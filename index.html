@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All In One PDD — Praja Satya Nayaka | SMKN 13 Bandung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --navy-light: #1B263B;
+      --gold: #D4AF37;
+      --gold-hover: #B89628;
+      --gold-subtle: rgba(212, 175, 55, 0.12);
+      --bg: #F4F6F9;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --tag-file: #E0E7FF;
+      --tag-file-txt: #3730A3;
+      --tag-folder: #FEF3C7;
+      --tag-folder-txt: #92400E;
+      --tag-other: #F1F5F9;
+      --tag-other-txt: #475467;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Banner / Navbar */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, #10243E 100%);
+      color: white;
+      padding: 24px 20px;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(13, 27, 42, 0.15);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-header:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1200px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* Controls: Search & Tabs */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      background: #E2E8F0;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-muted);
+      border-radius: 7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--navy);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 36px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      background: white;
+      font-family: inherit;
+    }
+
+    .search-box input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.08);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    /* Tab Content Cards */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Table Container */
+    .table-container {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    thead th {
+      background: #2563EB;
+      color: white;
+      font-weight: 600;
+      padding: 14px 16px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #F8FAFC;
+    }
+
+    tbody tr:hover {
+      background-color: #EDF4FE;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .badge-file { background: var(--tag-file); color: var(--tag-file-txt); }
+    .badge-folder { background: var(--tag-folder); color: var(--tag-folder-txt); }
+    .badge-other { background: var(--tag-other); color: var(--tag-other-txt); }
+
+    .badge-status {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .status-not-started { background: #F1F5F9; color: #475569; }
+    .status-in-progress { background: #FEF3C7; color: #92400E; }
+    .status-done { background: #D1FAE5; color: #065F46; }
+
+    .file-link {
+      color: #2563EB;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .file-link:hover {
+      text-decoration: underline;
+    }
+
+    .note-text {
+      color: #475569;
+      line-height: 1.5;
+      max-width: 480px;
+    }
+
+    /* Brand Kit Section */
+    .brand-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .brand-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+    }
+
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .color-box {
+      border-radius: 8px;
+      padding: 12px;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.15s;
+    }
+
+    .color-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .color-box .hex {
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .color-box .name {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* Toast notification */
+    #toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: var(--navy);
+      color: var(--gold);
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 18px;
+      position: fixed;
+      z-index: 999;
+      bottom: 24px;
+      right: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.3s, fadeout 0.3s 2s;
+    }
+
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 24px; opacity: 1;}
+    }
+
+    @keyframes fadeout {
+      from {bottom: 24px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      background: white;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <span class="brand-badge">PDD PILKETOS</span>
+        <div>
+          <h1>PRAJA SATYA NAYAKA</h1>
+          <div class="tagline">All In One Portal & Arsip Digital — MPK/OSIS SMKN 13 Bandung</div>
+        </div>
+      </div>
+      <div class="header-links">
+        <a href="https://drive.google.com/drive/folders/1TgFahFMpVyVFcZElKE9WHOnvSaf-_XjZ?usp=sharing" target="_blank" class="btn-header">
+          📁 Buka Google Drive
+        </a>
+        <a href="https://canva.com" target="_blank" class="btn-header">
+          🎨 Canva Team
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Brand Kit Overview Banner -->
+    <div class="brand-section">
+      <div class="brand-card">
+        <h3>🎨 Color Palette (Klik untuk Salin HEX)</h3>
+        <div class="color-swatches">
+          <div class="color-box" style="background: #0D1B2A;" onclick="copyHex('#0D1B2A')">
+            <div class="hex">#0D1B2A</div>
+            <div class="name">Navy (60%)</div>
+          </div>
+          <div class="color-box" style="background: #D4AF37; color: #0D1B2A;" onclick="copyHex('#D4AF37')">
+            <div class="hex">#D4AF37</div>
+            <div class="name">Gold (10%)</div>
+          </div>
+          <div class="color-box" style="background: #FFFFFF; color: #0D1B2A; border: 1px solid #CBD5E1;" onclick="copyHex('#FFFFFF')">
+            <div class="hex">#FFFFFF</div>
+            <div class="name">White (30%)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <h3>🔤 Font Resmi Canva</h3>
+        <p style="font-size: 13px; line-height: 1.6; color: #475569;">
+          <strong>Judul:</strong> <span style="font-family: 'League Spartan'; font-size: 15px;">League Spartan (Bold)</span><br>
+          <strong>Isi/Teks:</strong> <span style="font-family: 'Poppins';">Poppins (Regular/Medium)</span><br>
+          <small style="color: #64748B;">Aturan: Maksimal 3 warna, jaga safe margin IG, dan netralitas foto paslon.</small>
+        </p>
+      </div>
+
+      <div class="brand-card">
+        <h3>👥 Tim PDD & Koordinator</h3>
+        <p style="font-size: 13px; line-height: 1.6; color: #475569;">
+          <strong>Koor & QC:</strong> Davin Maritza<br>
+          <strong>Desain Grafis:</strong> Kayla & Inaya<br>
+          <strong>Copywriter & Data:</strong> Naufal | <strong>Multimedia:</strong> Rayi
+        </p>
+      </div>
+    </div>
+
+    <!-- Navigation & Search Controls -->
+    <div class="controls">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('administrasi', this)">📁 Administrasi</button>
+        <button class="tab-btn" onclick="switchTab('template', this)">🎨 Template & Aset</button>
+        <button class="tab-btn" onclick="switchTab('sosmed', this)">🌐 Sosmed & Link</button>
+        <button class="tab-btn" onclick="switchTab('tasks', this)">✅ Task Tracker</button>
+      </div>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari file, template, atau tugas..." onkeyup="filterTable()">
+      </div>
+    </div>
+
+    <!-- TAB 1: ADMINISTRASI -->
+    <div id="administrasi" class="tab-content active">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Kategori</th>
+              <th style="text-align: center;">Jenis</th>
+              <th style="text-align: center;">Update Terakhir</th>
+              <th>Lokasi File</th>
+              <th>Catatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Template Proposal Pilketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📁 Proposal_Pilketos.docx</a></td>
+              <td class="note-text">Format resmi proposal kegiatan, jangan langsung edit file ini tapi di-download atau duplikat dulu ya.</td>
+            </tr>
+            <tr>
+              <td><strong>Template LPJ / LAK Kegiatan</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📊 LAK_Pilketos.docx</a></td>
+              <td class="note-text">Format pertanggungjawaban untuk MPK dan pembina setelah seluruh rangkaian pemilihan selesai.</td>
+            </tr>
+            <tr>
+              <td><strong>Surat Izin & Peminjaman Alat PDD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">15 Okt 2026</td>
+              <td><a href="#" class="file-link">📄 Peminjaman_Alat_PDD.docx</a></td>
+              <td class="note-text">Surat pinjam kamera sekolah, mic wireless, lighting, dan tripod ke sarpras/lab.</td>
+            </tr>
+            <tr>
+              <td><strong>List Anggota PDD & Kontak</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">👥 Anggota_PDD_SMKN13</a></td>
+              <td class="note-text">Daftar kontak Davin, Kayla, Inaya, Naufal, Rayi buat koordinasi cepat kalau ada revisi mendadak.</td>
+            </tr>
+            <tr>
+              <td><strong>Form Pendaftaran Calon Ketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">14 Okt 2026</td>
+              <td><a href="#" class="file-link">📝 Form_Caketos_2026</a></td>
+              <td class="note-text">Form pendaftaran dan biodata resmi bakal calon, link ini disebar panitia ke perwakilan kelas.</td>
+            </tr>
+            <tr>
+              <td><strong>Rekap Visi, Misi & Program Paslon</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📑 Data_VisiMisi_Paslon</a></td>
+              <td class="note-text">Data teks visi-misi paslon terverifikasi. Tim desain wajib ambil teks dari sini biar tidak ada typo.</td>
+            </tr>
+            <tr>
+              <td><strong>SOP & Aturan Desain PDD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">17 Okt 2026</td>
+              <td><a href="#" class="file-link">📌 SOP_Desain_PDD.pdf</a></td>
+              <td class="note-text">Panduan aturan 3 warna, batas margin Instagram, dan kewajiban netralitas tampilan paslon.</td>
+            </tr>
+            <tr>
+              <td><strong>Folder Arsip Administrasi & Surat</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📁 _Arsip_Administrasi</a></td>
+              <td class="note-text">Folder untuk menyimpan surat masuk, lembar pengesahan, dan notulensi rapat.</td>
+            </tr>
+            <tr>
+              <td><strong>Rekap Kas & Anggaran Belanja PDD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">💵 Anggaran_PDD_Pilketos</a></td>
+              <td class="note-text">Catatan nota cetak banner, print stiker kromo, tali lanyard, dan baterai cadangan mic.</td>
+            </tr>
+            <tr>
+              <td><strong>List Akun & Password Manager PDD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-other">Other</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">🔐 Password Manager PDD</a></td>
+              <td class="note-text">Khusus akses login akun IG, Canva Team, dan email drive bersama. Rahasia internal tim!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: TEMPLATE -->
+    <div id="template" class="tab-content">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Kategori</th>
+              <th style="text-align: center;">Jenis</th>
+              <th style="text-align: center;">Update Terakhir</th>
+              <th>Lokasi File</th>
+              <th>Catatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Logo Resmi SMKN 13, MPK & OSIS HD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📁 _LOGO_RESMI_HD</a></td>
+              <td class="note-text">Semua file logo format PNG transparan kualitas tinggi ada di sini. Tarik dari pojok agar tidak distorsi.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Feed Instagram (4:5)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://canva.com" target="_blank" class="file-link">🖼️ Master_Feed_Canva</a></td>
+              <td class="note-text">Buat postingan alur memilih dan info umum. Buka linknya lalu duplikat dulu, jangan ubah master aslinya.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Story Instagram (9:16)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://canva.com" target="_blank" class="file-link">📱 Master_Story_Canva</a></td>
+              <td class="note-text">Format vertikal 9:16, dipakai buat live report hari H dan posting countdown.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Poster Visi Misi Caketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://canva.com" target="_blank" class="file-link">🖼️ Poster_VisiMisi_Paslon</a></td>
+              <td class="note-text">Layout foto dan visi misi paslon. Pastikan ukuran frame foto paslon 1, 2, dst sama persis biar netral.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Video Orasi & Reels</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">🎬 Project_Video_CapCut</a></td>
+              <td class="note-text">Template bumper intro/outro video orasi paslon dengan logo sekolah dan teks nama calon.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Banner Lapangan 3x1m</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">15 Okt 2026</td>
+              <td><a href="#" class="file-link">🚩 Banner_Pilketos_3x1m</a></td>
+              <td class="note-text">Desain cetak spanduk di panggung/lapangan utama, ukurannya 3x1 meter resolusi tinggi (siap print).</td>
+            </tr>
+            <tr>
+              <td><strong>Template ID Card & Lanyard Panitia</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">🪪 Lanyard_Panitia_Pilketos</a></td>
+              <td class="note-text">Ukuran kartu panitia B3/A6, tinggal ganti foto panitia dan nama divisinya.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Countdown Hari H</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">⏳ Countdown_H3_H2_H1</a></td>
+              <td class="note-text">Seri countdown H-3, H-2, H-1 jelang hari H pemungutan suara.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Stiker Flip Cover (Nautical)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">⚓ Stiker_OnePiece_LAK.pdf</a></td>
+              <td class="note-text">File stiker bahari + 2 logo OSIS yang sudah di-acc untuk jilidan flip cover laporan LAK.</td>
+            </tr>
+            <tr>
+              <td><strong>Folder Mentahan Foto & Rekaman</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="#" class="file-link">📁 _RAW_Foto_Video</a></td>
+              <td class="note-text">Tempat Rayi dan tim upload seluruh foto dan video mentah hasil liputan dan sesi foto caketos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: SOSMED -->
+    <div id="sosmed" class="tab-content">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama Platform</th>
+              <th>Tautan / Link</th>
+              <th>Catatan & Panduan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Instagram OSIS SMKN 13</strong></td>
+              <td><a href="https://instagram.com/osis_smkn13bdg" target="_blank" class="file-link">@osis_smkn13bdg</a></td>
+              <td class="note-text">Akun utama buat upload feed visi misi, countdown, dan live report story pas hari pemilihan.</td>
+            </tr>
+            <tr>
+              <td><strong>Instagram MPK SMKN 13</strong></td>
+              <td><a href="https://instagram.com/mpk_smkn13bdg" target="_blank" class="file-link">@mpk_smkn13bdg</a></td>
+              <td class="note-text">Akun penyelenggara buat update pengawasan jalannya Pilketos dan pengumuman resmi.</td>
+            </tr>
+            <tr>
+              <td><strong>TikTok OSIS / Sekolah</strong></td>
+              <td><a href="https://tiktok.com/@osis13bdg" target="_blank" class="file-link">@osis13bdg</a></td>
+              <td class="note-text">Dipakai buat upload video orasi paslon format santai dan cuplikan keseruan hari H.</td>
+            </tr>
+            <tr>
+              <td><strong>YouTube SMKN 13 Bandung</strong></td>
+              <td><a href="https://youtube.com/@smkn13bandung" target="_blank" class="file-link">SMKN 13 Bandung Official</a></td>
+              <td class="note-text">Buat upload video debat kandidat atau rekaman orasi versi durasi penuh kalau ada.</td>
+            </tr>
+            <tr>
+              <td><strong>Canva Team PDD Pilketos</strong></td>
+              <td><a href="https://canva.com" target="_blank" class="file-link">Buka Canva Workspace</a></td>
+              <td class="note-text">Workspace Canva bersama, semua adik-adik PDD wajib kerjain desain di dalam tim ini biar tidak mencar.</td>
+            </tr>
+            <tr>
+              <td><strong>Google Drive Utama (Arsip 2026)</strong></td>
+              <td><a href="https://drive.google.com/drive/folders/1TgFahFMpVyVFcZElKE9WHOnvSaf-_XjZ?usp=sharing" target="_blank" class="file-link">Folder Arsip Pilketos 2026</a></td>
+              <td class="note-text">Folder induk Google Drive 'Arsip Pilketos 2026' buat menyimpan semua file dan spreadsheet ini.</td>
+            </tr>
+            <tr>
+              <td><strong>Form Aspirasi & Suara Siswa</strong></td>
+              <td><a href="#" class="file-link">Form Aspirasi Siswa</a></td>
+              <td class="note-text">Link kuesioner pertanyaan siswa buat bahan uji debat kandidat caketos.</td>
+            </tr>
+            <tr>
+              <td><strong>WhatsApp Grup PDD Pilketos</strong></td>
+              <td><a href="#" class="file-link">Grup WA Panitia PDD</a></td>
+              <td class="note-text">Grup koordinasi cepat panitia PDD (Davin, Kayla, Inaya, Naufal, Rayi).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: TASK TRACKER -->
+    <div id="tasks" class="tab-content">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center;">No</th>
+              <th style="text-align: center;">Fase</th>
+              <th>Nama Tugas / Konten</th>
+              <th style="text-align: center;">Kategori</th>
+              <th style="text-align: center;">PJ</th>
+              <th style="text-align: center;">Deadline</th>
+              <th style="text-align: center;">Status</th>
+              <th>Catatan Teknis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center;">1</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Informasi Umum & Jadwal Tahapan</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
+              <td style="text-align: center;"><strong>Kayla & Naufal</strong></td>
+              <td style="text-align: center;">H-10</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Format 4:5 portrait, alur pendaftaran sampai pelantikan.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">2</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Master Template Feed & Story IG</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Feed & Story</span></td>
+              <td style="text-align: center;"><strong>Davin</strong></td>
+              <td style="text-align: center;">H-9</td>
+              <td style="text-align: center;"><span class="badge-status status-in-progress">In Progress</span></td>
+              <td class="note-text">Template resmi warna Navy #0D1B2A dan Gold #D4AF37.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">3</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Pengumpulan Data & Visi Misi Caketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Data & Teks</span></td>
+              <td style="text-align: center;"><strong>Naufal</strong></td>
+              <td style="text-align: center;">H-8</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Wawancara calon dan pastikan teks visi misi bebas typo.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">4</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Poster Profil & Visi Misi Caketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
+              <td style="text-align: center;"><strong>Kayla & Inaya</strong></td>
+              <td style="text-align: center;">H-7</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Frame foto paslon 1, 2, dst ukurannya wajib sama persis.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">5</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Shooting & Editing Video Orasi Caketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Reels/Video</span></td>
+              <td style="text-align: center;"><strong>Rayi</strong></td>
+              <td style="text-align: center;">H-5</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Rasio vertikal 9:16 durasi 60-90 detik, pakai mic wireless.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">6</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Desain Banner / Spanduk Lapangan</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
+              <td style="text-align: center;"><strong>Inaya</strong></td>
+              <td style="text-align: center;">H-5</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Ukuran 3x1 meter, cek resolusi jangan pecah sebelum cetak.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">7</td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Desain ID Card / Lanyard Panitia</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
+              <td style="text-align: center;"><strong>Kayla</strong></td>
+              <td style="text-align: center;">H-4</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Ukuran standar B3, beri nama dan divisi panitia masing-masing.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">Hari H</td>
+              <td><strong>Live Report Story: Suasana TPS</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
+              <td style="text-align: center;"><strong>Rayi & Naufal</strong></td>
+              <td style="text-align: center;">Hari H</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Update berkala tiap 1-2 jam suasana pencoblosan.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">9</td>
+              <td style="text-align: center;">Hari H</td>
+              <td><strong>Dokumentasi Perhitungan Suara</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Dokumentasi</span></td>
+              <td style="text-align: center;"><strong>Rayi & Davin</strong></td>
+              <td style="text-align: center;">Hari H</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Momen sakral penghitungan surat suara dan papan rekap.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">10</td>
+              <td style="text-align: center;">Hari H</td>
+              <td><strong>Grafis Kilat Pengumuman Pemenang</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
+              <td style="text-align: center;"><strong>Davin & Kayla</strong></td>
+              <td style="text-align: center;">Hari H</td>
+              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td class="note-text">Siapkan template sebelum vote selesai agar langsung rilis.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast">HEX Berhasil Disalin!</div>
+
+  <!-- Footer -->
+  <footer>
+    Divisi PDD MPK & OSIS SMKN 13 Bandung © 2026 — Tema: Praja Satya Nayaka
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+      document.getElementById('searchInput').value = '';
+      filterTable();
+    }
+
+    function filterTable() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const activeTab = document.querySelector('.tab-content.active');
+      const rows = activeTab.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('toast');
+        toast.innerText = 'HEX ' + hex + ' Berhasil Disalin!';
+        toast.className = 'show';
+        setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
