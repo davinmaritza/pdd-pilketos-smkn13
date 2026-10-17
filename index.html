@@ -271,9 +271,32 @@
       font-weight: 600;
     }
 
-    .status-not-started { background: #F1F5F9; color: #475569; }
-    .status-in-progress { background: #FEF3C7; color: #92400E; }
-    .status-done { background: #D1FAE5; color: #065F46; }
+    .status-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid transparent;
+      outline: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: center;
+      text-align-last: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .status-select:hover {
+      filter: brightness(0.96);
+    }
+
+    .status-select.not-started { background: #F1F5F9; color: #475569; }
+    .status-select.in-progress { background: #FEF3C7; color: #92400E; }
+    .status-select.review      { background: #DBEAFE; color: #1E40AF; }
+    .status-select.done        { background: #D1FAE5; color: #065F46; }
 
     .file-link {
       color: #2563EB;
@@ -596,9 +619,8 @@
               <th style="text-align: center;">Fase</th>
               <th>Nama Tugas / Konten</th>
               <th style="text-align: center;">Kategori</th>
-              <th style="text-align: center;">PJ</th>
               <th style="text-align: center;">Deadline</th>
-              <th style="text-align: center;">Status</th>
+              <th style="text-align: center;">Status (Bisa Diubah)</th>
               <th>Catatan Teknis</th>
             </tr>
           </thead>
@@ -608,9 +630,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Informasi Umum & Jadwal Tahapan</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
-              <td style="text-align: center;"><strong>Kayla & Naufal</strong></td>
               <td style="text-align: center;">H-10</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t1" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Format 4:5 portrait, alur pendaftaran sampai pelantikan.</td>
             </tr>
             <tr>
@@ -618,9 +646,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Master Template Feed & Story IG</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed & Story</span></td>
-              <td style="text-align: center;"><strong>Davin</strong></td>
               <td style="text-align: center;">H-9</td>
-              <td style="text-align: center;"><span class="badge-status status-in-progress">In Progress</span></td>
+              <td style="text-align: center;">
+                <select class="status-select in-progress" data-task-id="t2" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress" selected>In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Template resmi warna Navy #0D1B2A dan Gold #D4AF37.</td>
             </tr>
             <tr>
@@ -628,9 +662,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Pengumpulan Data & Visi Misi Caketos</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Data & Teks</span></td>
-              <td style="text-align: center;"><strong>Naufal</strong></td>
               <td style="text-align: center;">H-8</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t3" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Wawancara calon dan pastikan teks visi misi bebas typo.</td>
             </tr>
             <tr>
@@ -638,9 +678,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Poster Profil & Visi Misi Caketos</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
-              <td style="text-align: center;"><strong>Kayla & Inaya</strong></td>
               <td style="text-align: center;">H-7</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t4" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Frame foto paslon 1, 2, dst ukurannya wajib sama persis.</td>
             </tr>
             <tr>
@@ -648,9 +694,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Shooting & Editing Video Orasi Caketos</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Reels/Video</span></td>
-              <td style="text-align: center;"><strong>Rayi</strong></td>
               <td style="text-align: center;">H-5</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t5" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Rasio vertikal 9:16 durasi 60-90 detik, pakai mic wireless.</td>
             </tr>
             <tr>
@@ -658,9 +710,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Desain Banner / Spanduk Lapangan</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
-              <td style="text-align: center;"><strong>Inaya</strong></td>
               <td style="text-align: center;">H-5</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t6" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Ukuran 3x1 meter, cek resolusi jangan pecah sebelum cetak.</td>
             </tr>
             <tr>
@@ -668,9 +726,15 @@
               <td style="text-align: center;">Pra-Hari H</td>
               <td><strong>Desain ID Card / Lanyard Panitia</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
-              <td style="text-align: center;"><strong>Kayla</strong></td>
               <td style="text-align: center;">H-4</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t7" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Ukuran standar B3, beri nama dan divisi panitia masing-masing.</td>
             </tr>
             <tr>
@@ -678,9 +742,15 @@
               <td style="text-align: center;">Hari H</td>
               <td><strong>Live Report Story: Suasana TPS</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
-              <td style="text-align: center;"><strong>Rayi & Naufal</strong></td>
               <td style="text-align: center;">Hari H</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t8" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Update berkala tiap 1-2 jam suasana pencoblosan.</td>
             </tr>
             <tr>
@@ -688,9 +758,15 @@
               <td style="text-align: center;">Hari H</td>
               <td><strong>Dokumentasi Perhitungan Suara</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Dokumentasi</span></td>
-              <td style="text-align: center;"><strong>Rayi & Davin</strong></td>
               <td style="text-align: center;">Hari H</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t9" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Momen sakral penghitungan surat suara dan papan rekap.</td>
             </tr>
             <tr>
@@ -698,9 +774,15 @@
               <td style="text-align: center;">Hari H</td>
               <td><strong>Grafis Kilat Pengumuman Pemenang</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
-              <td style="text-align: center;"><strong>Davin & Kayla</strong></td>
               <td style="text-align: center;">Hari H</td>
-              <td style="text-align: center;"><span class="badge-status status-not-started">Not Started</span></td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t10" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
               <td class="note-text">Siapkan template sebelum vote selesai agar langsung rilis.</td>
             </tr>
           </tbody>
@@ -739,14 +821,46 @@
       });
     }
 
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.className = 'show';
+      setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2000);
+    }
+
     function copyHex(hex) {
       navigator.clipboard.writeText(hex).then(() => {
-        const toast = document.getElementById('toast');
-        toast.innerText = 'HEX ' + hex + ' Berhasil Disalin!';
-        toast.className = 'show';
-        setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2000);
+        showToast('HEX ' + hex + ' Berhasil Disalin!');
       });
     }
+
+    function changeTaskStatus(sel) {
+      const val = sel.value;
+      const taskId = sel.getAttribute('data-task-id');
+      sel.className = 'status-select ' + val;
+      localStorage.setItem('pdd_task_status_' + taskId, val);
+      
+      const labels = {
+        'not-started': 'Not Started',
+        'in-progress': 'In Progress',
+        'review': 'Review Koor',
+        'done': 'Done'
+      };
+      showToast('Status diubah ke: ' + (labels[val] || val));
+    }
+
+    function initTaskStatuses() {
+      document.querySelectorAll('.status-select').forEach(sel => {
+        const taskId = sel.getAttribute('data-task-id');
+        const saved = localStorage.getItem('pdd_task_status_' + taskId);
+        if (saved) {
+          sel.value = saved;
+        }
+        sel.className = 'status-select ' + sel.value;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initTaskStatuses);
   </script>
 </body>
 </html>
