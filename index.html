@@ -68,16 +68,30 @@
       gap: 16px;
     }
 
-    .brand-logo-img {
-      height: 58px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-      transition: transform 0.2s ease;
+    .brand-logo-container {
+      background: #FFFFFF;
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(212, 175, 55, 0.7);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
     }
 
-    .brand-logo-img:hover {
-      transform: scale(1.05);
+    .brand-logo-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+      border-color: var(--gold);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
     .brand-badge {
@@ -487,8 +501,13 @@
         gap: 12px;
       }
 
+      .brand-logo-container {
+        padding: 5px 8px;
+        border-radius: 10px;
+      }
+
       .brand-logo-img {
-        height: 48px;
+        height: 38px;
       }
 
       .brand-badge {
@@ -621,8 +640,13 @@
         gap: 10px;
       }
 
+      .brand-logo-container {
+        padding: 4px 6px;
+        border-radius: 8px;
+      }
+
       .brand-logo-img {
-        height: 42px;
+        height: 32px;
       }
 
       h1 {
@@ -657,7 +681,9 @@
   <header>
     <div class="header-container">
       <div class="brand-title">
-        <img src="logo-mpk.png" alt="Logo MPK SMKN 13 Bandung" class="brand-logo-img">
+        <div class="brand-logo-container">
+          <img src="logo-mpk.png" alt="Logo MPK SMKN 13 Bandung" class="brand-logo-img">
+        </div>
         <div class="brand-info">
           <div class="brand-badge-wrapper">
             <span class="brand-badge">PDD PILKETOS</span>
