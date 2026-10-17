@@ -474,6 +474,164 @@
       margin-bottom: 2px;
     }
 
+    /* Roadmap Tab Styles */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .roadmap-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .roadmap-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .roadmap-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .roadmap-step-badge.done {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .roadmap-step-badge.ready {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+
+    .roadmap-step-badge.active {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .roadmap-card h4 {
+      font-size: 15px;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-card p {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* Phase Timeline Grid */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .phase-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .phase-card-header {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+
+    .phase-card-header.pra { background: linear-gradient(135deg, #1E3A8A, #2563EB); }
+    .phase-card-header.hari-h { background: linear-gradient(135deg, #B45309, #D97706); }
+    .phase-card-header.after { background: linear-gradient(135deg, #047857, #059669); }
+
+    .phase-card-body {
+      padding: 16px;
+    }
+
+    .phase-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .phase-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .phase-item-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .phase-item-text strong {
+      display: block;
+      font-size: 13px;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .phase-item-text span {
+      font-size: 11.5px;
+      color: #64748B;
+      line-height: 1.4;
+    }
+
+    /* Design Checklist */
+    .checklist-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .checklist-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
     /* Responsive Media Queries */
     @media (max-width: 992px) {
       .header-container {
@@ -546,6 +704,10 @@
         grid-template-columns: 1fr;
         gap: 12px;
         margin-bottom: 18px;
+      }
+
+      .phase-grid {
+        grid-template-columns: 1fr;
       }
 
       .brand-card {
@@ -752,6 +914,7 @@
         <button class="tab-btn active" onclick="switchTab('administrasi', this)">📁 Administrasi</button>
         <button class="tab-btn" onclick="switchTab('template', this)">🎨 Template & Aset</button>
         <button class="tab-btn" onclick="switchTab('tasks', this)">✅ Task Tracker</button>
+        <button class="tab-btn" onclick="switchTab('roadmap', this)">🗺️ Roadmap PDD</button>
       </div>
       <div class="search-box">
         <span class="search-icon">🔍</span>
@@ -904,7 +1067,7 @@
             <tr>
               <td style="text-align: center;">1</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Informasi Umum & Jadwal Tahapan</strong></td>
+              <td><strong>Informasi Pilketos Secara Umum</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
               <td style="text-align: center;">H-10</td>
               <td style="text-align: center;">
@@ -915,13 +1078,13 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Format 4:5 portrait, alur pendaftaran sampai pelantikan.</td>
+              <td class="note-text">Format 4:5 portrait, pengumuman tahapan dari pendaftaran sampai hari H.</td>
             </tr>
             <tr>
               <td style="text-align: center;">2</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Master Template Feed & Story IG</strong></td>
-              <td style="text-align: center;"><span class="badge badge-file">Feed & Story</span></td>
+              <td><strong>Master Template Kosongan (Feed, Story, Banner)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Template</span></td>
               <td style="text-align: center;">H-9</td>
               <td style="text-align: center;">
                 <select class="status-select in-progress" data-task-id="t2" onchange="changeTaskStatus(this)">
@@ -931,12 +1094,12 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Template resmi warna Navy #0D1B2A dan Gold #D4AF37.</td>
+              <td class="note-text">Template kosongan siap pakai warna Navy #0D1B2A dan Gold #D4AF37.</td>
             </tr>
             <tr>
               <td style="text-align: center;">3</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Pengumpulan Data & Visi Misi Caketos</strong></td>
+              <td><strong>Pengumpulan Data & Profil Calon Trikora</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Data & Teks</span></td>
               <td style="text-align: center;">H-8</td>
               <td style="text-align: center;">
@@ -947,12 +1110,12 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Wawancara calon dan pastikan teks visi misi bebas typo.</td>
+              <td class="note-text">Form biodata resmi dan naskah visi misi paslon terverifikasi bebas typo.</td>
             </tr>
             <tr>
               <td style="text-align: center;">4</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Poster Profil & Visi Misi Caketos</strong></td>
+              <td><strong>Poster Visi Misi Caketos</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
               <td style="text-align: center;">H-7</td>
               <td style="text-align: center;">
@@ -963,14 +1126,14 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Frame foto paslon 1, 2, dst ukurannya wajib sama persis.</td>
+              <td class="note-text">Wajib netral mutlak: ukuran frame foto paslon 1, 2, dst sama persis.</td>
             </tr>
             <tr>
               <td style="text-align: center;">5</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Shooting & Editing Video Orasi Caketos</strong></td>
+              <td><strong>Video Orasi Caketos</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Reels/Video</span></td>
-              <td style="text-align: center;">H-5</td>
+              <td style="text-align: center;">H-6</td>
               <td style="text-align: center;">
                 <select class="status-select not-started" data-task-id="t5" onchange="changeTaskStatus(this)">
                   <option value="not-started">Not Started</option>
@@ -979,12 +1142,12 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Rasio vertikal 9:16 durasi 60-90 detik, pakai mic wireless.</td>
+              <td class="note-text">Rasio 9:16 vertikal durasi 60-90 detik, pakai bumper resmi tema.</td>
             </tr>
             <tr>
               <td style="text-align: center;">6</td>
               <td style="text-align: center;">Pra-Hari H</td>
-              <td><strong>Desain Banner / Spanduk Lapangan</strong></td>
+              <td><strong>Banner Pilketos Lapangan 3x1m</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
               <td style="text-align: center;">H-5</td>
               <td style="text-align: center;">
@@ -995,7 +1158,7 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Ukuran 3x1 meter, cek resolusi jangan pecah sebelum cetak.</td>
+              <td class="note-text">Spanduk panggung utama 3x1 meter, margin aman ring mata ayam 15 cm.</td>
             </tr>
             <tr>
               <td style="text-align: center;">7</td>
@@ -1011,14 +1174,14 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Ukuran standar B3, beri nama dan divisi panitia masing-masing.</td>
+              <td class="note-text">Ukuran B3/A6, lengkap dengan nama panitia dan divisi masing-masing.</td>
             </tr>
             <tr>
               <td style="text-align: center;">8</td>
-              <td style="text-align: center;">Hari H</td>
-              <td><strong>Live Report Story: Suasana TPS</strong></td>
+              <td style="text-align: center;">Pra-Hari H</td>
+              <td><strong>Countdown Hari H (H-3, H-2, H-1)</strong></td>
               <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
-              <td style="text-align: center;">Hari H</td>
+              <td style="text-align: center;">H-3</td>
               <td style="text-align: center;">
                 <select class="status-select not-started" data-task-id="t8" onchange="changeTaskStatus(this)">
                   <option value="not-started">Not Started</option>
@@ -1027,13 +1190,13 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Update berkala tiap 1-2 jam suasana pencoblosan.</td>
+              <td class="note-text">Pengingat tanggal, hari, dan bulan pelaksanaan pemungutan suara.</td>
             </tr>
             <tr>
               <td style="text-align: center;">9</td>
-              <td style="text-align: center;">Hari H</td>
-              <td><strong>Dokumentasi Perhitungan Suara</strong></td>
-              <td style="text-align: center;"><span class="badge badge-file">Dokumentasi</span></td>
+              <td style="text-align: center;">Pas Hari H</td>
+              <td><strong>Up Story Instagram Terjadwal</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
               <td style="text-align: center;">Hari H</td>
               <td style="text-align: center;">
                 <select class="status-select not-started" data-task-id="t9" onchange="changeTaskStatus(this)">
@@ -1043,13 +1206,13 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Momen sakral penghitungan surat suara dan papan rekap.</td>
+              <td class="note-text">Jadwal rutin story alur coblos dan ajakan jangan golput.</td>
             </tr>
             <tr>
               <td style="text-align: center;">10</td>
-              <td style="text-align: center;">Hari H</td>
-              <td><strong>Grafis Kilat Pengumuman Pemenang</strong></td>
-              <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
+              <td style="text-align: center;">Pas Hari H</td>
+              <td><strong>Live Report TPS & Bilik Suara</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
               <td style="text-align: center;">Hari H</td>
               <td style="text-align: center;">
                 <select class="status-select not-started" data-task-id="t10" onchange="changeTaskStatus(this)">
@@ -1059,10 +1222,217 @@
                   <option value="done">Done</option>
                 </select>
               </td>
-              <td class="note-text">Siapkan template sebelum vote selesai agar langsung rilis.</td>
+              <td class="note-text">Liputan real-time antrian siswa, bilik suara, dan suasana TPS.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">11</td>
+              <td style="text-align: center;">Pas Hari H</td>
+              <td><strong>Dokumentasi Perhitungan Suara</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Dokumentasi</span></td>
+              <td style="text-align: center;">Hari H</td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t11" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
+              <td class="note-text">Foto dan rekaman video sakral proses buka kotak suara dan papan rekap.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">12</td>
+              <td style="text-align: center;">After Pengumuman</td>
+              <td><strong>Best Moment & Pengumuman Who is Ketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Feed IG</span></td>
+              <td style="text-align: center;">Pasca-Vote</td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t12" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
+              <td class="note-text">Grafis resmi perolehan suara akhir dan ucapan selamat ketua terpilih.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">13</td>
+              <td style="text-align: center;">After Pengumuman</td>
+              <td><strong>Video Testimoni Guru & Siswa</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">Reels/Video</span></td>
+              <td style="text-align: center;">Pasca-Vote</td>
+              <td style="text-align: center;">
+                <select class="status-select not-started" data-task-id="t13" onchange="changeTaskStatus(this)">
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="review">Review Koor</option>
+                  <option value="done">Done</option>
+                </select>
+              </td>
+              <td class="note-text">Kesan, pesan, dan harapan dari kepala sekolah, guru, serta perwakilan siswa.</td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: ROADMAP PDD -->
+    <div id="roadmap" class="tab-content">
+      <!-- 6 Langkah Alur Kerja PDD -->
+      <h3 style="margin-bottom: 14px; font-size: 16px; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+        🚀 6 Langkah Utama Alur Kerja PDD
+      </h3>
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge done">✅ Langkah 1 • Selesai</span>
+          <h4>1. Tema Selesai</h4>
+          <p>Penetapan tema resmi Pilketos: <strong>"PRAJA SATYA NAYAKA"</strong> (Makna: Rakyat, Kebenaran, & Pemimpin Berintegritas).</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge done">✅ Langkah 2 • Selesai</span>
+          <h4>2. Mini Brand Kit</h4>
+          <p>Palet 3 warna resmi (#0D1B2A Midnight Navy, #D4AF37 Imperial Gold, #FFFFFF Pure White) & Font Canva (League Spartan + Poppins).</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge done">✅ Langkah 3 • Selesai</span>
+          <h4>3. Setup Workspace</h4>
+          <p>Struktur Google Drive terintegrasi (01_Administrasi, 02_Template_dan_Aset, _LOGO_RESMI_HD, & Arsip Digital).</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge ready">👥 Langkah 4 • Siap</span>
+          <h4>4. Pembagian PIC</h4>
+          <p>Supervisi & QC (Davin), Desainer Grafis (Kayla & Inaya), Konseptor/Copywriting (Naufal), Multimedia/Dokumentasi (Rayi).</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge ready">🎨 Langkah 5 • Siap</span>
+          <h4>5. Bikin Master Template</h4>
+          <p>Pembuatan template kosongan di Canva (Feed 4:5, Story 9:16, Banner 3x1m) & Bumper Video CapCut sebelum konten diisi.</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-step-badge active">🔥 Langkah 6 • Berjalan</span>
+          <h4>6. Eksekusi Konten Pra-Acara</h4>
+          <p>Produksi dan rilis materi: Feed info umum, profil Caketos Trikora, poster visi misi, countdown hari H, dan video orasi.</p>
+        </div>
+      </div>
+
+      <!-- Timeline Konten Berdasarkan Fase -->
+      <h3 style="margin-bottom: 14px; font-size: 16px; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+        📅 Timeline Konten Publikasi Berdasarkan Fase
+      </h3>
+      <div class="phase-grid">
+        <!-- Fase 1: Sebelum Hari H -->
+        <div class="phase-card">
+          <div class="phase-card-header pra">
+            <span>📌 Sebelum Hari H</span>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-item">
+              <div class="phase-item-icon">⏳</div>
+              <div class="phase-item-text">
+                <strong>1. Countdown Hari H</strong>
+                <span>Hitung mundur hari, tanggal, & bulan kapan hari H Pilketos (H-3, H-2, H-1) via Story IG.</span>
+              </div>
+            </div>
+            <div class="phase-item">
+              <div class="phase-item-icon">🪪</div>
+              <div class="phase-item-text">
+                <strong>2. Profil Calon Trikora</strong>
+                <span>Biodata lengkap, foto resmi, dan rekap visi misi bakal calon ketua OSIS.</span>
+              </div>
+            </div>
+            <div class="phase-item">
+              <div class="phase-item-icon">🎬</div>
+              <div class="phase-item-text">
+                <strong>3. Video Orasi Caketos</strong>
+                <span>Penyampaian orasi program kerja kandidat durasi 60-90 detik format Reels/TikTok.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 2: Pas Hari H -->
+        <div class="phase-card">
+          <div class="phase-card-header hari-h">
+            <span>🗳️ Pas Hari H</span>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-item">
+              <div class="phase-item-icon">📱</div>
+              <div class="phase-item-text">
+                <strong>1. Up Story Instagram</strong>
+                <span>Postingan berkala panduan bilik suara, ajakan memilih, dan jadwal penghitungan suara.</span>
+              </div>
+            </div>
+            <div class="phase-item">
+              <div class="phase-item-icon">🔴</div>
+              <div class="phase-item-text">
+                <strong>2. Live Report TPS</strong>
+                <span>Dokumentasi langsung suasana pemungutan suara siswa, bilik suara, dan rekapitulasi.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 3: Pas After Pengumuman -->
+        <div class="phase-card">
+          <div class="phase-card-header after">
+            <span>🏆 Pas After Pengumuman</span>
+          </div>
+          <div class="phase-card-body">
+            <div class="phase-item">
+              <div class="phase-item-icon">🎉</div>
+              <div class="phase-item-text">
+                <strong>1. Best Moment / Who is Ketos</strong>
+                <span>Rilis grafis kilat pengumuman resmi perolehan suara & ucapan selamat Ketua OSIS terpilih.</span>
+              </div>
+            </div>
+            <div class="phase-item">
+              <div class="phase-item-icon">🎙️</div>
+              <div class="phase-item-text">
+                <strong>2. Testimoni Guru & Siswa</strong>
+                <span>Video review pesan, harapan, dan testimoni kepala sekolah, dewan guru, serta perwakilan siswa.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist Desain Wajib Dibuat -->
+      <div class="checklist-card">
+        <h4 style="font-size: 15px; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+          🎨 Desain yang Wajib Dibuat (Core Deliverables)
+        </h4>
+        <div class="checklist-grid">
+          <div class="checklist-item">
+            <span style="font-size: 18px;">📢</span>
+            <div>
+              <div style="font-size: 13px; font-weight: 700;">1. Informasi Pilketos Umum</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400;">Feed IG alur & tata tertib memilih</div>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span style="font-size: 18px;">🚩</span>
+            <div>
+              <div style="font-size: 13px; font-weight: 700;">2. Banner Lapangan 3x1m</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400;">Cetak spanduk panggung utama</div>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span style="font-size: 18px;">📑</span>
+            <div>
+              <div style="font-size: 13px; font-weight: 700;">3. Poster Visi Misi Caketos</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400;">Layout netral foto & program kerja</div>
+            </div>
+          </div>
+          <div class="checklist-item">
+            <span style="font-size: 18px;">📱</span>
+            <div>
+              <div style="font-size: 13px; font-weight: 700;">4. Feed Instagram Terjadwal</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400;">Rasio 4:5 portrait konsisten tema</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
