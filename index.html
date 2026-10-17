@@ -420,14 +420,234 @@
       to {bottom: 0; opacity: 0;}
     }
 
-    footer {
-      text-align: center;
-      padding: 24px;
+    /* Mobile Table Hint */
+    .mobile-table-hint {
+      display: none;
+      font-size: 11px;
+      font-weight: 500;
       color: var(--text-muted);
-      font-size: 12px;
-      border-top: 1px solid var(--border);
-      background: white;
-      margin-top: auto;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    /* Custom Table Scrollbar */
+    .table-container {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+      background: #F1F5F9;
+      border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-badge-wrapper {
+      display: inline-flex;
+      margin-bottom: 2px;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 992px) {
+      .header-container {
+        gap: 14px;
+      }
+      
+      .brand-title {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 16px;
+      }
+
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .brand-title {
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-logo-img {
+        height: 48px;
+      }
+
+      .brand-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .tagline {
+        font-size: 11.5px;
+      }
+
+      .header-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .btn-header {
+        justify-content: center;
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+
+      main {
+        padding: 0 14px;
+        margin: 16px auto;
+      }
+
+      .brand-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .brand-card {
+        padding: 16px;
+      }
+
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .tabs {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tab-btn {
+        flex: 1 0 auto;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .search-box {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .search-box input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 14px 11px 36px;
+        font-size: 13px;
+      }
+
+      .mobile-table-hint {
+        display: block;
+      }
+
+      .table-container {
+        border-radius: 10px;
+      }
+
+      #administrasi table,
+      #template table {
+        min-width: 650px;
+      }
+
+      #tasks table {
+        min-width: 800px;
+      }
+
+      thead th {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+
+      tbody td {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+
+      .note-text {
+        max-width: 260px;
+        font-size: 11px;
+      }
+
+      .status-select {
+        padding: 6px 10px;
+        font-size: 11px;
+      }
+
+      #toast {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-title {
+        gap: 10px;
+      }
+
+      .brand-logo-img {
+        height: 42px;
+      }
+
+      h1 {
+        font-size: 17px;
+      }
+
+      .tagline {
+        font-size: 10.5px;
+      }
+
+      .color-swatches {
+        gap: 6px;
+      }
+
+      .color-box {
+        padding: 8px 4px;
+      }
+
+      .color-box .hex {
+        font-size: 10px;
+      }
+
+      .color-box .name {
+        font-size: 9px;
+      }
     }
   </style>
 </head>
@@ -438,8 +658,10 @@
     <div class="header-container">
       <div class="brand-title">
         <img src="logo-mpk.png" alt="Logo MPK SMKN 13 Bandung" class="brand-logo-img">
-        <span class="brand-badge">PDD PILKETOS</span>
-        <div>
+        <div class="brand-info">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">PDD PILKETOS</span>
+          </div>
           <h1>PRAJA SATYA NAYAKA</h1>
           <div class="tagline">All In One Portal & Arsip Digital — MPK SMKN 13 Bandung</div>
         </div>
@@ -502,6 +724,7 @@
 
     <!-- TAB 1: ADMINISTRASI -->
     <div id="administrasi" class="tab-content active">
+      <div class="mobile-table-hint">👉 Geser tabel ke samping untuk info lengkap</div>
       <div class="table-container">
         <table>
           <thead>
@@ -542,6 +765,7 @@
 
     <!-- TAB 2: TEMPLATE -->
     <div id="template" class="tab-content">
+      <div class="mobile-table-hint">👉 Geser tabel ke samping untuk info lengkap</div>
       <div class="table-container">
         <table>
           <thead>
@@ -625,6 +849,7 @@
 
     <!-- TAB 4: TASK TRACKER -->
     <div id="tasks" class="tab-content">
+      <div class="mobile-table-hint">👉 Geser tabel ke samping untuk status & info lengkap</div>
       <div class="table-container">
         <table>
           <thead>
