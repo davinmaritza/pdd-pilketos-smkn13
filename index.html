@@ -1099,6 +1099,9 @@
       });
     }
 
+    // URL Google Apps Script Web App untuk sinkronisasi cloud online antar-pengunjung
+    let APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_pdd_pilketos_api/exec';
+
     function changeTaskStatus(sel) {
       const val = sel.value;
       const taskId = sel.getAttribute('data-task-id');
@@ -1111,10 +1114,24 @@
         'review': 'Review Koor',
         'done': 'Done'
       };
-      showToast('Status diubah ke: ' + (labels[val] || val));
+      showToast('Status: ' + (labels[val] || val) + ' (Menyimpan...)');
+
+      if (APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('_pdd_pilketos_api')) {
+        fetch(APPS_SCRIPT_URL + '?action=update&taskId=' + encodeURIComponent(taskId) + '&status=' + encodeURIComponent(val))
+          .then(res => res.json())
+          .then(data => {
+            if (data && data.success) {
+              showToast('✅ Status tersimpan & sinkron online!');
+            }
+          })
+          .catch(err => {
+            console.log('Tersimpan lokal di browser (offline mode)');
+          });
+      }
     }
 
     function initTaskStatuses() {
+      // 1. Baca cache lokal dulu
       document.querySelectorAll('.status-select').forEach(sel => {
         const taskId = sel.getAttribute('data-task-id');
         const saved = localStorage.getItem('pdd_task_status_' + taskId);
@@ -1123,6 +1140,25 @@
         }
         sel.className = 'status-select ' + sel.value;
       });
+
+      // 2. Jika APPS_SCRIPT_URL aktif, ambil status terbaru dari cloud
+      if (APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('_pdd_pilketos_api')) {
+        fetch(APPS_SCRIPT_URL)
+          .then(res => res.json())
+          .then(cloudTasks => {
+            if (cloudTasks && typeof cloudTasks === 'object') {
+              document.querySelectorAll('.status-select').forEach(sel => {
+                const taskId = sel.getAttribute('data-task-id');
+                if (cloudTasks[taskId]) {
+                  sel.value = cloudTasks[taskId];
+                  sel.className = 'status-select ' + sel.value;
+                  localStorage.setItem('pdd_task_status_' + taskId, sel.value);
+                }
+              });
+            }
+          })
+          .catch(err => console.log('Offline / lokal mode:', err));
+      }
     }
 
     document.addEventListener('DOMContentLoaded', initTaskStatuses);
