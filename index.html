@@ -324,6 +324,7 @@
     .status-select.in-progress { background: #FEF3C7; color: #92400E; }
     .status-select.review      { background: #DBEAFE; color: #1E40AF; }
     .status-select.done        { background: #D1FAE5; color: #065F46; }
+    .status-select.canceled    { background: #FEE2E2; color: #991B1B; text-decoration: line-through; }
 
     .file-link {
       color: #2563EB;
@@ -1076,6 +1077,7 @@
                   <option value="in-progress" selected>In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Format 4:5 portrait, pengumuman tahapan dari pendaftaran sampai hari H.</td>
@@ -1092,6 +1094,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done" selected>Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Template kosongan siap pakai warna Navy #0D1B2A dan Gold #D4AF37.</td>
@@ -1108,6 +1111,7 @@
                   <option value="in-progress" selected>In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Form biodata resmi dan naskah visi misi paslon terverifikasi bebas typo.</td>
@@ -1124,6 +1128,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Wajib netral mutlak: ukuran frame foto paslon 1, 2, dst sama persis.</td>
@@ -1140,6 +1145,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Rasio 9:16 vertikal durasi 60-90 detik, pakai bumper resmi tema.</td>
@@ -1151,11 +1157,12 @@
               <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
               <td style="text-align: center;">H-5</td>
               <td style="text-align: center;">
-                <select class="status-select not-started" data-task-id="t6" onchange="changeTaskStatus(this)">
+                <select class="status-select canceled" data-task-id="t6" onchange="changeTaskStatus(this)">
                   <option value="not-started">Not Started</option>
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled" selected>Canceled</option>
                 </select>
               </td>
               <td class="note-text">Spanduk panggung utama 3x1 meter, margin aman ring mata ayam 15 cm.</td>
@@ -1167,11 +1174,12 @@
               <td style="text-align: center;"><span class="badge badge-file">Cetak</span></td>
               <td style="text-align: center;">H-4</td>
               <td style="text-align: center;">
-                <select class="status-select not-started" data-task-id="t7" onchange="changeTaskStatus(this)">
+                <select class="status-select canceled" data-task-id="t7" onchange="changeTaskStatus(this)">
                   <option value="not-started">Not Started</option>
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled" selected>Canceled</option>
                 </select>
               </td>
               <td class="note-text">Ukuran B3/A6, lengkap dengan nama panitia dan divisi masing-masing.</td>
@@ -1183,11 +1191,12 @@
               <td style="text-align: center;"><span class="badge badge-file">Story IG</span></td>
               <td style="text-align: center;">H-3</td>
               <td style="text-align: center;">
-                <select class="status-select not-started" data-task-id="t8" onchange="changeTaskStatus(this)">
+                <select class="status-select in-progress" data-task-id="t8" onchange="changeTaskStatus(this)">
                   <option value="not-started">Not Started</option>
-                  <option value="in-progress">In Progress</option>
+                  <option value="in-progress" selected>In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Pengingat tanggal, hari, dan bulan pelaksanaan pemungutan suara.</td>
@@ -1204,6 +1213,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Jadwal rutin story alur coblos dan ajakan jangan golput.</td>
@@ -1220,6 +1230,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Liputan real-time antrian siswa, bilik suara, dan suasana TPS.</td>
@@ -1236,6 +1247,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Foto dan rekaman video sakral proses buka kotak suara dan papan rekap.</td>
@@ -1252,6 +1264,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Grafis resmi perolehan suara akhir dan ucapan selamat ketua terpilih.</td>
@@ -1268,6 +1281,7 @@
                   <option value="in-progress">In Progress</option>
                   <option value="review">Review Koor</option>
                   <option value="done">Done</option>
+                  <option value="canceled">Canceled</option>
                 </select>
               </td>
               <td class="note-text">Kesan, pesan, dan harapan dari kepala sekolah, guru, serta perwakilan siswa.</td>
@@ -1493,7 +1507,8 @@
         'not-started': 'Not Started',
         'in-progress': 'In Progress',
         'review': 'Review Koor',
-        'done': 'Done'
+        'done': 'Done',
+        'canceled': 'Canceled'
       };
       showToast('Status: ' + (labels[val] || val) + ' (Menyimpan...)');
 
