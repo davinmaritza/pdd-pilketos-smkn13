@@ -773,6 +773,120 @@
       color: var(--navy);
     }
 
+    /* Daily Timeline Grid */
+    .daily-timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .daily-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      position: relative;
+      border-top: 4px solid var(--navy);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .daily-card.today {
+      border-top-color: #D97706;
+      background: #FFFDF9;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+    }
+
+    .daily-card.election-day {
+      border-top-color: #059669;
+      background: #F0FDF4;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
+    }
+
+    .daily-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .daily-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .daily-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #F1F5F9;
+      color: #475569;
+      text-transform: uppercase;
+    }
+
+    .daily-tag.today {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .daily-tag.gold {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .daily-tag.green {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .daily-card h5 {
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .daily-card p {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.45;
+      margin: 0 0 10px 0;
+      flex-grow: 1;
+    }
+
+    .daily-actions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border-top: 1px dashed #E2E8F0;
+      padding-top: 8px;
+    }
+
+    .daily-actions li {
+      font-size: 11.5px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.4;
+    }
+
+    .daily-actions li::before {
+      content: "✔";
+      color: #2563EB;
+      font-size: 11px;
+    }
+
     /* Responsive Media Queries */
     @media (max-width: 992px) {
       .header-container {
@@ -1468,6 +1582,125 @@
           <span class="roadmap-step-badge active">🔥 Langkah 6 • Berjalan</span>
           <h4>6. Eksekusi Konten Pra-Acara</h4>
           <p>Produksi dan rilis materi: Feed info umum, profil Caketos Trikora, poster visi misi, countdown hari H, dan video orasi.</p>
+        </div>
+      </div>
+
+      <!-- Roadmap Eksekusi Harian H-8 Menuju Hari H -->
+      <h3 style="margin-bottom: 14px; font-size: 16px; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+        🗓️ Roadmap Eksekusi Harian PDD (H-8 s.d. Hari H & Pasca-Vote)
+      </h3>
+      <div class="daily-timeline-grid">
+        <!-- H-8: Selasa, 20 Okt (Hari Ini) -->
+        <div class="daily-card today">
+          <div class="daily-header">
+            <span class="daily-date">Selasa, 20 Okt 2026</span>
+            <span class="daily-tag today">🔥 H-8 (HARI INI)</span>
+          </div>
+          <h5>📢 Info Umum & Tagih Data Caketos</h5>
+          <p>Kawal data resmi calon dari panitia pelaksana/Kesiswaan dan rilis feed pengumuman Pilketos.</p>
+          <ul class="daily-actions">
+            <li>Tagih: Nama lengkap, kelas, nomor urut, foto HD jas almamater, naskah biodata & visi misi.</li>
+            <li>Rilis: Feed IG Informasi Pilketos 2026 (Tanggal 28 Okt 2026 di Aula & tema resmi).</li>
+          </ul>
+        </div>
+
+        <!-- H-7: Rabu, 21 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">Rabu, 21 Okt 2026</span>
+            <span class="daily-tag">H-7</span>
+          </div>
+          <h5>📸 Feed Profil Caketos (Carousel 3 Slide)</h5>
+          <p>Eksekusi postingan profil untuk setiap kandidat menggunakan master template Canva rasio 4:5.</p>
+          <ul class="daily-actions">
+            <li>1 Calon = 1 Postingan Feed (Slide 1: Foto Cover, Slide 2: Track Record, Slide 3: Visi Misi).</li>
+            <li>Urutan upload: Calon 03 &rarr; 02 &rarr; 01 (agar di profil IG berjejer rapi 01-02-03).</li>
+          </ul>
+        </div>
+
+        <!-- H-6: Kamis, 22 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">Kamis, 22 Okt 2026</span>
+            <span class="daily-tag">H-6</span>
+          </div>
+          <h5>🎬 Video Orasi Caketos (Reels / TikTok)</h5>
+          <p>Rilis cuplikan video orasi dan penyampaian program kerja unggulan calon.</p>
+          <ul class="daily-actions">
+            <li>Durasi 60–90 detik format 9:16 vertikal dengan bumper resmi Praja Satya Nayaka.</li>
+            <li>Caption kutipan jargon masing-masing paslon.</li>
+          </ul>
+        </div>
+
+        <!-- H-5: Jumat, 23 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">Jumat, 23 Okt 2026</span>
+            <span class="daily-tag">H-5</span>
+          </div>
+          <h5>🗳️ Panduan Cara Memilih / Alur TPS</h5>
+          <p>Edukasi warga sekolah mengenai tahapan pemungutan suara di TPS Aula SMKN 13.</p>
+          <ul class="daily-actions">
+            <li>Infografis alur: Datang &rarr; Absen &rarr; Ambil Surat Suara &rarr; Bilik Coblos &rarr; Kotak Suara &rarr; Celup Tinta.</li>
+            <li>Syarat dokumen yang harus dibawa pemilih (Kartu Pelajar / Absensi kelas).</li>
+          </ul>
+        </div>
+
+        <!-- H-4: Sabtu, 24 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">Sabtu, 24 Okt 2026</span>
+            <span class="daily-tag">H-4</span>
+          </div>
+          <h5>📷 Briefing Tim Dokumentasi & Cek Alat</h5>
+          <p>Konsolidasi internal divisi PDD untuk kesiapan liputan langsung hari H.</p>
+          <ul class="daily-actions">
+            <li>Cek kamera, baterai cadangan, memory card, dan tripod.</li>
+            <li>Plotting posisi fotografer: Meja registrasi, bilik suara, panggung utama, dan meja rekap.</li>
+          </ul>
+        </div>
+
+        <!-- H-3 s.d H-1: 25-27 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">25 – 27 Okt 2026</span>
+            <span class="daily-tag gold">⏳ H-3 s.d H-1</span>
+          </div>
+          <h5>⏰ Story Countdown (Kayla) & Hype</h5>
+          <p>Story Instagram bertahap hitung mundur menuju hari pencoblosan.</p>
+          <ul class="daily-actions">
+            <li>H-3 (25 Okt), H-2 (26 Okt), dan H-1 (27 Okt) via Story IG @mpk.smkn13bdg.</li>
+            <li>Ajakan "Gunakan Hak Suaramu & Jangan Golput!".</li>
+          </ul>
+        </div>
+
+        <!-- Hari H: Rabu, 28 Okt -->
+        <div class="daily-card election-day">
+          <div class="daily-header">
+            <span class="daily-date">Rabu, 28 Okt 2026</span>
+            <span class="daily-tag green">🗳️ HARI H VOTING</span>
+          </div>
+          <h5>🏆 Hari Pemungutan Suara & Live Report</h5>
+          <p>Eksekusi liputan langsung di Aula SMKN 13 dan pengumuman ketua terpilih.</p>
+          <ul class="daily-actions">
+            <li>07.30–12.00: Live story antrian siswa & suasana bilik suara TPS.</li>
+            <li>13.00–15.00: Rekaman sakral buka kotak suara & papan perhitungan.</li>
+            <li>15.30: Grafis Kilat Feed IG "Who is Ketos Terpilih" & ucapan selamat.</li>
+          </ul>
+        </div>
+
+        <!-- Pasca Hari H: Kamis, 29 Okt -->
+        <div class="daily-card">
+          <div class="daily-header">
+            <span class="daily-date">Kamis, 29 Okt 2026</span>
+            <span class="daily-tag">🏆 H+1 PASCA-VOTE</span>
+          </div>
+          <h5>🎉 Aftermovie & Testimoni Resmi</h5>
+          <p>Publikasi penutup rangkaian kegiatan Pilketos SMKN 13 Bandung 2026.</p>
+          <ul class="daily-actions">
+            <li>Video Aftermovie rangkuman keseruan momen pemilu.</li>
+            <li>Video review testimoni Kepala Sekolah, Pembina, dewan guru, dan perwakilan siswa.</li>
+          </ul>
         </div>
       </div>
 
