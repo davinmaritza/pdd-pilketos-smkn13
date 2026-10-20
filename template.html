@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎨 Template & Aset — Divisi PDD PILKETOS SMKN 13 BANDUNG</title>
+  <link rel="icon" type="image/png" href="logo-mpk.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --navy-light: #1B263B;
+      --gold: #D4AF37;
+      --gold-hover: #B89628;
+      --gold-subtle: rgba(212, 175, 55, 0.12);
+      --bg: #F4F6F9;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --tag-file: #E0E7FF;
+      --tag-file-txt: #3730A3;
+      --tag-folder: #FEF3C7;
+      --tag-folder-txt: #92400E;
+      --tag-other: #F1F5F9;
+      --tag-other-txt: #475467;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Banner / Navbar */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, #10243E 100%);
+      color: white;
+      padding: 24px 20px;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(13, 27, 42, 0.15);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-container {
+      background: #FFFFFF;
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(212, 175, 55, 0.7);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+      border-color: var(--gold);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-header:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1200px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* Controls: Search & Tabs */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      background: #E2E8F0;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-muted);
+      border-radius: 7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--navy);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 36px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      background: white;
+      font-family: inherit;
+    }
+
+    .search-box input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.08);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    /* Tab Content Cards */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Table Container */
+    .table-container {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    thead th {
+      background: #2563EB;
+      color: white;
+      font-weight: 600;
+      padding: 14px 16px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #F8FAFC;
+    }
+
+    tbody tr:hover {
+      background-color: #EDF4FE;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .badge-file { background: var(--tag-file); color: var(--tag-file-txt); }
+    .badge-folder { background: var(--tag-folder); color: var(--tag-folder-txt); }
+    .badge-other { background: var(--tag-other); color: var(--tag-other-txt); }
+
+    .badge-status {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .status-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid transparent;
+      outline: none;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: center;
+      text-align-last: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .status-select:hover {
+      filter: brightness(0.96);
+    }
+
+    .status-select.not-started { background: #F1F5F9; color: #475569; }
+    .status-select.in-progress { background: #FEF3C7; color: #92400E; }
+    .status-select.review      { background: #DBEAFE; color: #1E40AF; }
+    .status-select.done        { background: #D1FAE5; color: #065F46; }
+    .status-select.canceled    { background: #FEE2E2; color: #991B1B; text-decoration: line-through; }
+
+    .file-link {
+      color: #2563EB;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .file-link:hover {
+      text-decoration: underline;
+    }
+
+    .note-text {
+      color: #475569;
+      line-height: 1.5;
+      max-width: 480px;
+    }
+
+    /* Brand Kit Section */
+    .brand-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .brand-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+    }
+
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .color-box {
+      border-radius: 8px;
+      padding: 12px;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.15s;
+    }
+
+    .color-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .color-box .hex {
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .color-box .name {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* Toast notification */
+    #toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: var(--navy);
+      color: var(--gold);
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 18px;
+      position: fixed;
+      z-index: 999;
+      bottom: 24px;
+      right: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.3s, fadeout 0.3s 2s;
+    }
+
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 24px; opacity: 1;}
+    }
+
+    @keyframes fadeout {
+      from {bottom: 24px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+
+    /* Mobile Table Hint */
+    .mobile-table-hint {
+      display: none;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    /* Custom Table Scrollbar */
+    .table-container {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+      background: #F1F5F9;
+      border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-badge-wrapper {
+      display: inline-flex;
+      margin-bottom: 2px;
+    }
+
+    /* Roadmap Tab Styles */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .roadmap-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .roadmap-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .roadmap-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .roadmap-step-badge.done {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .roadmap-step-badge.ready {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+
+    .roadmap-step-badge.active {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .roadmap-card h4 {
+      font-size: 15px;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-card p {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* Phase Timeline Grid */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .phase-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .phase-card-header {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+
+    .phase-card-header.pra { background: linear-gradient(135deg, #1E3A8A, #2563EB); }
+    .phase-card-header.hari-h { background: linear-gradient(135deg, #B45309, #D97706); }
+    .phase-card-header.after { background: linear-gradient(135deg, #047857, #059669); }
+
+    .phase-card-body {
+      padding: 16px;
+    }
+
+    .phase-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .phase-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .phase-item-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .phase-item-text strong {
+      display: block;
+      font-size: 13px;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .phase-item-text span {
+      font-size: 11.5px;
+      color: #64748B;
+      line-height: 1.4;
+    }
+
+    /* Design Checklist */
+    .checklist-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .checklist-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Spec Carousel Profil Caketos */
+    .carousel-spec-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .carousel-spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .carousel-spec-header h4 {
+      font-size: 16px;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .carousel-tag-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .carousel-slides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .carousel-slide-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .carousel-slide-box.active-cover {
+      border: 1.5px solid #D4AF37;
+      background: #FFFCF2;
+    }
+
+    .slide-badge-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: white;
+      width: fit-content;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .slide-badge-num.gold {
+      background: #B45309;
+      color: white;
+    }
+
+    .carousel-slide-box h5 {
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+
+    .carousel-slide-box p.slide-desc {
+      font-size: 12px;
+      color: #64748B;
+      margin: 0 0 12px 0;
+      line-height: 1.4;
+    }
+
+    .slide-elements-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .slide-elements-list li {
+      font-size: 12px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.45;
+    }
+
+    .slide-elements-list li::before {
+      content: "•";
+      color: #D4AF37;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .carousel-tips-bar {
+      background: #F1F5F9;
+      border-left: 4px solid var(--navy);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .carousel-tips-bar strong {
+      color: var(--navy);
+    }
+
+    /* Daily Timeline Grid */
+    .daily-timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .daily-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      position: relative;
+      border-top: 4px solid var(--navy);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .daily-card.today {
+      border-top-color: #D97706;
+      background: #FFFDF9;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12);
+    }
+
+    .daily-card.election-day {
+      border-top-color: #059669;
+      background: #F0FDF4;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
+    }
+
+    .daily-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .daily-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .daily-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      background: #F1F5F9;
+      color: #475569;
+      text-transform: uppercase;
+    }
+
+    .daily-tag.today {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .daily-tag.gold {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .daily-tag.green {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .daily-card h5 {
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .daily-card p {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.45;
+      margin: 0 0 10px 0;
+      flex-grow: 1;
+    }
+
+    .daily-actions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border-top: 1px dashed #E2E8F0;
+      padding-top: 8px;
+    }
+
+    .daily-actions li {
+      font-size: 11.5px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.4;
+    }
+
+    .daily-actions li::before {
+      content: "✔";
+      color: #2563EB;
+      font-size: 11px;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 992px) {
+      .header-container {
+        gap: 14px;
+      }
+      
+      .brand-title {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 16px;
+      }
+
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .brand-title {
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-logo-container {
+        padding: 5px 8px;
+        border-radius: 10px;
+      }
+
+      .brand-logo-img {
+        height: 38px;
+      }
+
+      .brand-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .tagline {
+        font-size: 11.5px;
+      }
+
+      .header-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .btn-header {
+        justify-content: center;
+        padding: 10px 10px;
+        font-size: 12px;
+      }
+
+      main {
+        padding: 0 14px;
+        margin: 16px auto;
+      }
+
+      .brand-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .phase-grid,
+      .carousel-slides-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-card {
+        padding: 16px;
+      }
+
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .tabs {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tab-btn {
+        flex: 1 0 auto;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .search-box {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .search-box input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 14px 11px 36px;
+        font-size: 13px;
+      }
+
+      .mobile-table-hint {
+        display: block;
+      }
+
+      .table-container {
+        border-radius: 10px;
+      }
+
+      #administrasi table,
+      #template table {
+        min-width: 650px;
+      }
+
+      #tasks table {
+        min-width: 800px;
+      }
+
+      thead th {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+
+      tbody td {
+        padding: 11px 12px;
+        font-size: 12px;
+      }
+
+      .note-text {
+        max-width: 260px;
+        font-size: 11px;
+      }
+
+      .status-select {
+        padding: 6px 10px;
+        font-size: 11px;
+      }
+
+      #toast {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-title {
+        gap: 10px;
+      }
+
+      .brand-logo-container {
+        padding: 4px 6px;
+        border-radius: 8px;
+      }
+
+      .brand-logo-img {
+        height: 32px;
+      }
+
+      h1 {
+        font-size: 17px;
+      }
+
+      .tagline {
+        font-size: 10.5px;
+      }
+
+      .color-swatches {
+        gap: 6px;
+      }
+
+      .color-box {
+        padding: 8px 4px;
+      }
+
+      .color-box .hex {
+        font-size: 10px;
+      }
+
+      .color-box .name {
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <div class="brand-logo-container">
+          <img src="logo-mpk.png" alt="Logo MPK SMKN 13 Bandung" class="brand-logo-img">
+        </div>
+        <div class="brand-info">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">PDD PILKETOS</span>
+          </div>
+          <h1>PRAJA SATYA NAYAKA</h1>
+          <div class="tagline">All In One Portal & Arsip Digital — MPK SMKN 13 Bandung</div>
+        </div>
+      </div>
+      <div class="header-links">
+        <a href="https://drive.google.com/drive/folders/1TgFahFMpVyVFcZElKE9WHOnvSaf-_XjZ?usp=sharing" target="_blank" class="btn-header">
+          📁 Buka Google Drive
+        </a>
+        <a href="https://canva.com" target="_blank" class="btn-header">
+          🎨 Canva Team
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Brand Kit Overview Banner -->
+    <div class="brand-section">
+      <div class="brand-card">
+        <h3>🎨 Color Palette (Klik untuk Salin HEX)</h3>
+        <div class="color-swatches">
+          <div class="color-box" style="background: #0D1B2A;" onclick="copyHex('#0D1B2A')">
+            <div class="hex">#0D1B2A</div>
+            <div class="name">Navy (60%)</div>
+          </div>
+          <div class="color-box" style="background: #D4AF37; color: #0D1B2A;" onclick="copyHex('#D4AF37')">
+            <div class="hex">#D4AF37</div>
+            <div class="name">Gold (10%)</div>
+          </div>
+          <div class="color-box" style="background: #FFFFFF; color: #0D1B2A; border: 1px solid #CBD5E1;" onclick="copyHex('#FFFFFF')">
+            <div class="hex">#FFFFFF</div>
+            <div class="name">White (30%)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <h3>🔤 Font Resmi Canva</h3>
+        <p style="font-size: 13px; line-height: 1.6; color: #475569;">
+          <strong>Judul:</strong> <span style="font-family: 'League Spartan'; font-size: 15px;">League Spartan (Bold)</span><br>
+          <strong>Isi/Teks:</strong> <span style="font-family: 'Poppins';">Poppins (Regular/Medium)</span><br>
+          <small style="color: #64748B;">Aturan: Maksimal 2 font family, line-height 1.5x, rata kiri.</small>
+        </p>
+      </div>
+
+      <div class="brand-card">
+        <h3>📐 Quick SOP & Standar Pro</h3>
+        <p style="font-size: 13px; line-height: 1.6; color: #475569;">
+          <strong>Feed IG:</strong> 4:5 (1080x1350) — Safe Zone 1:1 di tengah.<br>
+          <strong>Story/Reels:</strong> 9:16 — Kosongkan 250px atas & 280px bawah.<br>
+          <a href="SOP_Desain_PDD.pdf" target="_blank" style="color: #2563EB; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;">
+            📄 Baca SOP Lengkap (PDF 4 Bab) ➔
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Navigation & Search Controls -->
+    <div class="controls">
+      <div class="tabs">
+        <a href="index.html" class="tab-btn">📁 Administrasi</a>
+        <a href="template.html" class="tab-btn active">🎨 Template & Aset</a>
+        <a href="tasks.html" class="tab-btn">✅ Task Tracker</a>
+        <a href="roadmap.html" class="tab-btn">🗺️ Roadmap PDD</a>
+      </div>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari file, template, atau tugas..." onkeyup="filterTable()">
+      </div>
+    </div>
+
+    
+    <!-- TAB 2: TEMPLATE -->
+    <div id="template" class="tab-content active">
+      <div class="mobile-table-hint">👉 Geser tabel ke samping untuk info lengkap</div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Kategori</th>
+              <th style="text-align: center;">Jenis</th>
+              <th style="text-align: center;">Update Terakhir</th>
+              <th>Lokasi File</th>
+              <th>Catatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Logo Resmi SMKN 13, MPK & OSIS HD</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">17 Okt 2026</td>
+              <td><a href="https://drive.google.com/drive/folders/167m49rdG81UE73WaSt7j0UVUE8Fw6csB" target="_blank" class="file-link">📁 _LOGO_RESMI_HD</a></td>
+              <td class="note-text">File logo resmi format PNG transparan kualitas tinggi (Logo MPK, Logo SMKN 13 Bandung, & Logo OSIS). Tarik dari pojok agar tidak distorsi.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Feed Instagram (4:5)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1ZOP0W9Lb7tFA8_9AFEFAx56IfaQiaKoC" target="_blank" class="file-link">🖼️ Master_Feed_Canva</a></td>
+              <td class="note-text">Buat postingan alur memilih dan info umum. Buka linknya lalu duplikat dulu, jangan ubah master aslinya.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Story Instagram (9:16)</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1g-aYQxUW_eIiCbCOdQPqqPbn7YsxkLF_" target="_blank" class="file-link">📱 Master_Story_Canva</a></td>
+              <td class="note-text">Format vertikal 9:16, dipakai buat live report hari H dan posting countdown.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Poster Visi Misi Caketos</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1xY2Vyqf9j97LZ6R5lJ89yIgCleXcnqCV" target="_blank" class="file-link">🖼️ Poster_VisiMisi_Paslon</a></td>
+              <td class="note-text">Layout foto dan visi misi paslon. Pastikan ukuran frame foto paslon 1, 2, dst sama persis biar netral.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Video Orasi & Reels</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/drive/folders/16n_sxj-L_qduvs2bZcLRmnzAivpU8JOy" target="_blank" class="file-link">🎬 Project_Video_CapCut</a></td>
+              <td class="note-text">Template bumper intro/outro video orasi paslon dengan logo sekolah dan teks nama calon.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Banner Lapangan 3x1m</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">15 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1PqIlI-DW0e5KvmM1YxD0trdggiz0r1ya" target="_blank" class="file-link">🚩 Banner_Pilketos_3x1m</a></td>
+              <td class="note-text">Desain cetak spanduk di panggung/lapangan utama, ukurannya 3x1 meter resolusi tinggi (siap print).</td>
+            </tr>
+            <tr>
+              <td><strong>Template ID Card & Lanyard Panitia</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1mtKA450hz_zKpyUVpU8llTb-vD7RauM0" target="_blank" class="file-link">🪪 Lanyard_Panitia_Pilketos</a></td>
+              <td class="note-text">Ukuran kartu panitia B3/A6, tinggal ganti foto panitia dan nama divisinya.</td>
+            </tr>
+            <tr>
+              <td><strong>Template Countdown Hari H</strong></td>
+              <td style="text-align: center;"><span class="badge badge-file">File</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/open?id=1ZZvnGL-U1bfQfQJ5C_0drfhlw95AG5z_" target="_blank" class="file-link">⏳ Countdown_H3_H2_H1</a></td>
+              <td class="note-text">Seri countdown H-3, H-2, H-1 jelang hari H pemungutan suara.</td>
+            </tr>
+            <tr>
+              <td><strong>Folder Mentahan Foto & Rekaman</strong></td>
+              <td style="text-align: center;"><span class="badge badge-folder">Folder</span></td>
+              <td style="text-align: center;">16 Okt 2026</td>
+              <td><a href="https://drive.google.com/drive/folders/16n_sxj-L_qduvs2bZcLRmnzAivpU8JOy" target="_blank" class="file-link">📁 _RAW_Foto_Video</a></td>
+              <td class="note-text">Tempat tim dokumentasi upload seluruh foto dan video mentah hasil liputan dan sesi foto caketos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast">HEX Berhasil Disalin!</div>
+
+  <!-- Footer -->
+  <footer>
+    Divisi PDD MPK SMKN 13 Bandung © 2026 — Tema: Praja Satya Nayaka
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+      document.getElementById('searchInput').value = '';
+      filterTable();
+    }
+
+    function filterTable() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const activeTab = document.querySelector('.tab-content.active');
+      const rows = activeTab.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.className = 'show';
+      setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2000);
+    }
+
+    function copyHex(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        showToast('HEX ' + hex + ' Berhasil Disalin!');
+      });
+    }
+
+    // URL Google Apps Script Web App untuk sinkronisasi cloud online antar-pengunjung
+    let APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_pdd_pilketos_api/exec';
+
+    function changeTaskStatus(sel) {
+      const val = sel.value;
+      const taskId = sel.getAttribute('data-task-id');
+      sel.className = 'status-select ' + val;
+      localStorage.setItem('pdd_task_status_' + taskId, val);
+      
+      const labels = {
+        'not-started': 'Not Started',
+        'in-progress': 'In Progress',
+        'review': 'Review Koor',
+        'done': 'Done',
+        'canceled': 'Canceled'
+      };
+      showToast('Status: ' + (labels[val] || val) + ' (Menyimpan...)');
+
+      if (APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('_pdd_pilketos_api')) {
+        fetch(APPS_SCRIPT_URL + '?action=update&taskId=' + encodeURIComponent(taskId) + '&status=' + encodeURIComponent(val))
+          .then(res => res.json())
+          .then(data => {
+            if (data && data.success) {
+              showToast('✅ Status tersimpan & sinkron online!');
+            }
+          })
+          .catch(err => {
+            console.log('Tersimpan lokal di browser (offline mode)');
+          });
+      }
+    }
+
+    function initTaskStatuses() {
+      // 1. Baca cache lokal dulu
+      document.querySelectorAll('.status-select').forEach(sel => {
+        const taskId = sel.getAttribute('data-task-id');
+        const saved = localStorage.getItem('pdd_task_status_' + taskId);
+        if (saved) {
+          sel.value = saved;
+        }
+        sel.className = 'status-select ' + sel.value;
+      });
+
+      // 2. Jika APPS_SCRIPT_URL aktif, ambil status terbaru dari cloud
+      if (APPS_SCRIPT_URL && !APPS_SCRIPT_URL.includes('_pdd_pilketos_api')) {
+        fetch(APPS_SCRIPT_URL)
+          .then(res => res.json())
+          .then(cloudTasks => {
+            if (cloudTasks && typeof cloudTasks === 'object') {
+              document.querySelectorAll('.status-select').forEach(sel => {
+                const taskId = sel.getAttribute('data-task-id');
+                if (cloudTasks[taskId]) {
+                  sel.value = cloudTasks[taskId];
+                  sel.className = 'status-select ' + sel.value;
+                  localStorage.setItem('pdd_task_status_' + taskId, sel.value);
+                }
+              });
+            }
+          })
+          .catch(err => console.log('Offline / lokal mode:', err));
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initTaskStatuses);
+  </script>
+</body>
+</html>
