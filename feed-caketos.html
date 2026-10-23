@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📱 Konsep & Blueprint Feed IG Caketos — Divisi PDD MPK SMKN 13</title>
+  <link rel="icon" type="image/png" href="logo-mpk.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --navy-light: #1B263B;
+      --navy-card: #132438;
+      --navy-border: #22374E;
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-hover: #B89628;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --bg: #F4F6F9;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --danger: #EF4444;
+      --success: #10B981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, #10243E 100%);
+      color: white;
+      padding: 22px 20px;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 4px 20px rgba(13, 27, 42, 0.15);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-container {
+      background: #FFFFFF;
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(212, 175, 55, 0.7);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #94A3B8;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-header:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1200px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* Navigation Tabs */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      background: #E2E8F0;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-muted);
+      border-radius: 7px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--navy);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Designer Welcome Banner for Inaya */
+    .designer-banner {
+      background: linear-gradient(135deg, #0D1B2A 0%, #172A45 100%);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 24px 28px;
+      color: white;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 30px rgba(13, 27, 42, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .designer-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .designer-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .designer-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .designer-desc {
+      font-size: 13.5px;
+      color: #CBD5E1;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+
+    .quick-spec-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .spec-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .spec-pill strong {
+      color: var(--gold);
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 26px;
+      margin-bottom: 26px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Grid Trick Callout (The 3-2-1 Rule) */
+    .grid-trick-box {
+      background: #FFFBEB;
+      border: 2px dashed #F59E0B;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .trick-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .trick-badge {
+      background: #D97706;
+      color: white;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .trick-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #92400E;
+    }
+
+    .trick-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .trick-step-card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid #FDE68A;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.08);
+      position: relative;
+    }
+
+    .trick-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    /* Instagram Phone Mockup */
+    .ig-mockup-wrapper {
+      max-width: 480px;
+      margin: 0 auto 20px;
+      background: #FFFFFF;
+      border-radius: 28px;
+      border: 10px solid #1E293B;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .ig-header-bar {
+      background: #FAFAFA;
+      padding: 12px 16px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ig-username {
+      font-weight: 700;
+      font-size: 14px;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ig-verified {
+      color: #3B82F6;
+      font-size: 14px;
+    }
+
+    .ig-profile-info {
+      padding: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: white;
+    }
+
+    .ig-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      padding: 2px;
+      background: white;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .ig-stats-col {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .ig-stat-num {
+      font-weight: 700;
+      font-size: 14px;
+      color: #0F172A;
+    }
+
+    .ig-stat-lbl {
+      font-size: 11px;
+      color: #64748B;
+    }
+
+    .ig-bio {
+      padding: 0 16px 14px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #334155;
+    }
+
+    .ig-bio strong {
+      color: var(--navy);
+    }
+
+    /* Instagram 3-Col Grid */
+    .ig-feed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: #F1F5F9;
+      padding: 3px;
+    }
+
+    .ig-grid-item {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; /* 1:1 Aspect ratio */
+      overflow: hidden;
+      cursor: pointer;
+      background: #0D1B2A;
+      transition: transform 0.2s;
+    }
+
+    .ig-grid-item:hover {
+      transform: scale(0.98);
+      filter: brightness(1.05);
+    }
+
+    .ig-grid-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .ig-grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(13, 27, 42, 0.4) 0%, transparent 40%, rgba(13, 27, 42, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px;
+    }
+
+    .ig-badge-top {
+      align-self: flex-start;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .ig-grid-carousel-icon {
+      align-self: flex-end;
+      color: white;
+      font-size: 12px;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+    }
+
+    .ig-grid-cand-name {
+      color: white;
+      font-size: 10.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .ig-grid-meta {
+      font-size: 8.5px;
+      color: var(--gold-light);
+      margin-top: 1px;
+    }
+
+    /* Candidate Selector & Carousel Visualizer */
+    .cand-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cand-btn {
+      flex: 1;
+      min-width: 160px;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .cand-btn:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .cand-btn.active {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, #0D1B2A 0%, #172A45 100%);
+      color: white;
+      box-shadow: 0 6px 18px rgba(13, 27, 42, 0.2);
+    }
+
+    .cand-btn-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .cand-btn.active .cand-btn-num {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .cand-btn-info {
+      text-align: left;
+    }
+
+    .cand-btn-name {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .cand-btn-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cand-btn.active .cand-btn-sub {
+      color: #94A3B8;
+    }
+
+    /* Carousel Interactive Simulator Box */
+    .simulator-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .simulator-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* The 4:5 Card Preview */
+    .preview-phone-wrap {
+      background: #0F172A;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .card-canvas-4x5 {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
+      margin: 0 auto;
+      background: #0D1B2A;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Safe Zone 1:1 Overlay Guide */
+    .safe-zone-overlay {
+      position: absolute;
+      top: 10%; /* Center 1:1 box: (1 - 4/5)/2 = 10% from top and bottom */
+      left: 0;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border: 2px dashed rgba(212, 175, 55, 0.85);
+      background: rgba(212, 175, 55, 0.05);
+      pointer-events: none;
+      z-index: 10;
+      display: none;
+      box-sizing: border-box;
+    }
+
+    .safe-zone-label {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .safe-zone-overlay.active {
+      display: block;
+    }
+
+    /* Card Slides Inner Elements */
+    .slide-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      animation: slideIn 0.25s ease-out;
+    }
+
+    .slide-layer.active {
+      display: flex;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Slide 1 Cover Styling */
+    .s1-bg-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .s1-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(13, 27, 42, 0.6) 0%, rgba(13, 27, 42, 0.1) 35%, rgba(13, 27, 42, 0.75) 70%, rgba(13, 27, 42, 0.98) 100%);
+      z-index: 1;
+    }
+
+    .s1-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .s1-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .s1-logos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13, 27, 42, 0.75);
+      backdrop-filter: blur(4px);
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .s1-logo-img {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .s1-badge-number {
+      background: linear-gradient(135deg, var(--gold) 0%, #B89628 100%);
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 26px;
+      font-weight: 800;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .s1-bottom-info {
+      padding-bottom: 8px;
+    }
+
+    .s1-tag {
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .s1-cand-name {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.15;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      margin-bottom: 4px;
+    }
+
+    .s1-cand-class {
+      font-size: 12px;
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .s1-swipe-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 8px;
+      margin-top: 8px;
+      font-size: 11px;
+      color: #94A3B8;
+    }
+
+    .s1-swipe-cta strong {
+      color: white;
+    }
+
+    /* Slide 2 & 3 Styling */
+    .slide-editorial {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      text-align: left;
+      background: linear-gradient(145deg, #0D1B2A 0%, #10243E 60%, #162E4D 100%);
+      color: white;
+      box-sizing: border-box;
+    }
+
+    .slide-ed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .slide-page-badge {
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .slide-ed-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+
+    .slide-box-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .slide-box-card.highlight {
+      background: rgba(212, 175, 55, 0.08);
+      border-color: rgba(212, 175, 55, 0.35);
+    }
+
+    .slide-box-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .slide-box-text {
+      font-size: 11.5px;
+      color: #E2E8F0;
+      line-height: 1.45;
+    }
+
+    .slide-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+
+    .slide-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 4px;
+    }
+
+    .slide-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .slide-footer-cta {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      color: #94A3B8;
+    }
+
+    .slide-footer-cta strong {
+      color: var(--gold);
+    }
+
+    /* Carousel Controls */
+    .preview-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .slide-step-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .slide-step-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .slide-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .slide-dot.active {
+      background: var(--gold);
+      transform: scale(1.2);
+    }
+
+    .safe-toggle-btn {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .safe-toggle-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Right Column: Specification & Copywriting */
+    .specs-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .spec-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .spec-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .copy-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-family: inherit;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.5;
+      white-space: pre-line;
+      max-height: 220px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+
+    .btn-copy {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Safe Zone Guide Visual Diagram */
+    .dimension-guide-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .guide-diagram-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .guide-box-visual {
+      width: 180px;
+      aspect-ratio: 4 / 5;
+      background: #0D1B2A;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px;
+      color: white;
+      font-size: 8px;
+      text-align: center;
+    }
+
+    .guide-top-zone {
+      height: 10%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px dashed #94A3B8;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guide-center-square {
+      height: 75%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--gold-light);
+      padding: 4px;
+    }
+
+    .guide-bottom-zone {
+      height: 10%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px dashed #94A3B8;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guide-legend {
+      flex: 1;
+      min-width: 240px;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .guide-legend li {
+      margin-bottom: 6px;
+    }
+
+    /* Toast Notification */
+    #toast {
+      visibility: hidden;
+      min-width: 260px;
+      background-color: var(--navy);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 16px;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.3s, fadeout 0.3s 2.2s;
+    }
+
+    @keyframes fadein {
+      from { bottom: 10px; opacity: 0; }
+      to { bottom: 30px; opacity: 1; }
+    }
+
+    @keyframes fadeout {
+      from { bottom: 30px; opacity: 1; }
+      to { bottom: 10px; opacity: 0; }
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: #94A3B8;
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .brand-title {
+        width: 100%;
+      }
+      .cand-btn {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <div class="brand-logo-container">
+          <img src="logo-mpk.png" alt="Logo MPK SMKN 13 Bandung" class="brand-logo-img">
+        </div>
+        <div class="brand-info">
+          <div><span class="brand-badge">PDD PILKETOS 2026</span></div>
+          <h1>PRAJA SATYA NAYAKA</h1>
+          <div class="tagline">All In One Portal & Arsip Digital — MPK SMKN 13 Bandung</div>
+        </div>
+      </div>
+      <div class="header-links">
+        <a href="https://drive.google.com/open?id=1ZOP0W9Lb7tFA8_9AFEFAx56IfaQiaKoC" target="_blank" class="btn-header">
+          🎨 Master Feed Canva
+        </a>
+        <a href="https://drive.google.com/drive/folders/1TgFahFMpVyVFcZElKE9WHOnvSaf-_XjZ?usp=sharing" target="_blank" class="btn-header">
+          📁 Google Drive PDD
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Navigation Tabs -->
+    <div class="controls">
+      <div class="tabs">
+        <a href="index.html" class="tab-btn">📁 Administrasi</a>
+        <a href="template.html" class="tab-btn">🎨 Template & Aset</a>
+        <a href="tasks.html" class="tab-btn">✅ Task Tracker</a>
+        <a href="roadmap.html" class="tab-btn">🗺️ Roadmap PDD</a>
+        <a href="feed-caketos.html" class="tab-btn active">📱 Konsep Feed IG</a>
+      </div>
+    </div>
+
+    <!-- Designer Welcome Banner for Inaya -->
+    <div class="designer-banner">
+      <div class="designer-badge-tag">
+        <span>✨ PANDUAN DESAIN FEED CANVA • UNTUK INAYA & KAYLA</span>
+      </div>
+      <h2 class="designer-title">Konsep & Visual Feed Instagram Profil Calon Trikora</h2>
+      <p class="designer-desc">
+        Halaman ini dirancang khusus agar tim desainer (Inaya & Kayla) langsung memiliki gambaran visual 100% presisi: simulasi grid profil IG 3-kolom, carousel 3-slide tiap calon, garis safe zone 1:1, serta teks siap salin untuk ditempel langsung ke Canva.
+      </p>
+      <div class="quick-spec-pills">
+        <div class="spec-pill">📐 <strong>Ukuran Kanvas:</strong> 1080 x 1350 px (4:5 Portrait)</div>
+        <div class="spec-pill">🛡️ <strong>Grid Safe Zone:</strong> 1080 x 1080 px (Tengah)</div>
+        <div class="spec-pill">🎨 <strong>Warna:</strong> Navy #0D1B2A • Gold #D4AF37 • White #FFFFFF</div>
+        <div class="spec-pill">🔤 <strong>Font:</strong> League Spartan (Judul) & Poppins (Isi)</div>
+        <div class="spec-pill">⚖️ <strong>Prinsip:</strong> Netral 100% (Ukuran Frame & Font Identik)</div>
+      </div>
+    </div>
+
+    <!-- FEATURE 1: GRID SIMULATOR & THE 3-2-1 UPLOAD TRICK -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>📱 1. Simulasi Tampilan Grid Profil Instagram (Feed 3 Kolom)</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Trik Susunan Profil @mpksmkn13bdg</span>
+      </div>
+
+      <!-- Warning Box: The Upload Trick -->
+      <div class="grid-trick-box">
+        <div class="trick-header">
+          <span class="trick-badge">⚡ WAJIB DIPERHATIKAN</span>
+          <span class="trick-title">Trik Urutan Upload Instagram (Aturan 3 - 2 - 1)</span>
+        </div>
+        <p style="font-size: 13px; color: #78350F; line-height: 1.5;">
+          Instagram selalu menaruh postingan baru di <strong>kiri atas</strong> dan menggeser postingan lama ke kanan.
+          Agar di profil feed Instagram calon berjejer rapi dari kiri ke kanan (<strong>01 Salsya • 02 Bima • 03 Loviola</strong>), urutan postingnya <strong>WAJIB DIBALIK</strong>:
+        </p>
+        <div class="trick-steps">
+          <div class="trick-step-card">
+            <div class="trick-num">1</div>
+            <strong style="font-size: 12.5px; color: var(--navy);">Upload PERTAMA KALI:</strong>
+            <p style="font-size: 11.5px; color: #475569; margin-top: 4px;">
+              <strong>Calon 03 (Loviola Amira P.)</strong><br>
+              <span style="color: #64748B;">Nantinya akan tergeser ke kolom paling kanan.</span>
+            </p>
+          </div>
+          <div class="trick-step-card">
+            <div class="trick-num">2</div>
+            <strong style="font-size: 12.5px; color: var(--navy);">Upload KEDUA:</strong>
+            <p style="font-size: 11.5px; color: #475569; margin-top: 4px;">
+              <strong>Calon 02 (Bima Pangestu S.)</strong><br>
+              <span style="color: #64748B;">Nantinya akan duduk tepat di kolom tengah.</span>
+            </p>
+          </div>
+          <div class="trick-step-card">
+            <div class="trick-num">3</div>
+            <strong style="font-size: 12.5px; color: var(--navy);">Upload TERAKHIR:</strong>
+            <p style="font-size: 11.5px; color: #475569; margin-top: 4px;">
+              <strong>Calon 01 (Salsya Aprilia H.)</strong><br>
+              <span style="color: #64748B;">Otomatis menempati kolom paling kiri.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live IG Phone Mockup -->
+      <div class="ig-mockup-wrapper">
+        <div class="ig-header-bar">
+          <div class="ig-username">
+            <span>mpksmkn13bdg</span>
+            <span class="ig-verified">✓</span>
+          </div>
+          <div style="font-size: 16px; color: #64748B;">⋮</div>
+        </div>
+        
+        <div class="ig-profile-info">
+          <img src="logo-mpk.png" alt="MPK SMKN 13" class="ig-avatar">
+          <div class="ig-stats-col">
+            <div>
+              <div class="ig-stat-num">3</div>
+              <div class="ig-stat-lbl">Posts</div>
+            </div>
+            <div>
+              <div class="ig-stat-num">1.4K</div>
+              <div class="ig-stat-lbl">Followers</div>
+            </div>
+            <div>
+              <div class="ig-stat-num">13</div>
+              <div class="ig-stat-lbl">Following</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ig-bio">
+          <strong>MPK SMKN 13 BANDUNG</strong> • Organisasi Sekolah<br>
+          🏛️ <i>PRAJA SATYA NAYAKA</i> — Pilketos 2026/2027<br>
+          🗳️ Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026
+        </div>
+
+        <!-- 3-Column Feed Grid -->
+        <div class="ig-feed-grid">
+          <!-- Kolom 1 (Kiri): Calon 01 Salsya -->
+          <div class="ig-grid-item" onclick="selectCandidate('01')">
+            <img src="assets/candidates/salsya_portrait.jpg" alt="01 Salsya" class="ig-grid-img">
+            <div class="ig-grid-overlay">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="ig-badge-top">01</span>
+                <span class="ig-grid-carousel-icon">⧉</span>
+              </div>
+              <div>
+                <div class="ig-grid-cand-name">SALSYA APRILIA</div>
+                <div class="ig-grid-meta">XI Kimia Analisis 5</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 2 (Tengah): Calon 02 Bima -->
+          <div class="ig-grid-item" onclick="selectCandidate('02')">
+            <img src="assets/candidates/bima_portrait.jpg" alt="02 Bima" class="ig-grid-img">
+            <div class="ig-grid-overlay">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="ig-badge-top">02</span>
+                <span class="ig-grid-carousel-icon">⧉</span>
+              </div>
+              <div>
+                <div class="ig-grid-cand-name">BIMA PANGESTU</div>
+                <div class="ig-grid-meta">XI Kimia Analisis 6</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 3 (Kanan): Calon 03 Loviola -->
+          <div class="ig-grid-item" onclick="selectCandidate('03')">
+            <img src="assets/candidates/loviola_portrait.jpg" alt="03 Loviola" class="ig-grid-img">
+            <div class="ig-grid-overlay">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="ig-badge-top">03</span>
+                <span class="ig-grid-carousel-icon">⧉</span>
+              </div>
+              <div>
+                <div class="ig-grid-cand-name">LOVIOLA AMIRA</div>
+                <div class="ig-grid-meta">XI Kimia Analisis 4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 11.5px; color: var(--text-muted);">
+        👆 <em>Klik kotak di atas untuk melihat detail carousel calon tersebut di bawah.</em>
+      </p>
+    </div>
+
+    <!-- FEATURE 2: INTERACTIVE CAROUSEL MOCKUP & SPECIFICATION -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🖼️ 2. Blueprint Carousel 3 Slide Interaktif (Rasio 4:5 Portrait)</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="safe-toggle-btn" id="toggleSafeBtn" onclick="toggleSafeZone()">
+            👁️ Tampilkan Safe Zone 1:1
+          </button>
+        </div>
+      </div>
+
+      <!-- Candidate Switcher -->
+      <div class="cand-selector-bar">
+        <div class="cand-btn active" id="btnCand01" onclick="selectCandidate('01')">
+          <div class="cand-btn-num">01</div>
+          <div class="cand-btn-info">
+            <div class="cand-btn-name">Salsya Aprilia H.</div>
+            <div class="cand-btn-sub">XI Kimia Analisis 5</div>
+          </div>
+        </div>
+
+        <div class="cand-btn" id="btnCand02" onclick="selectCandidate('02')">
+          <div class="cand-btn-num">02</div>
+          <div class="cand-btn-info">
+            <div class="cand-btn-name">Bima Pangestu S.</div>
+            <div class="cand-btn-sub">XI Kimia Analisis 6</div>
+          </div>
+        </div>
+
+        <div class="cand-btn" id="btnCand03" onclick="selectCandidate('03')">
+          <div class="cand-btn-num">03</div>
+          <div class="cand-btn-info">
+            <div class="cand-btn-name">Loviola Amira P.</div>
+            <div class="cand-btn-sub">XI Kimia Analisis 4</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulator Container: Left Preview, Right Specs & Copy -->
+      <div class="simulator-container">
+        <!-- Left: Live 4:5 Card Simulation -->
+        <div class="preview-phone-wrap">
+          <div class="card-canvas-4x5" id="cardCanvas">
+            <!-- Safe Zone 1:1 Box Guide -->
+            <div class="safe-zone-overlay" id="safeZoneGuide">
+              <span class="safe-zone-label">Area Aman 1:1 (Grid Feed)</span>
+            </div>
+
+            <!-- SLIDE 1: COVER -->
+            <div class="slide-layer active" id="slide1Layer">
+              <img src="assets/candidates/salsya_portrait.jpg" id="slide1Photo" alt="Candidate" class="s1-bg-photo">
+              <div class="s1-gradient"></div>
+              <div class="s1-content">
+                <div class="s1-top-row">
+                  <div class="s1-logos">
+                    <img src="logo-smkn13.png" alt="SMKN 13" class="s1-logo-img">
+                    <img src="logo-mpk.png" alt="MPK" class="s1-logo-img">
+                  </div>
+                  <div class="s1-badge-number" id="slide1Badge">01</div>
+                </div>
+
+                <div class="s1-bottom-info">
+                  <span class="s1-tag">CALON KETUA OSIS 2026/2027</span>
+                  <div class="s1-cand-name" id="slide1Name">SALSYA APRILIA HIKMAH</div>
+                  <div class="s1-cand-class" id="slide1Class">XI KIMIA ANALISIS 5</div>
+                  <div class="s1-swipe-cta">
+                    <span>PRAJA SATYA NAYAKA</span>
+                    <strong>Geser Visi & Misi ➔</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: REKAM JEJAK & PRESTASI -->
+            <div class="slide-layer" id="slide2Layer">
+              <div class="slide-editorial">
+                <div>
+                  <div class="slide-ed-header">
+                    <div style="font-size: 11px; font-weight: 700; color: #94A3B8;">
+                      PROFIL & KAPABILITAS
+                    </div>
+                    <span class="slide-page-badge">SLIDE 2 / 3</span>
+                  </div>
+
+                  <h3 class="slide-ed-title" id="slide2Heading">Rekam Jejak & Pengalaman</h3>
+
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">🏫 Latar Belakang Sekolah</div>
+                    <div class="slide-box-text" id="slide2Smp">Asal SMP: SMPN 48 Bandung</div>
+                  </div>
+
+                  <div class="slide-box-card highlight">
+                    <div class="slide-box-title">🏆 Capaian & Prestasi</div>
+                    <ul class="slide-list" id="slide2Prestasi">
+                      <li>Juara Lomba Esai Tingkat Kota Bandung</li>
+                      <li>Siswa Berprestasi Bidang Akademik Kimia Analisis</li>
+                    </ul>
+                  </div>
+
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">👥 Pengalaman Organisasi</div>
+                    <ul class="slide-list" id="slide2Organisasi">
+                      <li>Anggota Komisi MPK SMKN 13 Bandung</li>
+                      <li>Koordinator Divisi Kegiatan Pelajar</li>
+                      <li>Aktif Komunitas Literasi & Debat Sekolah</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="slide-footer-cta">
+                  <span>Masa Bakti 2026/2027</span>
+                  <strong>Geser Program Kerja ➔</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3: VISI MISI & PROKER -->
+            <div class="slide-layer" id="slide3Layer">
+              <div class="slide-editorial">
+                <div>
+                  <div class="slide-ed-header">
+                    <div style="font-size: 11px; font-weight: 700; color: #94A3B8;">
+                      GAGASAN & AKSI NYATA
+                    </div>
+                    <span class="slide-page-badge">SLIDE 3 / 3</span>
+                  </div>
+
+                  <!-- Slogan -->
+                  <div class="slide-box-card highlight" style="margin-top: 10px;">
+                    <div class="slide-box-title">📣 Slogan Kepemimpinan</div>
+                    <div class="slide-box-text" id="slide3Slogan" style="font-weight: 700; color: #FFFFFF; font-size: 12px;">
+                      "1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama."
+                    </div>
+                  </div>
+
+                  <!-- Visi -->
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">🎯 Visi Utama</div>
+                    <div class="slide-box-text" id="slide3Visi">
+                      <strong>RISE:</strong> Reach, Inspire, Serve, Empower — Penggerak perubahan inovatif, kooperatif & inspiratif.
+                    </div>
+                  </div>
+
+                  <!-- Proker Unggulan -->
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">🚀 Program Unggulan</div>
+                    <ul class="slide-list" id="slide3Proker">
+                      <li><strong>Student Achievement Article:</strong> Apresiasi karya siswa.</li>
+                      <li><strong>PILAH:</strong> Peduli Lingkungan Olah Sampah.</li>
+                      <li><strong>CONNECT:</strong> Kanal keterbukaan & aspirasi OSIS.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="slide-footer-cta">
+                  <span>Pemungutan Suara: <strong>28 Okt 2026</strong></span>
+                  <strong>#GunakanHakSuaramu</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls under preview -->
+          <div class="preview-controls">
+            <button class="slide-step-btn" onclick="prevSlide()">◀ Slide Sebelumnya</button>
+            <div class="slide-dots">
+              <div class="slide-dot active" id="dot1" onclick="goToSlide(1)"></div>
+              <div class="slide-dot" id="dot2" onclick="goToSlide(2)"></div>
+              <div class="slide-dot" id="dot3" onclick="goToSlide(3)"></div>
+            </div>
+            <button class="slide-step-btn" onclick="nextSlide()">Slide Berikutnya ▶</button>
+          </div>
+        </div>
+
+        <!-- Right: Specs & Copywriting ready to paste to Canva -->
+        <div class="specs-col">
+          <!-- Text Slide Aktif -->
+          <div class="spec-card">
+            <div class="spec-card-title">
+              <span id="copyTitle">📋 Teks untuk Slide Ini (Bisa Langsung Di-Copy)</span>
+              <button class="btn-copy" onclick="copyCurrentSlideText()">📋 Salin Teks</button>
+            </div>
+            <div class="copy-box" id="copyTextContent">
+              <!-- Text auto populated by JS -->
+            </div>
+            <span style="font-size: 11px; color: var(--text-muted);">
+              💡 <em>Klik tombol "Salin Teks" lalu paste ke teks elemen di Canva.</em>
+            </span>
+          </div>
+
+          <!-- Caption Instagram -->
+          <div class="spec-card">
+            <div class="spec-card-title">
+              <span>✍️ Naskah Caption Instagram Paslon Ini</span>
+              <button class="btn-copy" onclick="copyCaptionText()">📋 Salin Caption</button>
+            </div>
+            <div class="copy-box" id="captionTextContent" style="max-height: 200px;">
+              <!-- Caption auto populated by JS -->
+            </div>
+          </div>
+
+          <!-- Canva Design Guide -->
+          <div class="spec-card" style="background: #F1F5F9;">
+            <div class="spec-card-title" style="color: var(--navy);">
+              <span>🎨 Checklist Desain Canva Inaya</span>
+            </div>
+            <ul style="font-size: 12px; color: #475569; line-height: 1.6; padding-left: 18px;">
+              <li><strong>Rasio:</strong> 1080 x 1350 px (Gunakan ruler di Canva untuk safe area tengah 1080x1080).</li>
+              <li><strong>Logo:</strong> Logo SMKN 13 & MPK wajib ada di pojok kiri atas Slide 1.</li>
+              <li><strong>Nomor Urut:</strong> Lingkaran emas besar di pojok kanan atas dengan angka yang tegas.</li>
+              <li><strong>Foto Calon:</strong> Pakai foto jas OSIS resmi dari folder mentahan tanpa distorsi.</li>
+              <li><strong>Konsistensi Font:</strong> League Spartan (Bold) untuk judul & Poppins untuk isi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 3: SAFE ZONE 1:1 VS 4:5 EXPLAINED -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>📐 3. Panduan Anatomi Ukuran 4:5 & Safe Zone Grid 1:1</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Kenapa Wajah Tidak Boleh Kepotong?</span>
+      </div>
+
+      <p style="font-size: 13.5px; color: #475569; line-height: 1.6;">
+        Instagram menampilkan foto dalam rasio <strong>4:5 (1080 x 1350 px)</strong> saat orang scroll di beranda. Tetapi saat orang membuka profil <strong>@mpksmkn13bdg</strong>, foto dipotong otomatis menjadi <strong>bujur sangkar 1:1 (1080 x 1080 px)</strong> tepat di tengah kanvas!
+      </p>
+
+      <div class="dimension-guide-box">
+        <div class="guide-diagram-wrap">
+          <div class="guide-box-visual">
+            <div class="guide-top-zone">Margin Atas (135 px)</div>
+            <div class="guide-center-square">
+              <span>AREA AMAN 1:1 (1080 x 1080 px)</span>
+              <span style="font-size: 7px; color: #CBD5E1; margin-top: 4px;">Wajah, Nama Calon, & Nomor Urut Wajib Masuk Sini!</span>
+            </div>
+            <div class="guide-bottom-zone">Margin Bawah (135 px)</div>
+          </div>
+
+          <div class="guide-legend">
+            <h4 style="font-size: 14px; color: var(--navy); margin-bottom: 8px;">Kaidah Layout Canva:</h4>
+            <ul style="padding-left: 18px;">
+              <li><strong>Area Atas (135 px):</strong> Aman untuk penempatan logo sekolah & MPK atau ornamen kecil.</li>
+              <li><strong>Area Tengah (1080 px):</strong> Ini area terpenting. Kepala/mata kandidat, teks nama, dan badge nomor urut <strong>WAJIB</strong> berada di dalam area ini agar saat tampil di grid feed profil, wajah tidak terpotong lehernya!</li>
+              <li><strong>Area Bawah (135 px):</strong> Aman untuk footer teks geser (Swipe ➔), tema Pilketos, atau tanggal pemilihan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 4: DIRECT CLOUD ASSETS -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>📂 4. Link Cepat Aset Mentahan & Master File</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Akses Langsung Cloud PDD</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <a href="https://drive.google.com/open?id=1ZOP0W9Lb7tFA8_9AFEFAx56IfaQiaKoC" target="_blank" style="text-decoration: none;">
+          <div class="spec-card" style="height: 100%; border-left: 4px solid var(--gold); transition: transform 0.2s; cursor: pointer;">
+            <div style="font-size: 20px; margin-bottom: 6px;">🎨</div>
+            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Master Feed Canva</strong>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Template Canva 4:5 resmi. Buka lalu klik "Gunakan Template".</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/167m49rdG81UE73WaSt7j0UVUE8Fw6csB" target="_blank" style="text-decoration: none;">
+          <div class="spec-card" style="height: 100%; border-left: 4px solid #3B82F6; transition: transform 0.2s; cursor: pointer;">
+            <div style="font-size: 20px; margin-bottom: 6px;">📁</div>
+            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Logo Resmi HD Transparan</strong>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Logo SMKN 13, MPK, dan OSIS format PNG tanpa background.</span>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/16n_sxj-L_qduvs2bZcLRmnzAivpU8JOy" target="_blank" style="text-decoration: none;">
+          <div class="spec-card" style="height: 100%; border-left: 4px solid #10B981; transition: transform 0.2s; cursor: pointer;">
+            <div style="font-size: 20px; margin-bottom: 6px;">📸</div>
+            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Folder Foto HD Caketos</strong>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Foto portrait mentahan resolusi kamera Canon (Salsya, Bima, Loviola).</span>
+          </div>
+        </a>
+
+        <a href="SOP_Desain_PDD.pdf" target="_blank" style="text-decoration: none;">
+          <div class="spec-card" style="height: 100%; border-left: 4px solid #8B5CF6; transition: transform 0.2s; cursor: pointer;">
+            <div style="font-size: 20px; margin-bottom: 6px;">📄</div>
+            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Buku SOP Desain PDD</strong>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Pedoman resmi tipografi, palet 60-30-10, dan aturan kenetralan.</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast">Teks Berhasil Disalin!</div>
+
+  <!-- Footer -->
+  <footer>
+    Divisi PDD MPK SMKN 13 Bandung © 2026 — Tema: Praja Satya Nayaka • All-in-One Portal
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Data Lengkap Caketos untuk Simulasi & Copywriting
+    const CANDIDATES_DATA = {
+      '01': {
+        num: '01',
+        nama: 'SALSYA APRILIA HIKMAH',
+        kelas: 'XI KIMIA ANALISIS 5',
+        photo: 'assets/candidates/salsya_portrait.jpg',
+        smp: 'SMPN 48 Bandung',
+        prestasi: [
+          'Juara Lomba Esai Tingkat Pelajar se-Kota Bandung',
+          'Siswa Berprestasi Akademik Program Keahlian Kimia Analisis'
+        ],
+        organisasi: [
+          'Anggota Aktif Komisi MPK SMKN 13 Bandung',
+          'Koordinator Acara dan Kepanitiaan MPK 2025/2026',
+          'Penggerak Komunitas Literasi & Debat Sekolah'
+        ],
+        visiTitle: 'RISE (Reach, Inspire, Serve, Empower)',
+        visiDesc: 'Mewujudkan OSIS SMKN 13 Bandung sebagai motor penggerak perubahan yang inovatif, berdaya saing, kooperatif, dan inklusif bagi seluruh siswa.',
+        proker: [
+          'Student Achievement Article: Publikasi & apresiasi prestasi siswa secara berkala',
+          'PILAH: Peduli Lingkungan Olah Sampah melalui bank sampah terpilah',
+          'CONNECT: Kanal keterbukaan informasi program kerja dan aspirasi OSIS',
+          'REFLECT: Rapat evaluasi bulanan untuk menjaga efektivitas organisasi',
+          'AKSI: Kompetisi pemecahan masalah sekolah oleh ide kreatif siswa'
+        ],
+        slogan: '1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama.',
+        caption: `[KENALI CALONMU: PASLON 01 SALSYA APRILIA HIKMAH]
+
+"1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama."
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 01:
+👤 Salsya Aprilia Hikmah (@salsya)
+📚 Kelas: XI Kimia Analisis 5
+
+✨ VISI:
+RISE (Reach, Inspire, Serve, Empower) — Menjadikan OSIS SMKN 13 sebagai motor penggerak inovatif, berdaya saing, dan inklusif untuk seluruh siswa.
+
+🚀 PROGRAM KERJA UNGGULAN:
+1. Student Achievement Article (Apresiasi karya & prestasi siswa)
+2. PILAH (Peduli Lingkungan Olah Sampah)
+3. CONNECT (Keterbukaan informasi & publikasi berkala)
+4. REFLECT (Evaluasi rutin kinerja pengurus)
+5. AKSI (Ruang solusi inspiratif problem solving siswa)
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 01! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon01 #SalsyaAprilia #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+      },
+
+      '02': {
+        num: '02',
+        nama: 'BIMA PANGESTU SEJATI',
+        kelas: 'XI KIMIA ANALISIS 6',
+        photo: 'assets/candidates/bima_portrait.jpg',
+        smp: 'SMPN 34 Bandung',
+        prestasi: [
+          'Juara Turnamen Futsal & Olahraga Tingkat Pelajar',
+          'Peringkat Paralel Akademik Kejuruan Kimia Analisis'
+        ],
+        organisasi: [
+          'Pengurus Aktif OSIS SMKN 13 Bandung Periode 2025/2026',
+          'Koordinator Lapangan Berbagai Event Besar Sekolah',
+          'Pengurus Inti Ekstrakurikuler Olahraga'
+        ],
+        visiTitle: 'Kolaboratif, Inovatif, Berintegritas',
+        visiDesc: 'Mewujudkan peserta didik SMKN 13 Bandung yang berakhlak mulia, kompeten, dan berkontribusi nyata secara berkelanjutan.',
+        proker: [
+          'EKSPOSISI: Eksposisi dan Kreasi Siswa SMKN 13 Bandung (Pameran karya, demo kejuruan & kolaborasi lintas jurusan)',
+          'Penguatan Akhlak & Karakter Disiplin Siswa Berkelanjutan',
+          'Pengembangan Prestasi Akademik & Non-Akademik Berstandar Nasional',
+          'Wadah Penampungan & Eksekusi Nyata Aspirasi Seluruh Jurusan'
+        ],
+        slogan: '2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!',
+        caption: `[KENALI CALONMU: PASLON 02 BIMA PANGESTU SEJATI]
+
+"2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!"
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 02:
+👤 Bima Pangestu Sejati (@bima)
+📚 Kelas: XI Kimia Analisis 6
+
+✨ VISI:
+Mewujudkan peserta didik SMKN 13 Bandung yang berakhlak mulia, kompeten, dan berkontribusi nyata secara berkelanjutan melalui OSIS yang kolaboratif dan berintegritas.
+
+🚀 PROGRAM KERJA UNGGULAN:
+🎯 EKSPOSISI (Eksposisi dan Kreasi Siswa SMKN 13 Bandung)
+Sebuah festival pameran kejuruan terpadu, demo inovasi kompetensi, dan unjuk bakat lintas konsentrasi keahlian!
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 02! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon02 #BimaPangestu #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+      },
+
+      '03': {
+        num: '03',
+        nama: 'LOVIOLA AMIRA PRAMESWARI',
+        kelas: 'XI KIMIA ANALISIS 4',
+        photo: 'assets/candidates/loviola_portrait.jpg',
+        smp: 'SMPN 13 Bandung',
+        prestasi: [
+          'Finalis Public Speaking & Orasi Pelajar Jawa Barat',
+          'Juara Lomba Cipta Puisi & Pentas Seni Pelajar'
+        ],
+        organisasi: [
+          'Pengurus Divisi Kesenian & Hubungan Publik OSIS 2025/2026',
+          'Master of Ceremony (MC) Protokoler Acara Resmi Sekolah',
+          'Duta Karakter & Duta Budaya SMKN 13 Bandung'
+        ],
+        visiTitle: 'Berprestasi, Solutif & Berkarakter Unggul',
+        visiDesc: 'Mewujudkan OSIS SMKN 13 Bandung yang berprestasi, inovatif, kreatif, solutif, serta berkarakter unggul berlandaskan nilai kebersamaan.',
+        proker: [
+          'RANGKUL 13: Ruang Kolaborasi Bulanan OSIS, MPK & Ekstrakurikuler',
+          'Kanal Media Digital Kreatif & Transparansi Informasi Terpadu',
+          'Peningkatan Kepedulian Sosial & Gotong Royong Lingkungan Sekolah',
+          'Penguatan Sinergi Lintas Ekskul untuk Menjawab Kendala Bersama'
+        ],
+        slogan: 'Stop Scrolling, Start Voting! Pilih Nomor 3 For Real Siding!',
+        caption: `[KENALI CALONMU: PASLON 03 LOVIOLA AMIRA PRAMESWARI]
+
+"Stop Scrolling, Start Voting! Pilih Nomor 3 For Real Siding!"
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 03:
+👤 Loviola Amira Prameswari (@loviola)
+📚 Kelas: XI Kimia Analisis 4
+
+✨ VISI:
+Mewujudkan OSIS SMKN 13 Bandung yang berprestasi, inovatif, kreatif, solutif, serta berkarakter unggul berlandaskan semangat kebersamaan.
+
+🚀 PROGRAM KERJA UNGGULAN:
+🤝 RANGKUL 13 (Ruang Kolaborasi Bulanan)
+Forum temu bulanan antara pengurus OSIS, MPK, dan perwakilan seluruh ekstrakurikuler untuk menyelaraskan agenda, memonitor program kerja, dan menuntaskan kendala bersama-sama!
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 03! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon03 #LoviolaAmira #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+      }
+    };
+
+    let currentCand = '01';
+    let currentSlide = 1;
+    let safeZoneActive = false;
+
+    function selectCandidate(candId) {
+      currentCand = candId;
+      document.querySelectorAll('.cand-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('btnCand' + candId);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      updateCandidateView();
+      updateCopyText();
+    }
+
+    function updateCandidateView() {
+      const data = CANDIDATES_DATA[currentCand];
+
+      // Update Slide 1
+      document.getElementById('slide1Photo').src = data.photo;
+      document.getElementById('slide1Badge').innerText = data.num;
+      document.getElementById('slide1Name').innerText = data.nama;
+      document.getElementById('slide1Class').innerText = data.kelas;
+
+      // Update Slide 2
+      document.getElementById('slide2Heading').innerText = 'Rekam Jejak & Prestasi';
+      document.getElementById('slide2Smp').innerText = 'Asal SMP: ' + data.smp;
+
+      const presUl = document.getElementById('slide2Prestasi');
+      presUl.innerHTML = '';
+      data.prestasi.forEach(p => {
+        const li = document.createElement('li');
+        li.innerText = p;
+        presUl.appendChild(li);
+      });
+
+      const orgUl = document.getElementById('slide2Organisasi');
+      orgUl.innerHTML = '';
+      data.organisasi.forEach(o => {
+        const li = document.createElement('li');
+        li.innerText = o;
+        orgUl.appendChild(li);
+      });
+
+      // Update Slide 3
+      document.getElementById('slide3Slogan').innerText = '"' + data.slogan + '"';
+      document.getElementById('slide3Visi').innerHTML = '<strong>' + data.visiTitle + ':</strong> ' + data.visiDesc;
+
+      const prokUl = document.getElementById('slide3Proker');
+      prokUl.innerHTML = '';
+      data.proker.slice(0, 3).forEach(pr => {
+        const li = document.createElement('li');
+        li.innerText = pr;
+        prokUl.appendChild(li);
+      });
+
+      // Update Caption
+      document.getElementById('captionTextContent').innerText = data.caption;
+    }
+
+    function goToSlide(slideNum) {
+      currentSlide = slideNum;
+      document.querySelectorAll('.slide-layer').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.slide-dot').forEach(d => d.classList.remove('active'));
+
+      document.getElementById('slide' + slideNum + 'Layer').classList.add('active');
+      document.getElementById('dot' + slideNum).classList.add('active');
+
+      updateCopyText();
+    }
+
+    function nextSlide() {
+      let nxt = currentSlide + 1;
+      if (nxt > 3) nxt = 1;
+      goToSlide(nxt);
+    }
+
+    function prevSlide() {
+      let prv = currentSlide - 1;
+      if (prv < 1) prv = 3;
+      goToSlide(prv);
+    }
+
+    function toggleSafeZone() {
+      safeZoneActive = !safeZoneActive;
+      const guide = document.getElementById('safeZoneGuide');
+      const btn = document.getElementById('toggleSafeBtn');
+      if (safeZoneActive) {
+        guide.classList.add('active');
+        btn.innerText = '🔒 Sembunyikan Safe Zone';
+        btn.style.background = 'var(--gold)';
+        btn.style.color = 'var(--navy)';
+      } else {
+        guide.classList.remove('active');
+        btn.innerText = '👁️ Tampilkan Safe Zone 1:1';
+        btn.style.background = '';
+        btn.style.color = '';
+      }
+    }
+
+    function updateCopyText() {
+      const data = CANDIDATES_DATA[currentCand];
+      const titleEl = document.getElementById('copyTitle');
+      const boxEl = document.getElementById('copyTextContent');
+
+      if (currentSlide === 1) {
+        titleEl.innerText = '📋 Naskah Teks Slide 1 (Cover / Grid Feed)';
+        boxEl.innerText = `Tag: CALON KETUA OSIS 2026/2027
+Nomor Urut: ${data.num}
+Nama: ${data.nama}
+Kelas: ${data.kelas}
+Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔`;
+      } else if (currentSlide === 2) {
+        titleEl.innerText = '📋 Naskah Teks Slide 2 (Rekam Jejak & Prestasi)';
+        let presTxt = data.prestasi.map(p => '- ' + p).join('\\n');
+        let orgTxt = data.organisasi.map(o => '- ' + o).join('\\n');
+        boxEl.innerText = `Header: PROFIL & KAPABILITAS (Slide 2/3)
+Judul: Rekam Jejak & Prestasi
+Asal Sekolah: Asal SMP: ${data.smp}
+
+Daftar Prestasi:
+${presTxt}
+
+Pengalaman Organisasi:
+${orgTxt}`;
+      } else if (currentSlide === 3) {
+        titleEl.innerText = '📋 Naskah Teks Slide 3 (Visi, Misi & Slogan)';
+        let prokTxt = data.proker.map((pr, i) => `${i+1}. ${pr}`).join('\\n');
+        boxEl.innerText = `Header: GAGASAN & AKSI NYATA (Slide 3/3)
+Slogan Resmi: "${data.slogan}"
+
+Visi Utama:
+${data.visiTitle} — ${data.visiDesc}
+
+Program Kerja Unggulan:
+${prokTxt}
+
+Footer CTA:
+Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026`;
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.className = 'show';
+      setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2200);
+    }
+
+    function copyCurrentSlideText() {
+      const txt = document.getElementById('copyTextContent').innerText;
+      navigator.clipboard.writeText(txt).then(() => {
+        showToast('✅ Teks Slide Berhasil Disalin!');
+      });
+    }
+
+    function copyCaptionText() {
+      const txt = document.getElementById('captionTextContent').innerText;
+      navigator.clipboard.writeText(txt).then(() => {
+        showToast('✅ Caption Instagram Berhasil Disalin!');
+      });
+    }
+
+    // Init on load
+    document.addEventListener('DOMContentLoaded', () => {
+      selectCandidate('01');
+      goToSlide(1);
+    });
+  </script>
+</body>
+</html>
