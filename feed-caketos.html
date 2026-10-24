@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📱 Konsep & Blueprint Feed IG Caketos — Divisi PDD MPK SMKN 13</title>
+  <title>📱 Bank Naskah & Konsep Feed IG Caketos — Divisi PDD MPK SMKN 13</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,17 +212,6 @@
       overflow: hidden;
     }
 
-    .designer-banner::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
     .designer-badge-tag {
       display: inline-flex;
       align-items: center;
@@ -304,6 +293,246 @@
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    /* Quick Jump Anchor Bar */
+    .quick-jump-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: #F1F5F9;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .quick-jump-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .quick-jump-link {
+      background: white;
+      border: 1px solid #CBD5E1;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .quick-jump-link:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Bank Naskah Card */
+    .paslon-bank-card {
+      background: white;
+      border-radius: 16px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      margin-bottom: 28px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    .paslon-bank-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+    }
+
+    .paslon-bank-card-header {
+      background: linear-gradient(135deg, #0D1B2A 0%, #172A45 100%);
+      color: white;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .bank-cand-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bank-cand-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+      object-position: top;
+      background: #0F172A;
+    }
+
+    .bank-badge-num {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .bank-cand-name {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .bank-cand-meta {
+      font-size: 12px;
+      color: var(--gold-light);
+      margin-top: 2px;
+    }
+
+    .bank-header-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-copy-all {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+    }
+
+    .btn-copy-all:hover {
+      background: #FFFFFF;
+      color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .paslon-bank-tabs {
+      display: flex;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      padding: 8px 16px;
+      gap: 6px;
+    }
+
+    .bank-tab-btn {
+      background: transparent;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bank-tab-btn:hover {
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .bank-tab-btn.active {
+      background: var(--navy);
+      color: var(--gold);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .bank-tab-pane {
+      display: none;
+      padding: 22px;
+    }
+
+    .bank-tab-pane.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    .bank-pane-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bank-pane-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-copy-pane {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-copy-pane:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .raw-copy-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'Poppins', monospace, sans-serif;
+      font-size: 12.5px;
+      color: #1E293B;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      max-height: 420px;
+      overflow-y: auto;
+      user-select: all;
     }
 
     /* Grid Trick Callout (The 3-2-1 Rule) */
@@ -644,7 +873,7 @@
     /* Safe Zone 1:1 Overlay Guide */
     .safe-zone-overlay {
       position: absolute;
-      top: 10%; /* Center 1:1 box: (1 - 4/5)/2 = 10% from top and bottom */
+      top: 10%;
       left: 0;
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -784,7 +1013,7 @@
 
     .s1-cand-name {
       font-family: 'League Spartan', sans-serif;
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 800;
       color: #FFFFFF;
       line-height: 1.15;
@@ -822,11 +1051,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 22px;
+      padding: 20px;
       text-align: left;
       background: linear-gradient(145deg, #0D1B2A 0%, #10243E 60%, #162E4D 100%);
       color: white;
       box-sizing: border-box;
+      overflow-y: auto;
     }
 
     .slide-ed-header {
@@ -834,7 +1064,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
     .slide-page-badge {
@@ -849,19 +1079,19 @@
 
     .slide-ed-title {
       font-family: 'League Spartan', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--gold);
-      margin-top: 10px;
-      margin-bottom: 12px;
+      margin-top: 8px;
+      margin-bottom: 10px;
     }
 
     .slide-box-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 10px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
     }
 
     .slide-box-card.highlight {
@@ -870,7 +1100,7 @@
     }
 
     .slide-box-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--gold-light);
       text-transform: uppercase;
@@ -881,23 +1111,23 @@
     }
 
     .slide-box-text {
-      font-size: 11.5px;
+      font-size: 11px;
       color: #E2E8F0;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .slide-list {
       list-style: none;
       padding-left: 0;
-      font-size: 11.5px;
+      font-size: 11px;
       color: #CBD5E1;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .slide-list li {
       position: relative;
-      padding-left: 14px;
-      margin-bottom: 4px;
+      padding-left: 12px;
+      margin-bottom: 3px;
     }
 
     .slide-list li::before {
@@ -910,7 +1140,7 @@
 
     .slide-footer-cta {
       border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 10px;
+      padding-top: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1136,7 +1366,7 @@
       color: #fff;
       text-align: center;
       border-radius: 8px;
-      padding: 12px 16px;
+      padding: 12px 18px;
       position: fixed;
       z-index: 9999;
       left: 50%;
@@ -1145,7 +1375,7 @@
       font-size: 13px;
       font-weight: 600;
       border: 1px solid var(--gold);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     #toast.show {
@@ -1186,6 +1416,13 @@
       .cand-btn {
         min-width: 100%;
       }
+      .bank-cand-title-wrap {
+        width: 100%;
+      }
+      .bank-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
@@ -1205,11 +1442,11 @@
         </div>
       </div>
       <div class="header-links">
+        <a href="#bank-naskah" class="btn-header" style="background: var(--gold); color: var(--navy); font-weight: 700;">
+          📋 Bank Naskah Copypaste
+        </a>
         <a href="https://drive.google.com/open?id=1ZOP0W9Lb7tFA8_9AFEFAx56IfaQiaKoC" target="_blank" class="btn-header">
           🎨 Master Feed Canva
-        </a>
-        <a href="https://drive.google.com/drive/folders/1TgFahFMpVyVFcZElKE9WHOnvSaf-_XjZ?usp=sharing" target="_blank" class="btn-header">
-          📁 Google Drive PDD
         </a>
       </div>
     </div>
@@ -1231,18 +1468,18 @@
     <!-- Designer Welcome Banner for Inaya -->
     <div class="designer-banner">
       <div class="designer-badge-tag">
-        <span>✨ PANDUAN DESAIN FEED CANVA • UNTUK INAYA & KAYLA</span>
+        <span>✨ PANDUAN DESAIN FEED CANVA • UNTUK INAYA, KAYLA & TIM PDD</span>
       </div>
-      <h2 class="designer-title">Konsep & Visual Feed Instagram Profil Calon Trikora</h2>
+      <h2 class="designer-title">Bank Naskah Lengkap & Visual Feed Instagram Caketos</h2>
       <p class="designer-desc">
-        Halaman ini dirancang khusus agar tim desainer (Inaya & Kayla) langsung memiliki gambaran visual 100% presisi: simulasi grid profil IG 3-kolom, carousel 3-slide tiap calon, garis safe zone 1:1, serta teks siap salin untuk ditempel langsung ke Canva.
+        Halaman ini menyediakan seluruh <strong>naskah resmi (Visi, Misi, Proker, Biodata, & Slogan)</strong> yang sudah disusun berurutan dari <strong>Paslon 01, 02, dan 03</strong> dengan tombol <strong>1-Klik Copy-Paste</strong> agar tim desain bisa langsung menempelkannya ke Canva tanpa perlu mengetik ulang!
       </p>
       <div class="quick-spec-pills">
         <div class="spec-pill">📐 <strong>Ukuran Kanvas:</strong> 1080 x 1350 px (4:5 Portrait)</div>
         <div class="spec-pill">🛡️ <strong>Grid Safe Zone:</strong> 1080 x 1080 px (Tengah)</div>
         <div class="spec-pill">🎨 <strong>Warna:</strong> Navy #0D1B2A • Gold #D4AF37 • White #FFFFFF</div>
         <div class="spec-pill">🔤 <strong>Font:</strong> League Spartan (Judul) & Poppins (Isi)</div>
-        <div class="spec-pill">⚖️ <strong>Prinsip:</strong> Netral 100% (Ukuran Frame & Font Identik)</div>
+        <div class="spec-pill">📋 <strong>Fitur Cepat:</strong> Tombol Salin Naskah 1-Klik Siap Pakai</div>
       </div>
     </div>
 
@@ -1369,7 +1606,7 @@
               </div>
               <div>
                 <div class="ig-grid-cand-name">LOVIOLA AMIRA</div>
-                <div class="ig-grid-meta">XI Kimia Analisis 4</div>
+                <div class="ig-grid-meta">XI Kimia Analisis 6</div>
               </div>
             </div>
           </div>
@@ -1380,7 +1617,7 @@
       </p>
     </div>
 
-    <!-- FEATURE 2: INTERACTIVE CAROUSEL MOCKUP & SPECIFICATION -->
+    <!-- FEATURE 2: INTERACTIVE CAROUSEL MOCKUP -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
@@ -1415,12 +1652,12 @@
           <div class="cand-btn-num">03</div>
           <div class="cand-btn-info">
             <div class="cand-btn-name">Loviola Amira P.</div>
-            <div class="cand-btn-sub">XI Kimia Analisis 4</div>
+            <div class="cand-btn-sub">XI Kimia Analisis 6</div>
           </div>
         </div>
       </div>
 
-      <!-- Simulator Container: Left Preview, Right Specs & Copy -->
+      <!-- Simulator Container -->
       <div class="simulator-container">
         <!-- Left: Live 4:5 Card Simulation -->
         <div class="preview-phone-wrap">
@@ -1446,7 +1683,7 @@
                 <div class="s1-bottom-info">
                   <span class="s1-tag">CALON KETUA OSIS 2026/2027</span>
                   <div class="s1-cand-name" id="slide1Name">SALSYA APRILIA HIKMAH</div>
-                  <div class="s1-cand-class" id="slide1Class">XI KIMIA ANALISIS 5</div>
+                  <div class="s1-cand-class" id="slide1Class">XI-KA-5</div>
                   <div class="s1-swipe-cta">
                     <span>PRAJA SATYA NAYAKA</span>
                     <strong>Geser Visi & Misi ➔</strong>
@@ -1466,27 +1703,19 @@
                     <span class="slide-page-badge">SLIDE 2 / 3</span>
                   </div>
 
-                  <h3 class="slide-ed-title" id="slide2Heading">Rekam Jejak & Pengalaman</h3>
-
-                  <div class="slide-box-card">
-                    <div class="slide-box-title">🏫 Latar Belakang Sekolah</div>
-                    <div class="slide-box-text" id="slide2Smp">Asal SMP: SMPN 48 Bandung</div>
-                  </div>
+                  <h3 class="slide-ed-title" id="slide2Heading">Rekam Jejak & Prestasi</h3>
 
                   <div class="slide-box-card highlight">
                     <div class="slide-box-title">🏆 Capaian & Prestasi</div>
                     <ul class="slide-list" id="slide2Prestasi">
-                      <li>Juara Lomba Esai Tingkat Kota Bandung</li>
-                      <li>Siswa Berprestasi Bidang Akademik Kimia Analisis</li>
+                      <!-- Populated by JS -->
                     </ul>
                   </div>
 
                   <div class="slide-box-card">
                     <div class="slide-box-title">👥 Pengalaman Organisasi</div>
                     <ul class="slide-list" id="slide2Organisasi">
-                      <li>Anggota Komisi MPK SMKN 13 Bandung</li>
-                      <li>Koordinator Divisi Kegiatan Pelajar</li>
-                      <li>Aktif Komunitas Literasi & Debat Sekolah</li>
+                      <!-- Populated by JS -->
                     </ul>
                   </div>
                 </div>
@@ -1510,10 +1739,10 @@
                   </div>
 
                   <!-- Slogan -->
-                  <div class="slide-box-card highlight" style="margin-top: 10px;">
+                  <div class="slide-box-card highlight" style="margin-top: 8px;">
                     <div class="slide-box-title">📣 Slogan Kepemimpinan</div>
-                    <div class="slide-box-text" id="slide3Slogan" style="font-weight: 700; color: #FFFFFF; font-size: 12px;">
-                      "1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama."
+                    <div class="slide-box-text" id="slide3Slogan" style="font-weight: 700; color: #FFFFFF; font-size: 11.5px;">
+                      <!-- Populated by JS -->
                     </div>
                   </div>
 
@@ -1521,7 +1750,7 @@
                   <div class="slide-box-card">
                     <div class="slide-box-title">🎯 Visi Utama</div>
                     <div class="slide-box-text" id="slide3Visi">
-                      <strong>RISE:</strong> Reach, Inspire, Serve, Empower — Penggerak perubahan inovatif, kooperatif & inspiratif.
+                      <!-- Populated by JS -->
                     </div>
                   </div>
 
@@ -1529,9 +1758,7 @@
                   <div class="slide-box-card">
                     <div class="slide-box-title">🚀 Program Unggulan</div>
                     <ul class="slide-list" id="slide3Proker">
-                      <li><strong>Student Achievement Article:</strong> Apresiasi karya siswa.</li>
-                      <li><strong>PILAH:</strong> Peduli Lingkungan Olah Sampah.</li>
-                      <li><strong>CONNECT:</strong> Kanal keterbukaan & aspirasi OSIS.</li>
+                      <!-- Populated by JS -->
                     </ul>
                   </div>
                 </div>
@@ -1561,21 +1788,21 @@
           <!-- Text Slide Aktif -->
           <div class="spec-card">
             <div class="spec-card-title">
-              <span id="copyTitle">📋 Teks untuk Slide Ini (Bisa Langsung Di-Copy)</span>
+              <span id="copyTitle">📋 Naskah Teks Slide Ini (Canva)</span>
               <button class="btn-copy" onclick="copyCurrentSlideText()">📋 Salin Teks</button>
             </div>
             <div class="copy-box" id="copyTextContent">
               <!-- Text auto populated by JS -->
             </div>
             <span style="font-size: 11px; color: var(--text-muted);">
-              💡 <em>Klik tombol "Salin Teks" lalu paste ke teks elemen di Canva.</em>
+              💡 <em>Klik "Salin Teks" lalu paste ke layer teks di Canva.</em>
             </span>
           </div>
 
           <!-- Caption Instagram -->
           <div class="spec-card">
             <div class="spec-card-title">
-              <span>✍️ Naskah Caption Instagram Paslon Ini</span>
+              <span>✍️ Caption Instagram Lengkap</span>
               <button class="btn-copy" onclick="copyCaptionText()">📋 Salin Caption</button>
             </div>
             <div class="copy-box" id="captionTextContent" style="max-height: 200px;">
@@ -1583,28 +1810,542 @@
             </div>
           </div>
 
-          <!-- Canva Design Guide -->
+          <!-- Canva Quick Check -->
           <div class="spec-card" style="background: #F1F5F9;">
             <div class="spec-card-title" style="color: var(--navy);">
               <span>🎨 Checklist Desain Canva Inaya</span>
             </div>
             <ul style="font-size: 12px; color: #475569; line-height: 1.6; padding-left: 18px;">
-              <li><strong>Rasio:</strong> 1080 x 1350 px (Gunakan ruler di Canva untuk safe area tengah 1080x1080).</li>
-              <li><strong>Logo:</strong> Logo SMKN 13 & MPK wajib ada di pojok kiri atas Slide 1.</li>
-              <li><strong>Nomor Urut:</strong> Lingkaran emas besar di pojok kanan atas dengan angka yang tegas.</li>
-              <li><strong>Foto Calon:</strong> Pakai foto jas OSIS resmi dari folder mentahan tanpa distorsi.</li>
-              <li><strong>Konsistensi Font:</strong> League Spartan (Bold) untuk judul & Poppins untuk isi.</li>
+              <li><strong>Rasio:</strong> 1080 x 1350 px (Gunakan safe zone 1:1 di tengah).</li>
+              <li><strong>Logo:</strong> SMKN 13 & MPK di pojok kiri atas Slide 1.</li>
+              <li><strong>Nomor Urut:</strong> Lingkaran emas besar (01 / 02 / 03) di kanan atas.</li>
+              <li><strong>Konsistensi Font:</strong> League Spartan (Judul) & Poppins (Isi).</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- FEATURE 3: SAFE ZONE 1:1 VS 4:5 EXPLAINED -->
+    <!-- FEATURE 3: BANK DATA & NASKAH LENGKAP PASLON (URUT 01, 02, 03) -->
+    <div class="section-card" id="bank-naskah">
+      <div class="section-header">
+        <div class="section-title">
+          <span>📑 3. Bank Data & Naskah Paslon Lengkap (Urut & 1-Click Copy-Paste)</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Data Resmi Terverifikasi untuk Desainer Canva</span>
+      </div>
+
+      <!-- Quick Jump Bar -->
+      <div class="quick-jump-bar">
+        <span class="quick-jump-label">⚡ Lompat Cepat:</span>
+        <a href="#paslon-01-card" class="quick-jump-link">🥇 Paslon 01 (Salsya Aprilia H.)</a>
+        <a href="#paslon-02-card" class="quick-jump-link">🥈 Paslon 02 (Bima Pangestu S.)</a>
+        <a href="#paslon-03-card" class="quick-jump-link">🥉 Paslon 03 (Loviola Amira P.)</a>
+      </div>
+
+      <!-- ================= PASLON 01 ================= -->
+      <div class="paslon-bank-card" id="paslon-01-card">
+        <div class="paslon-bank-card-header">
+          <div class="bank-cand-title-wrap">
+            <img src="assets/candidates/salsya_portrait.jpg" alt="01 Salsya" class="bank-cand-thumb">
+            <div>
+              <div style="display: flex; align-items: center;">
+                <span class="bank-badge-num">01</span>
+                <span class="bank-cand-name">SALSYA APRILIA HIKMAH</span>
+              </div>
+              <div class="bank-cand-meta">Kelas: XI-KA-5 • Slogan: "Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."</div>
+            </div>
+          </div>
+          <div class="bank-header-actions">
+            <button class="btn-copy-all" onclick="copyFullCandidateData('01')">
+              📋 Salin Semua Data Paslon 01
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="paslon-bank-tabs">
+          <button class="bank-tab-btn active" onclick="switchBankTab('01', 'visi', this)">🎯 Visi & Misi Lengkap</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('01', 'bio', this)">👤 Profil & Biodata</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('01', 'proker', this)">🚀 Program Kerja Unggulan</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('01', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('01', 'caption', this)">✍️ Caption Instagram</button>
+        </div>
+
+        <!-- Tab 1: Visi & Misi -->
+        <div class="bank-tab-pane active" id="pane-01-visi">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🎯 Visi & 6 Butir Misi Resmi Paslon 01</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-01-visi', 'Visi Misi Paslon 01')">📋 Salin Visi Misi</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-01-visi">VISI PASLON 01 (SALSYA APRILIA HIKMAH):
+“Mewujudkan Pengurus OSIS SMKN 13 Bandung Sebagai pengurus yang RISE (Reach, Inspire, Serve, Empower) sebagai penggerak perubahan yang inovatif, inspiratif, dan kolaboratif dalam mengembangkan potensi siswa, menciptakan prestasi, serta menghadirkan dampak positif bagi lingkungan sekolah.”
+
+MISI PASLON 01:
+1. Mengembangkan potensi dan prestasi siswa dalam bidang akademik maupun nonakademik serta memberikan apresiasi atas setiap pencapaian dan kreativitas siswa.
+2. Membangun komunikasi dan keterbukaan informasi antara OSIS dan seluruh siswa melalui media informasi yang menarik, informatif, dan mudah diakses.
+3. Menumbuhkan kepedulian terhadap lingkungan sekolah melalui kegiatan pemilahan sampah, pengelolaan sampah bernilai guna, dan pembiasaan hidup bersih.
+4. Mendorong pemanfaatan teknologi digital sebagai sarana penyebaran informasi, penyampaian aspirasi, dan transparansi kegiatan OSIS.
+5. Meningkatkan kualitas kinerja OSIS melalui evaluasi rutin, kerja sama tim, kedisiplinan, dan tanggung jawab dalam menjalankan setiap program kerja.
+6. Mewujudkan budaya berpikir kritis dan inovatif dengan melibatkan siswa dalam mengidentifikasi permasalahan di sekolah serta menciptakan solusi yang nyata dan bermanfaat.</pre>
+        </div>
+
+        <!-- Tab 2: Bio & Profil -->
+        <div class="bank-tab-pane" id="pane-01-bio">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">👤 Biodata, Organisasi & Prestasi Paslon 01</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-01-bio', 'Profil Paslon 01')">📋 Salin Profil</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-01-bio">PROFIL CALON KETUA OSIS NOMOR URUT 01:
+Nama Lengkap: Salsya Aprilia Hikmah
+Kelas: XI-KA-5
+
+SLOGAN CAKETOS:
+"Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."
+
+PENGALAMAN ORGANISASI:
+• Komandan PMR SMPN 24 Bandung Periode 2024-2025
+• Ketua Angkatan 28 PMR SMKN 13 Bandung
+• Pengurus PMR SMKN 13 Bandung (Divisi Tata Tertib)
+• Pengurus OSIS SMKN 13 Bandung (Sekretaris)
+• Pengurus Wilayah 7 Forum OSIS Jawa Barat Generasi 13 (Divisi Program Manajemen Learning Center)
+• Pengurus Forum OSIS Jawa Barat Generasi 14 (Wakil Ketua Manajemen Learning Center)
+
+PRESTASI:
+• Juara Harapan 3 Lomba Pertolongan Pertama PMR se-Jawa Barat
+• Juara Harapan 1 Lomba Clash of Champions PMR se-Jawa Barat</pre>
+        </div>
+
+        <!-- Tab 3: Proker Unggulan -->
+        <div class="bank-tab-pane" id="pane-01-proker">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🚀 5 Program Kerja Unggulan Paslon 01</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-01-proker', 'Proker Paslon 01')">📋 Salin Proker</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-01-proker">5 PROGRAM KERJA UNGGULAN PASLON 01:
+
+1. Student Achievement & Inspiration
+Program ini bertujuan mengapresiasi siswa berprestasi di bidang akademik maupun nonakademik sekaligus menginspirasi siswa lainnya. Kegiatannya berupa publikasi artikel di media sosial yang membahas pencapaian, perjalanan, tantangan, cara mengatasinya, serta tips dan trik meraih prestasi. Dengan begitu, prestasi siswa dapat menjadi motivasi dan sumber pembelajaran bagi warga sekolah.
+
+2. PILAH — Peduli Lingkungan, Olah Sampah
+Gerakan Pemilahan Sampah dan Bank Sampah Sekolah. Program ini bertujuan membangun kebiasaan menjaga kebersihan dan meningkatkan kepedulian siswa terhadap lingkungan melalui pemilahan sampah organik dan anorganik. Kegiatannya meliputi penyediaan tempat sampah terpilah, pengumpulan sampah bernilai guna, serta pengelolaan bank sampah secara berkala untuk didaur ulang atau disalurkan kepada pihak terkait.
+
+3. CONNECT — Connecting Students, Information, and Action
+Media Digital Informasi dan Transparansi OSIS. Program ini bertujuan menyediakan pusat informasi digital mengenai kegiatan dan program kerja OSIS. Media ini memuat agenda, dokumentasi, informasi kegiatan mendatang, serta perkembangan dan hasil program kerja secara transparan.
+
+4. REFLECT — Review, Evaluate, Improve, and Act
+Program evaluasi rutin bulanan bagi pengurus OSIS untuk meninjau perkembangan program kerja yang telah direncanakan maupun dilaksanakan. Hasil evaluasi digunakan untuk menentukan langkah perbaikan, menetapkan prioritas, dan meningkatkan koordinasi antarbidang agar program kerja berjalan lebih terarah, efektif, dan bertanggung jawab.
+
+5. AKSI — Ajang Kreativitas dan Solusi Inspiratif
+Kompetisi Inovasi dan Pemecahan Masalah di Sekolah. Wadah bagi siswa untuk mengembangkan ide kreatif dalam mengatasi permasalahan sekolah, seperti kebersihan, kedisiplinan, kenyamanan belajar, dan hubungan antarsiswa. Ide terbaik akan dikembangkan menjadi aksi nyata melalui kolaborasi siswa, OSIS, dan sekolah.</pre>
+        </div>
+
+        <!-- Tab 4: Teks Slide Canva -->
+        <div class="bank-tab-pane" id="pane-01-slides">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-01-slides', 'Teks Slide Paslon 01')">📋 Salin Teks Slide</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-01-slides">PANDUAN TEKS SLIDE CANVA - PASLON 01 (SALSYA APRILIA HIKMAH)
+
+[SLIDE 1 - COVER DEPAN / FEED GRID]
+• Tag Atas: CALON KETUA OSIS 2026/2027
+• Nomor Urut: 01
+• Nama Lengkap: SALSYA APRILIA HIKMAH
+• Kelas: XI-KA-5
+• Slogan di Koran/Kotak: "Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."
+• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+
+[SLIDE 2 - PROFIL & REKAM JEJAK]
+• Header: PROFIL & KAPABILITAS (Slide 2/3)
+• Judul: Rekam Jejak & Prestasi
+• Asal Sekolah: SMPN 24 Bandung
+• Prestasi:
+  - Juara Harapan 3 Lomba Pertolongan Pertama PMR se-Jawa Barat
+  - Juara Harapan 1 Lomba Clash of Champions PMR se-Jawa Barat
+• Pengalaman Organisasi:
+  - Wakil Ketua Manajemen Learning Center (Forum OSIS Jabar Gen 14)
+  - Pengurus Wilayah 7 Forum OSIS Jabar Gen 13
+  - Sekretaris OSIS SMKN 13 Bandung
+  - Ketua Angkatan 28 & Pengurus PMR SMKN 13 Bandung
+  - Komandan PMR SMPN 24 Bandung (2024-2025)
+
+[SLIDE 3 - GAGASAN & AKSI NYATA]
+• Header: GAGASAN & AKSI NYATA (Slide 3/3)
+• Visi Inti: RISE (Reach, Inspire, Serve, Empower) — Penggerak perubahan inovatif, inspiratif, dan kolaboratif.
+• 5 Program Unggulan:
+  1. Student Achievement & Inspiration (Artikel edukasi & apresiasi karya)
+  2. PILAH (Peduli Lingkungan Olah Sampah & Bank Sampah)
+  3. CONNECT (Media keterbukaan informasi digital OSIS)
+  4. REFLECT (Evaluasi rutin bulanan pengurus)
+  5. AKSI (Kompetisi problem-solving & inovasi sekolah)
+• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+        </div>
+
+        <!-- Tab 5: Caption Instagram -->
+        <div class="bank-tab-pane" id="pane-01-caption">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">✍️ Caption Instagram Resmi Paslon 01</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-01-caption', 'Caption Paslon 01')">📋 Salin Caption</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-01-caption">[KENALI CALONMU: PASLON 01 SALSYA APRILIA HIKMAH]
+
+"Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 01:
+👤 Salsya Aprilia Hikmah (@salsya)
+📚 Kelas: XI-KA-5
+
+✨ VISI:
+“Mewujudkan Pengurus OSIS SMKN 13 Bandung Sebagai pengurus yang RISE (Reach, Inspire, Serve, Empower) sebagai penggerak perubahan yang inovatif, inspiratif, dan kolaboratif dalam mengembangkan potensi siswa, menciptakan prestasi, serta menghadirkan dampak positif bagi lingkungan sekolah.”
+
+🚀 5 PROGRAM KERJA UNGGULAN:
+1. Student Achievement & Inspiration (Apresiasi karya & inspirasi prestasi siswa)
+2. PILAH — Peduli Lingkungan, Olah Sampah (Bank sampah sekolah & pemilahan bernilai guna)
+3. CONNECT (Pusat transparansi dan keterbukaan informasi digital OSIS)
+4. REFLECT (Evaluasi rutin bulanan untuk efektivitas organisasi)
+5. AKSI — Ajang Kreativitas dan Solusi Inspiratif (Kompetisi pemecahan masalah sekolah)
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 01! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon01 #SalsyaAprilia #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna</pre>
+        </div>
+      </div>
+
+      <!-- ================= PASLON 02 ================= -->
+      <div class="paslon-bank-card" id="paslon-02-card">
+        <div class="paslon-bank-card-header">
+          <div class="bank-cand-title-wrap">
+            <img src="assets/candidates/bima_portrait.jpg" alt="02 Bima" class="bank-cand-thumb">
+            <div>
+              <div style="display: flex; align-items: center;">
+                <span class="bank-badge-num">02</span>
+                <span class="bank-cand-name">BIMA PANGESTU SEJATI</span>
+              </div>
+              <div class="bank-cand-meta">Kelas: XI-KA-6 • Slogan: "Bersama 2 Wujudkan Aksi Nyata" / "2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!"</div>
+            </div>
+          </div>
+          <div class="bank-header-actions">
+            <button class="btn-copy-all" onclick="copyFullCandidateData('02')">
+              📋 Salin Semua Data Paslon 02
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="paslon-bank-tabs">
+          <button class="bank-tab-btn active" onclick="switchBankTab('02', 'visi', this)">🎯 Visi & Misi Lengkap</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('02', 'bio', this)">👤 Profil & Biodata</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('02', 'proker', this)">🚀 Program Kerja Unggulan</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('02', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('02', 'caption', this)">✍️ Caption Instagram</button>
+        </div>
+
+        <!-- Tab 1: Visi & Misi -->
+        <div class="bank-tab-pane active" id="pane-02-visi">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🎯 Visi & 5 Butir Misi Resmi Paslon 02</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-02-visi', 'Visi Misi Paslon 02')">📋 Salin Visi Misi</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-02-visi">VISI PASLON 02 (BIMA PANGESTU SEJATI):
+“Mewujudkan OSIS sebagai organisasi yang berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik yang berakhlak mulia, kompeten, serta berdaya suai melalui kepemimpinan yang aspiratif dan aksi nyata yang berkelanjutan.”
+
+MISI PASLON 02:
+1. Menanamkan nilai akhlak mulia, kedisiplinan, dan tanggung jawab.
+2. Mengembangkan potensi, kreativitas, dan prestasi siswa baik akademik maupun non-akademik.
+3. Mendorong inovasi dan kemampuan beradaptasi terhadap perkembangan zaman.
+4. Menjadikan OSIS sebagai wadah aspirasi dan kolaborasi seluruh siswa.
+5. Mewujudkan program kerja yang terencana, berkelanjutan, dan berdampak nyata.</pre>
+        </div>
+
+        <!-- Tab 2: Bio & Profil -->
+        <div class="bank-tab-pane" id="pane-02-bio">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">👤 Biodata, Organisasi & Prestasi Paslon 02</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-02-bio', 'Profil Paslon 02')">📋 Salin Profil</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-02-bio">PROFIL CALON KETUA OSIS NOMOR URUT 02:
+Nama Lengkap: Bima Pangestu Sejati
+Kelas: XI-KA-6
+
+SLOGAN CAKETOS:
+"Bersama 2 Wujudkan Aksi Nyata"
+(Slogan Orasi: "2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!")
+
+PENGALAMAN ORGANISASI:
+• Ketua Umum Rohis SMPN 35 Bandung
+• Anggota Sekbid 1 OSIS SMPN 35 Bandung
+
+PRESTASI:
+• Juara Harapan 1 Membaca dan Menulis Aksara Sunda Tingkat Kota Bandung
+• Juara Umum 2 Lomba Tingkat 2 Pramuka Penggalang
+• Juara 1 MTQ Tingkat Pesantren
+• Juara 3 Pidato Bahasa Arab Tingkat Kecamatan
+• Juara 2 Lomba Gerakan Sholat Tingkat Kota Bandung</pre>
+        </div>
+
+        <!-- Tab 3: Proker Unggulan -->
+        <div class="bank-tab-pane" id="pane-02-proker">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🚀 Program Kerja Unggulan Paslon 02</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-02-proker', 'Proker Paslon 02')">📋 Salin Proker</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-02-proker">PROGRAM KERJA UNGGULAN PASLON 02:
+
+EXPOKASI (Expo Kompetisi dan Kreasi)
+• Konsep: Menggabungkan pameran hasil karya inovasi siswa dengan demonstrasi keterampilan dari setiap program keahlian di SMKN 13 Bandung.
+• Waktu Pelaksanaan: Dilakukan secara berkala setiap 6 bulan sekali (1 kali per semester).
+• Tujuan: Menjadi panggung apresiasi karya kejuruan, festival unjuk bakat lintas jurusan, serta melatih daya saing dan jiwa kewirausahaan siswa SMKN 13 Bandung.</pre>
+        </div>
+
+        <!-- Tab 4: Teks Slide Canva -->
+        <div class="bank-tab-pane" id="pane-02-slides">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-02-slides', 'Teks Slide Paslon 02')">📋 Salin Teks Slide</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-02-slides">PANDUAN TEKS SLIDE CANVA - PASLON 02 (BIMA PANGESTU SEJATI)
+
+[SLIDE 1 - COVER DEPAN / FEED GRID]
+• Tag Atas: CALON KETUA OSIS 2026/2027
+• Nomor Urut: 02
+• Nama Lengkap: BIMA PANGESTU SEJATI
+• Kelas: XI-KA-6
+• Slogan di Koran/Kotak: "Bersama 2 Wujudkan Aksi Nyata"
+• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+
+[SLIDE 2 - PROFIL & REKAM JEJAK]
+• Header: PROFIL & KAPABILITAS (Slide 2/3)
+• Judul: Rekam Jejak & Prestasi
+• Asal Sekolah: SMPN 35 Bandung
+• Prestasi:
+  - Juara Harapan 1 Membaca & Menulis Aksara Sunda Kota Bandung
+  - Juara Umum 2 Lomba Tingkat 2 Pramuka Penggalang
+  - Juara 1 MTQ Tingkat Pesantren
+  - Juara 3 Pidato Bahasa Arab Tingkat Kecamatan
+  - Juara 2 Gerakan Sholat Kota Bandung
+• Pengalaman Organisasi:
+  - Ketua Umum Rohis SMPN 35 Bandung
+  - Anggota Sekbid 1 OSIS SMPN 35 Bandung
+
+[SLIDE 3 - GAGASAN & AKSI NYATA]
+• Header: GAGASAN & AKSI NYATA (Slide 3/3)
+• Visi Inti: "Mewujudkan OSIS berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik berakhlak mulia, kompeten, dan berdaya suai."
+• 5 Misi Unggulan:
+  1. Akhlak mulia, kedisiplinan & tanggung jawab
+  2. Pengembangan potensi & prestasi akademik/non-akademik
+  3. Mendorong inovasi & adaptasi perkembangan zaman
+  4. Wadah aspirasi & kolaborasi seluruh siswa
+  5. Program kerja terencana, berkelanjutan & berdampak nyata
+• Program Unggulan:
+  - EXPOKASI (Expo Kompetisi & Kreasi Kejuruan Siswa SMKN 13 per Semester)
+• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+        </div>
+
+        <!-- Tab 5: Caption Instagram -->
+        <div class="bank-tab-pane" id="pane-02-caption">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">✍️ Caption Instagram Resmi Paslon 02</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-02-caption', 'Caption Paslon 02')">📋 Salin Caption</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-02-caption">[KENALI CALONMU: PASLON 02 BIMA PANGESTU SEJATI]
+
+"Bersama 2 Wujudkan Aksi Nyata!"
+"2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!"
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 02:
+👤 Bima Pangestu Sejati (@bima)
+📚 Kelas: XI-KA-6
+
+✨ VISI:
+“Mewujudkan OSIS sebagai organisasi yang berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik yang berakhlak mulia, kompeten, serta berdaya suai melalui kepemimpinan yang aspiratif dan aksi nyata yang berkelanjutan.”
+
+🚀 PROGRAM KERJA UNGGULAN:
+🎯 EXPOKASI (Expo Kompetisi dan Kreasi)
+Festival pameran kejuruan terpadu dan demonstrasi keterampilan dari setiap program keahlian yang diadakan berkala tiap semester sebagai wadah kreasi nyata seluruh jurusan!
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 02! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon02 #BimaPangestu #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna</pre>
+        </div>
+      </div>
+
+      <!-- ================= PASLON 03 ================= -->
+      <div class="paslon-bank-card" id="paslon-03-card">
+        <div class="paslon-bank-card-header">
+          <div class="bank-cand-title-wrap">
+            <img src="assets/candidates/loviola_portrait.jpg" alt="03 Loviola" class="bank-cand-thumb">
+            <div>
+              <div style="display: flex; align-items: center;">
+                <span class="bank-badge-num">03</span>
+                <span class="bank-cand-name">LOVIOLA AMIRA PRAMESWARI</span>
+              </div>
+              <div class="bank-cand-meta">Kelas: XI-KA-6 • Slogan: "Stop scrolling, start voting: Pilih Nomor 3 for real shining!"</div>
+            </div>
+          </div>
+          <div class="bank-header-actions">
+            <button class="btn-copy-all" onclick="copyFullCandidateData('03')">
+              📋 Salin Semua Data Paslon 03
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="paslon-bank-tabs">
+          <button class="bank-tab-btn active" onclick="switchBankTab('03', 'visi', this)">🎯 Visi & Misi Lengkap</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('03', 'bio', this)">👤 Profil & Biodata</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('03', 'proker', this)">🚀 Program Kerja Unggulan</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('03', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('03', 'caption', this)">✍️ Caption Instagram</button>
+        </div>
+
+        <!-- Tab 1: Visi & Misi -->
+        <div class="bank-tab-pane active" id="pane-03-visi">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🎯 Visi & 5 Butir Misi Resmi Paslon 03</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-03-visi', 'Visi Misi Paslon 03')">📋 Salin Visi Misi</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-03-visi">VISI PASLON 03 (LOVIOLA AMIRA PRAMESWARI):
+“Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter.”
+
+MISI PASLON 03:
+1. Menyelenggarakan kegiatan kreatif di bidang akademik maupun non-akademik.
+2. Membangun komunikasi yang solid antara OSIS, MPK, ekskul, dan pihak sekolah.
+3. Menumbuhkan kedisiplinan, kepemimpinan, dan kepedulian sosial siswa.
+4. Memanfaatkan media digital untuk publikasi, transparansi, apresiasi karya dan juga kegiatan OSIS.
+5. Menjaga profesionalisme, kejujuran, dan tanggung jawab dalam berorganisasi.</pre>
+        </div>
+
+        <!-- Tab 2: Bio & Profil -->
+        <div class="bank-tab-pane" id="pane-03-bio">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">👤 Biodata, Organisasi & Prestasi Paslon 03</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-03-bio', 'Profil Paslon 03')">📋 Salin Profil</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-03-bio">PROFIL CALON KETUA OSIS NOMOR URUT 03:
+Nama Lengkap: Loviola Amira Prameswari
+Kelas: XI-KA-6
+
+SLOGAN CAKETOS:
+"Stop scrolling, start voting: Pilih Nomor 3 for real shining!"
+
+PENGALAMAN ORGANISASI:
+• Ketua Angkatan PASKIBRA MTs Cijawura Periode 2024-2025
+• Ketua Angkatan PASKIBRA SMKN 13 Bandung Periode 2026-2027
+• Pengurus OSIS SMKN 13 Bandung (Sekbid 2)
+• PASKIBRA Kota Bandung (Kebidangan Bina Lapangan)
+
+PRESTASI:
+• Juara Prasetya Muda 3 Pra Madya Lomba Regu Pengibar Bendera Se-Bandung Raya
+• Juara Prasetya Muda 3 Madya Lomba Regu Pengibar Bendera Se-Jawa Barat</pre>
+        </div>
+
+        <!-- Tab 3: Proker Unggulan -->
+        <div class="bank-tab-pane" id="pane-03-proker">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">🚀 Program Kerja Unggulan Paslon 03</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-03-proker', 'Proker Paslon 03')">📋 Salin Proker</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-03-proker">PROGRAM KERJA UNGGULAN PASLON 03:
+
+RANGKUL 13 (Misi 2 & Visi Solutif)
+Ruang Kolaborasi, Komunikasi Solid, dan Penyaluran Aspirasi Tanpa Sekat.
+
+• Bentuk Kegiatan:
+Diskusi Ketua Organisasi & Ekskul: Pertemuan rutin bulanan antara OSIS, MPK, dan seluruh Ketua Ekstrakurikuler untuk menyelaraskan kalender kegiatan sekolah, membagi penggunaan sarana/fasilitas, dan menyelesaikan kendala kegiatan bersama-sama.</pre>
+        </div>
+
+        <!-- Tab 4: Teks Slide Canva -->
+        <div class="bank-tab-pane" id="pane-03-slides">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-03-slides', 'Teks Slide Paslon 03')">📋 Salin Teks Slide</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-03-slides">PANDUAN TEKS SLIDE CANVA - PASLON 03 (LOVIOLA AMIRA PRAMESWARI)
+
+[SLIDE 1 - COVER DEPAN / FEED GRID]
+• Tag Atas: CALON KETUA OSIS 2026/2027
+• Nomor Urut: 03
+• Nama Lengkap: LOVIOLA AMIRA PRAMESWARI
+• Kelas: XI-KA-6
+• Slogan di Koran/Kotak: "Stop scrolling, start voting: Pilih Nomor 3 for real shining!"
+• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+
+[SLIDE 2 - PROFIL & REKAM JEJAK]
+• Header: PROFIL & KAPABILITAS (Slide 2/3)
+• Judul: Rekam Jejak & Prestasi
+• Asal Sekolah: MTs Cijawura
+• Prestasi:
+  - Juara Prasetya Muda 3 Pra Madya Lomba Regu Pengibar Bendera Bandung Raya
+  - Juara Prasetya Muda 3 Madya Lomba Regu Pengibar Bendera Jawa Barat
+• Pengalaman Organisasi:
+  - Ketua Angkatan PASKIBRA SMKN 13 Bandung (2026-2027)
+  - Pengurus OSIS SMKN 13 Bandung (Sekbid 2)
+  - PASKIBRA Kota Bandung (Kebidangan Bina Lapangan)
+  - Ketua Angkatan PASKIBRA MTs Cijawura (2024-2025)
+
+[SLIDE 3 - GAGASAN & AKSI NYATA]
+• Header: GAGASAN & AKSI NYATA (Slide 3/3)
+• Visi Inti: "Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter."
+• 5 Misi Unggulan:
+  1. Kegiatan kreatif akademik & non-akademik
+  2. Komunikasi solid OSIS, MPK, Ekskul & Sekolah
+  3. Kedisiplinan, kepemimpinan & kepedulian sosial
+  4. Media digital publikasi & transparansi karya
+  5. Profesionalisme, kejujuran & tanggung jawab
+• Program Unggulan:
+  - RANGKUL 13 (Ruang Kolaborasi & Pertemuan Bulanan OSIS, MPK, dan Seluruh Ketua Ekskul)
+• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+        </div>
+
+        <!-- Tab 5: Caption Instagram -->
+        <div class="bank-tab-pane" id="pane-03-caption">
+          <div class="bank-pane-top">
+            <span class="bank-pane-title">✍️ Caption Instagram Resmi Paslon 03</span>
+            <button class="btn-copy-pane" onclick="copyTextById('raw-03-caption', 'Caption Paslon 03')">📋 Salin Caption</button>
+          </div>
+          <pre class="raw-copy-box" id="raw-03-caption">[KENALI CALONMU: PASLON 03 LOVIOLA AMIRA PRAMESWARI]
+
+"Stop scrolling, start voting: Pilih Nomor 3 for real shining!"
+
+Halo Warga Trikora! 👋
+Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 03:
+👤 Loviola Amira Prameswari (@loviola)
+📚 Kelas: XI-KA-6
+
+✨ VISI:
+“Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter.”
+
+🚀 PROGRAM KERJA UNGGULAN:
+🤝 RANGKUL 13 (Ruang Kolaborasi Bulanan)
+Forum temu rutin bulanan antara pengurus OSIS, MPK, dan seluruh Ketua Ekstrakurikuler untuk menyelaraskan agenda kegiatan, berbagi pemakaian fasilitas, dan menyelesaikan kendala bersama!
+
+Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 03! 👉
+
+🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
+📍 Aula SMKN 13 Bandung
+Suaramu menentukan masa depan Trikora!
+
+#PilketosSMKN13 #PrajaSatyaNayaka #Paslon03 #LoviolaAmira #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 4: SAFE ZONE 1:1 VS 4:5 EXPLAINED -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <span>📐 3. Panduan Anatomi Ukuran 4:5 & Safe Zone Grid 1:1</span>
+          <span>📐 4. Panduan Anatomi Ukuran 4:5 & Safe Zone Grid 1:1</span>
         </div>
         <span style="font-size: 12px; color: var(--text-muted);">Kenapa Wajah Tidak Boleh Kepotong?</span>
       </div>
@@ -1636,11 +2377,11 @@
       </div>
     </div>
 
-    <!-- FEATURE 4: DIRECT CLOUD ASSETS -->
+    <!-- FEATURE 5: DIRECT CLOUD ASSETS -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <span>📂 4. Link Cepat Aset Mentahan & Master File</span>
+          <span>📂 5. Link Cepat Aset Mentahan & Master File</span>
         </div>
         <span style="font-size: 12px; color: var(--text-muted);">Akses Langsung Cloud PDD</span>
       </div>
@@ -1691,157 +2432,96 @@
 
   <!-- Interactive JavaScript Logic -->
   <script>
-    // Data Lengkap Caketos untuk Simulasi & Copywriting
+    // Data Lengkap Caketos untuk Simulasi & Copywriting (100% Sesuai Naskah Resmi)
     const CANDIDATES_DATA = {
       '01': {
         num: '01',
         nama: 'SALSYA APRILIA HIKMAH',
-        kelas: 'XI KIMIA ANALISIS 5',
+        kelas: 'XI-KA-5',
         photo: 'assets/candidates/salsya_portrait.jpg',
-        smp: 'SMPN 48 Bandung',
+        smp: 'SMPN 24 Bandung',
         prestasi: [
-          'Juara Lomba Esai Tingkat Pelajar se-Kota Bandung',
-          'Siswa Berprestasi Akademik Program Keahlian Kimia Analisis'
+          'Juara Harapan 3 Lomba Pertolongan Pertama PMR se-Jawa Barat',
+          'Juara Harapan 1 Lomba Clash of Champions PMR se-Jawa Barat'
         ],
         organisasi: [
-          'Anggota Aktif Komisi MPK SMKN 13 Bandung',
-          'Koordinator Acara dan Kepanitiaan MPK 2025/2026',
-          'Penggerak Komunitas Literasi & Debat Sekolah'
+          'Komandan PMR SMPN 24 Bandung Periode 2024-2025',
+          'Ketua Angkatan 28 PMR SMKN 13 Bandung',
+          'Pengurus PMR SMKN 13 Bandung (Divisi Tata Tertib)',
+          'Pengurus OSIS SMKN 13 Bandung (Sekretaris)',
+          'Pengurus Wilayah 7 Forum OSIS Jawa Barat Generasi 13 (Divisi Program Manajemen Learning Center)',
+          'Pengurus Forum OSIS Jawa Barat Generasi 14 (Wakil Ketua Manajemen Learning Center)'
         ],
         visiTitle: 'RISE (Reach, Inspire, Serve, Empower)',
-        visiDesc: 'Mewujudkan OSIS SMKN 13 Bandung sebagai motor penggerak perubahan yang inovatif, berdaya saing, kooperatif, dan inklusif bagi seluruh siswa.',
+        visiDesc: 'Mewujudkan Pengurus OSIS SMKN 13 Bandung Sebagai pengurus yang RISE (Reach, Inspire, Serve, Empower) sebagai penggerak perubahan yang inovatif, inspiratif, dan kolaboratif dalam mengembangkan potensi siswa, menciptakan prestasi, serta menghadirkan dampak positif bagi lingkungan sekolah.',
         proker: [
-          'Student Achievement Article: Publikasi & apresiasi prestasi siswa secara berkala',
-          'PILAH: Peduli Lingkungan Olah Sampah melalui bank sampah terpilah',
-          'CONNECT: Kanal keterbukaan informasi program kerja dan aspirasi OSIS',
-          'REFLECT: Rapat evaluasi bulanan untuk menjaga efektivitas organisasi',
+          'Student Achievement & Inspiration: Apresiasi prestasi siswa di medsos (tips, tantangan & perjalanan)',
+          'PILAH (Peduli Lingkungan Olah Sampah): Gerakan bank sampah terpilah & hidup bersih',
+          'CONNECT: Media digital transparansi program kerja & aspirasi OSIS',
+          'REFLECT: Evaluasi rutin bulanan pengurus untuk efektivitas organisasi',
           'AKSI: Kompetisi pemecahan masalah sekolah oleh ide kreatif siswa'
         ],
-        slogan: '1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama.',
-        caption: `[KENALI CALONMU: PASLON 01 SALSYA APRILIA HIKMAH]
-
-"1 Langkah Memulai, 1 Komitmen Mengabdi, 1 Tujuan untuk Kemajuan Bersama."
-
-Halo Warga Trikora! 👋
-Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 01:
-👤 Salsya Aprilia Hikmah (@salsya)
-📚 Kelas: XI Kimia Analisis 5
-
-✨ VISI:
-RISE (Reach, Inspire, Serve, Empower) — Menjadikan OSIS SMKN 13 sebagai motor penggerak inovatif, berdaya saing, dan inklusif untuk seluruh siswa.
-
-🚀 PROGRAM KERJA UNGGULAN:
-1. Student Achievement Article (Apresiasi karya & prestasi siswa)
-2. PILAH (Peduli Lingkungan Olah Sampah)
-3. CONNECT (Keterbukaan informasi & publikasi berkala)
-4. REFLECT (Evaluasi rutin kinerja pengurus)
-5. AKSI (Ruang solusi inspiratif problem solving siswa)
-
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 01! 👉
-
-🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
-📍 Aula SMKN 13 Bandung
-Suaramu menentukan masa depan Trikora!
-
-#PilketosSMKN13 #PrajaSatyaNayaka #Paslon01 #SalsyaAprilia #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+        slogan: 'Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama.',
+        caption: document.getElementById('raw-01-caption') ? document.getElementById('raw-01-caption').innerText : ''
       },
 
       '02': {
         num: '02',
         nama: 'BIMA PANGESTU SEJATI',
-        kelas: 'XI KIMIA ANALISIS 6',
+        kelas: 'XI-KA-6',
         photo: 'assets/candidates/bima_portrait.jpg',
-        smp: 'SMPN 34 Bandung',
+        smp: 'SMPN 35 Bandung',
         prestasi: [
-          'Juara Turnamen Futsal & Olahraga Tingkat Pelajar',
-          'Peringkat Paralel Akademik Kejuruan Kimia Analisis'
+          'Juara Harapan 1 Membaca dan Menulis Aksara Sunda Tingkat Kota Bandung',
+          'Juara Umum 2 Lomba Tingkat 2 Pramuka Penggalang',
+          'Juara 1 MTQ Tingkat Pesantren',
+          'Juara 3 Pidato Bahasa Arab Tingkat Kecamatan',
+          'Juara 2 Lomba Gerakan Sholat Tingkat Kota Bandung'
         ],
         organisasi: [
-          'Pengurus Aktif OSIS SMKN 13 Bandung Periode 2025/2026',
-          'Koordinator Lapangan Berbagai Event Besar Sekolah',
-          'Pengurus Inti Ekstrakurikuler Olahraga'
+          'Ketua Umum Rohis SMPN 35 Bandung',
+          'Anggota Sekbid 1 OSIS SMPN 35 Bandung'
         ],
-        visiTitle: 'Kolaboratif, Inovatif, Berintegritas',
-        visiDesc: 'Mewujudkan peserta didik SMKN 13 Bandung yang berakhlak mulia, kompeten, dan berkontribusi nyata secara berkelanjutan.',
+        visiTitle: 'Integritas, Kolaboratif, Inovatif',
+        visiDesc: 'Mewujudkan OSIS sebagai organisasi yang berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik yang berakhlak mulia, kompeten, serta berdaya suai melalui kepemimpinan yang aspiratif dan aksi nyata yang berkelanjutan.',
         proker: [
-          'EKSPOSISI: Eksposisi dan Kreasi Siswa SMKN 13 Bandung (Pameran karya, demo kejuruan & kolaborasi lintas jurusan)',
-          'Penguatan Akhlak & Karakter Disiplin Siswa Berkelanjutan',
-          'Pengembangan Prestasi Akademik & Non-Akademik Berstandar Nasional',
-          'Wadah Penampungan & Eksekusi Nyata Aspirasi Seluruh Jurusan'
+          'EXPOKASI (Expo Kompetisi dan Kreasi): Pameran hasil karya & demo kejuruan setiap 6 bulan sekali',
+          'Penanaman nilai akhlak mulia, kedisiplinan & tanggung jawab',
+          'Pengembangan potensi & prestasi akademik maupun non-akademik',
+          'Wadah aspirasi dan kolaborasi seluruh siswa lintas jurusan',
+          'Mewujudkan proker yang terencana, berkelanjutan & berdampak nyata'
         ],
-        slogan: '2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!',
-        caption: `[KENALI CALONMU: PASLON 02 BIMA PANGESTU SEJATI]
-
-"2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!"
-
-Halo Warga Trikora! 👋
-Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 02:
-👤 Bima Pangestu Sejati (@bima)
-📚 Kelas: XI Kimia Analisis 6
-
-✨ VISI:
-Mewujudkan peserta didik SMKN 13 Bandung yang berakhlak mulia, kompeten, dan berkontribusi nyata secara berkelanjutan melalui OSIS yang kolaboratif dan berintegritas.
-
-🚀 PROGRAM KERJA UNGGULAN:
-🎯 EKSPOSISI (Eksposisi dan Kreasi Siswa SMKN 13 Bandung)
-Sebuah festival pameran kejuruan terpadu, demo inovasi kompetensi, dan unjuk bakat lintas konsentrasi keahlian!
-
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 02! 👉
-
-🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
-📍 Aula SMKN 13 Bandung
-Suaramu menentukan masa depan Trikora!
-
-#PilketosSMKN13 #PrajaSatyaNayaka #Paslon02 #BimaPangestu #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+        slogan: 'Bersama 2 Wujudkan Aksi Nyata (2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!)',
+        caption: document.getElementById('raw-02-caption') ? document.getElementById('raw-02-caption').innerText : ''
       },
 
       '03': {
         num: '03',
         nama: 'LOVIOLA AMIRA PRAMESWARI',
-        kelas: 'XI KIMIA ANALISIS 4',
+        kelas: 'XI-KA-6',
         photo: 'assets/candidates/loviola_portrait.jpg',
-        smp: 'SMPN 13 Bandung',
+        smp: 'MTs Cijawura',
         prestasi: [
-          'Finalis Public Speaking & Orasi Pelajar Jawa Barat',
-          'Juara Lomba Cipta Puisi & Pentas Seni Pelajar'
+          'Juara Prasetya Muda 3 Pra Madya Lomba Regu Pengibar Bendera Se-Bandung Raya',
+          'Juara Prasetya Muda 3 Madya Lomba Regu Pengibar Bendera Se-Jawa Barat'
         ],
         organisasi: [
-          'Pengurus Divisi Kesenian & Hubungan Publik OSIS 2025/2026',
-          'Master of Ceremony (MC) Protokoler Acara Resmi Sekolah',
-          'Duta Karakter & Duta Budaya SMKN 13 Bandung'
+          'Ketua Angkatan PASKIBRA MTs Cijawura Periode 2024-2025',
+          'Ketua Angkatan PASKIBRA SMKN 13 Bandung Periode 2026-2027',
+          'Pengurus OSIS SMKN 13 Bandung (Sekbid 2)',
+          'PASKIBRA Kota Bandung (Kebidangan Bina Lapangan)'
         ],
-        visiTitle: 'Berprestasi, Solutif & Berkarakter Unggul',
-        visiDesc: 'Mewujudkan OSIS SMKN 13 Bandung yang berprestasi, inovatif, kreatif, solutif, serta berkarakter unggul berlandaskan nilai kebersamaan.',
+        visiTitle: 'Aktif, Kreatif, Solutif',
+        visiDesc: 'Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter.',
         proker: [
-          'RANGKUL 13: Ruang Kolaborasi Bulanan OSIS, MPK & Ekstrakurikuler',
-          'Kanal Media Digital Kreatif & Transparansi Informasi Terpadu',
-          'Peningkatan Kepedulian Sosial & Gotong Royong Lingkungan Sekolah',
-          'Penguatan Sinergi Lintas Ekskul untuk Menjawab Kendala Bersama'
+          'RANGKUL 13: Ruang Kolaborasi bulanan OSIS, MPK & seluruh Ketua Ekskul',
+          'Kegiatan kreatif di bidang akademik maupun non-akademik',
+          'Komunikasi solid OSIS, MPK, Ekskul & pihak sekolah',
+          'Media digital untuk publikasi, transparansi & apresiasi karya',
+          'Profesionalisme, kejujuran & integritas berorganisasi'
         ],
-        slogan: 'Stop Scrolling, Start Voting! Pilih Nomor 3 For Real Siding!',
-        caption: `[KENALI CALONMU: PASLON 03 LOVIOLA AMIRA PRAMESWARI]
-
-"Stop Scrolling, Start Voting! Pilih Nomor 3 For Real Siding!"
-
-Halo Warga Trikora! 👋
-Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 03:
-👤 Loviola Amira Prameswari (@loviola)
-📚 Kelas: XI Kimia Analisis 4
-
-✨ VISI:
-Mewujudkan OSIS SMKN 13 Bandung yang berprestasi, inovatif, kreatif, solutif, serta berkarakter unggul berlandaskan semangat kebersamaan.
-
-🚀 PROGRAM KERJA UNGGULAN:
-🤝 RANGKUL 13 (Ruang Kolaborasi Bulanan)
-Forum temu bulanan antara pengurus OSIS, MPK, dan perwakilan seluruh ekstrakurikuler untuk menyelaraskan agenda, memonitor program kerja, dan menuntaskan kendala bersama-sama!
-
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan komitmen aksi nyata Paslon 03! 👉
-
-🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
-📍 Aula SMKN 13 Bandung
-Suaramu menentukan masa depan Trikora!
-
-#PilketosSMKN13 #PrajaSatyaNayaka #Paslon03 #LoviolaAmira #MPKSMKN13 #OSISSMKN13 #SuaraSiswaBermakna`
+        slogan: 'Stop scrolling, start voting: Pilih Nomor 3 for real shining!',
+        caption: document.getElementById('raw-03-caption') ? document.getElementById('raw-03-caption').innerText : ''
       }
     };
 
@@ -1870,7 +2550,6 @@ Suaramu menentukan masa depan Trikora!
 
       // Update Slide 2
       document.getElementById('slide2Heading').innerText = 'Rekam Jejak & Prestasi';
-      document.getElementById('slide2Smp').innerText = 'Asal SMP: ' + data.smp;
 
       const presUl = document.getElementById('slide2Prestasi');
       presUl.innerHTML = '';
@@ -1901,7 +2580,10 @@ Suaramu menentukan masa depan Trikora!
       });
 
       // Update Caption
-      document.getElementById('captionTextContent').innerText = data.caption;
+      const rawCap = document.getElementById('raw-' + currentCand + '-caption');
+      if (rawCap) {
+        document.getElementById('captionTextContent').innerText = rawCap.innerText;
+      }
     }
 
     function goToSlide(slideNum) {
@@ -1955,14 +2637,14 @@ Suaramu menentukan masa depan Trikora!
 Nomor Urut: ${data.num}
 Nama: ${data.nama}
 Kelas: ${data.kelas}
+Slogan: "${data.slogan}"
 Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔`;
       } else if (currentSlide === 2) {
         titleEl.innerText = '📋 Naskah Teks Slide 2 (Rekam Jejak & Prestasi)';
-        let presTxt = data.prestasi.map(p => '- ' + p).join('\\n');
-        let orgTxt = data.organisasi.map(o => '- ' + o).join('\\n');
+        let presTxt = data.prestasi.map(p => '• ' + p).join('\n');
+        let orgTxt = data.organisasi.map(o => '• ' + o).join('\n');
         boxEl.innerText = `Header: PROFIL & KAPABILITAS (Slide 2/3)
 Judul: Rekam Jejak & Prestasi
-Asal Sekolah: Asal SMP: ${data.smp}
 
 Daftar Prestasi:
 ${presTxt}
@@ -1971,12 +2653,12 @@ Pengalaman Organisasi:
 ${orgTxt}`;
       } else if (currentSlide === 3) {
         titleEl.innerText = '📋 Naskah Teks Slide 3 (Visi, Misi & Slogan)';
-        let prokTxt = data.proker.map((pr, i) => `${i+1}. ${pr}`).join('\\n');
+        let prokTxt = data.proker.map((pr, i) => `${i+1}. ${pr}`).join('\n');
         boxEl.innerText = `Header: GAGASAN & AKSI NYATA (Slide 3/3)
 Slogan Resmi: "${data.slogan}"
 
 Visi Utama:
-${data.visiTitle} — ${data.visiDesc}
+${data.visiDesc}
 
 Program Kerja Unggulan:
 ${prokTxt}
@@ -1986,11 +2668,32 @@ Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026`;
       }
     }
 
+    // Switch Tabs in Bank Naskah
+    function switchBankTab(cand, tabName, btn) {
+      const card = document.getElementById('paslon-' + cand + '-card');
+      if (!card) return;
+
+      card.querySelectorAll('.bank-tab-btn').forEach(b => b.classList.remove('active'));
+      card.querySelectorAll('.bank-tab-pane').forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetPane = document.getElementById('pane-' + cand + '-' + tabName);
+      if (targetPane) targetPane.classList.add('active');
+    }
+
     function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.innerText = msg;
       toast.className = 'show';
       setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 2200);
+    }
+
+    function copyTextById(elId, label) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText).then(() => {
+        showToast('✅ ' + (label || 'Teks') + ' Berhasil Disalin!');
+      });
     }
 
     function copyCurrentSlideText() {
@@ -2004,6 +2707,38 @@ Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026`;
       const txt = document.getElementById('captionTextContent').innerText;
       navigator.clipboard.writeText(txt).then(() => {
         showToast('✅ Caption Instagram Berhasil Disalin!');
+      });
+    }
+
+    function copyFullCandidateData(candNum) {
+      const bio = document.getElementById('raw-' + candNum + '-bio').innerText;
+      const visi = document.getElementById('raw-' + candNum + '-visi').innerText;
+      const proker = document.getElementById('raw-' + candNum + '-proker').innerText;
+      const slides = document.getElementById('raw-' + candNum + '-slides').innerText;
+      const caption = document.getElementById('raw-' + candNum + '-caption').innerText;
+
+      const fullText = `=====================================================
+DATA LENGKAP KANDIDAT ${candNum} PILKETOS SMKN 13 BANDUNG
+=====================================================
+
+--- 1. PROFIL & BIODATA ---
+${bio}
+
+--- 2. VISI & MISI ---
+${visi}
+
+--- 3. PROGRAM KERJA UNGGULAN ---
+${proker}
+
+--- 4. PANDUAN TEKS SLIDE CANVA ---
+${slides}
+
+--- 5. CAPTION INSTAGRAM ---
+${caption}
+=====================================================`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        showToast('✅ SEMUA Data Paslon ' + candNum + ' Berhasil Disalin!');
       });
     }
 
