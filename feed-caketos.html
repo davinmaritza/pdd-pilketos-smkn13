@@ -212,6 +212,17 @@
       overflow: hidden;
     }
 
+    .designer-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
     .designer-badge-tag {
       display: inline-flex;
       align-items: center;
@@ -691,7 +702,7 @@
     .ig-grid-item {
       position: relative;
       width: 100%;
-      padding-top: 100%; /* 1:1 Aspect ratio */
+      padding-top: 100%;
       overflow: hidden;
       cursor: pointer;
       background: #0D1B2A;
@@ -1043,7 +1054,7 @@
       color: white;
     }
 
-    /* Slide 2 & 3 Styling */
+    /* Slide 2 Styling (Infografis Visi Misi, Proker & Rekam Jejak) */
     .slide-editorial {
       position: relative;
       z-index: 2;
@@ -1051,7 +1062,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px;
+      padding: 18px 20px;
       text-align: left;
       background: linear-gradient(145deg, #0D1B2A 0%, #10243E 60%, #162E4D 100%);
       color: white;
@@ -1065,6 +1076,7 @@
       align-items: center;
       border-bottom: 1px solid rgba(212, 175, 55, 0.3);
       padding-bottom: 8px;
+      margin-bottom: 8px;
     }
 
     .slide-page-badge {
@@ -1079,18 +1091,17 @@
 
     .slide-ed-title {
       font-family: 'League Spartan', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: var(--gold);
-      margin-top: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .slide-box-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 10px 12px;
+      padding: 9px 11px;
       margin-bottom: 8px;
     }
 
@@ -1100,11 +1111,11 @@
     }
 
     .slide-box-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 700;
       color: var(--gold-light);
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -1119,7 +1130,7 @@
     .slide-list {
       list-style: none;
       padding-left: 0;
-      font-size: 11px;
+      font-size: 10.5px;
       color: #CBD5E1;
       line-height: 1.35;
     }
@@ -1146,10 +1157,64 @@
       align-items: center;
       font-size: 10.5px;
       color: #94A3B8;
+      margin-top: 4px;
     }
 
     .slide-footer-cta strong {
       color: var(--gold);
+    }
+
+    /* Slide 3 Styling (Video Orasi Player) */
+    .slide-video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .slide-video-el {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-top-tag-bar {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+    }
+
+    .video-tag-badge {
+      background: rgba(13, 27, 42, 0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .video-bottom-info-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(13, 27, 42, 0.95) 0%, rgba(13, 27, 42, 0.5) 70%, transparent 100%);
+      padding: 16px;
+      z-index: 5;
+      color: white;
+      text-align: left;
     }
 
     /* Carousel Controls */
@@ -1468,18 +1533,20 @@
     <!-- Designer Welcome Banner for Inaya -->
     <div class="designer-banner">
       <div class="designer-badge-tag">
-        <span>✨ PANDUAN DESAIN FEED CANVA • UNTUK INAYA, KAYLA & TIM PDD</span>
+        <span>✨ PANDUAN STRUKTUR FEED CAROUSEL 3 SLIDE (REVISI FINAL)</span>
       </div>
-      <h2 class="designer-title">Bank Naskah Lengkap & Visual Feed Instagram Caketos</h2>
+      <h2 class="designer-title">Struktur Carousel: Slide 1 Foto, Slide 2 Visi Misi, Slide 3 Video Orasi</h2>
       <p class="designer-desc">
-        Halaman ini menyediakan seluruh <strong>naskah resmi (Visi, Misi, Proker, Biodata, & Slogan)</strong> yang sudah disusun berurutan dari <strong>Paslon 01, 02, dan 03</strong> dengan tombol <strong>1-Klik Copy-Paste</strong> agar tim desain bisa langsung menempelkannya ke Canva tanpa perlu mengetik ulang!
+        Format feed Instagram untuk setiap paslon adalah <strong>Carousel 3 Slide</strong>:<br>
+        📸 <strong>Slide 1:</strong> Foto Utama Paslon + Nomor Urut + Nama/Kelas + Slogan (Cover Grid).<br>
+        📜 <strong>Slide 2:</strong> Visi Misi, Program Kerja Unggulan, Prestasi & Pengalaman Organisasi.<br>
+        🎬 <strong>Slide 3:</strong> Video Orasi Paslon (dengan BGM & motion graphics teks).
       </p>
       <div class="quick-spec-pills">
-        <div class="spec-pill">📐 <strong>Ukuran Kanvas:</strong> 1080 x 1350 px (4:5 Portrait)</div>
-        <div class="spec-pill">🛡️ <strong>Grid Safe Zone:</strong> 1080 x 1080 px (Tengah)</div>
-        <div class="spec-pill">🎨 <strong>Warna:</strong> Navy #0D1B2A • Gold #D4AF37 • White #FFFFFF</div>
-        <div class="spec-pill">🔤 <strong>Font:</strong> League Spartan (Judul) & Poppins (Isi)</div>
-        <div class="spec-pill">📋 <strong>Fitur Cepat:</strong> Tombol Salin Naskah 1-Klik Siap Pakai</div>
+        <div class="spec-pill">📸 <strong>Slide 1:</strong> Foto Portrait HD (Safe Zone 1:1 Tengah)</div>
+        <div class="spec-pill">📜 <strong>Slide 2:</strong> Infografis Visi Misi & Proker Lengkap</div>
+        <div class="spec-pill">🎬 <strong>Slide 3:</strong> Video Orasi MP4 (Audio Jernih + Teks)</div>
+        <div class="spec-pill">📋 <strong>Bank Data:</strong> Tombol 1-Klik Copy-Paste Naskah Resmi</div>
       </div>
     </div>
 
@@ -1621,7 +1688,7 @@
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <span>🖼️ 2. Blueprint Carousel 3 Slide Interaktif (Rasio 4:5 Portrait)</span>
+          <span>🖼️ 2. Blueprint Carousel 3 Slide: Slide 1 Foto • Slide 2 Visi Misi • Slide 3 Video</span>
         </div>
         <div style="display: flex; gap: 8px;">
           <button class="safe-toggle-btn" id="toggleSafeBtn" onclick="toggleSafeZone()">
@@ -1667,7 +1734,7 @@
               <span class="safe-zone-label">Area Aman 1:1 (Grid Feed)</span>
             </div>
 
-            <!-- SLIDE 1: COVER -->
+            <!-- SLIDE 1: FOTO UTAMA & IDENTITAS -->
             <div class="slide-layer active" id="slide1Layer">
               <img src="assets/candidates/salsya_portrait.jpg" id="slide1Photo" alt="Candidate" class="s1-bg-photo">
               <div class="s1-gradient"></div>
@@ -1686,35 +1753,53 @@
                   <div class="s1-cand-class" id="slide1Class">XI-KA-5</div>
                   <div class="s1-swipe-cta">
                     <span>PRAJA SATYA NAYAKA</span>
-                    <strong>Geser Visi & Misi ➔</strong>
+                    <strong>Slide 2: Visi & Misi ➔</strong>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SLIDE 2: REKAM JEJAK & PRESTASI -->
+            <!-- SLIDE 2: VISI MISI, PROKER & REKAM JEJAK -->
             <div class="slide-layer" id="slide2Layer">
               <div class="slide-editorial">
                 <div>
                   <div class="slide-ed-header">
                     <div style="font-size: 11px; font-weight: 700; color: #94A3B8;">
-                      PROFIL & KAPABILITAS
+                      INFOGRAFIS GAGASAN & PROFIL
                     </div>
                     <span class="slide-page-badge">SLIDE 2 / 3</span>
                   </div>
 
-                  <h3 class="slide-ed-title" id="slide2Heading">Rekam Jejak & Prestasi</h3>
+                  <h3 class="slide-ed-title" id="slide2Heading">Visi, Misi & Program Unggulan</h3>
 
+                  <!-- Visi Box -->
                   <div class="slide-box-card highlight">
-                    <div class="slide-box-title">🏆 Capaian & Prestasi</div>
-                    <ul class="slide-list" id="slide2Prestasi">
+                    <div class="slide-box-title">🎯 Visi Utama</div>
+                    <div class="slide-box-text" id="slide2Visi">
+                      <!-- Populated by JS -->
+                    </div>
+                  </div>
+
+                  <!-- Misi Poin Utama -->
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">📜 Poin Misi Unggulan</div>
+                    <ul class="slide-list" id="slide2Misi">
                       <!-- Populated by JS -->
                     </ul>
                   </div>
 
+                  <!-- Proker Unggulan -->
                   <div class="slide-box-card">
-                    <div class="slide-box-title">👥 Pengalaman Organisasi</div>
-                    <ul class="slide-list" id="slide2Organisasi">
+                    <div class="slide-box-title">🚀 Program Kerja Utama</div>
+                    <div class="slide-box-text" id="slide2Proker">
+                      <!-- Populated by JS -->
+                    </div>
+                  </div>
+
+                  <!-- Rekam Jejak Singkat -->
+                  <div class="slide-box-card">
+                    <div class="slide-box-title">🏆 Prestasi & Rekam Jejak</div>
+                    <ul class="slide-list" id="slide2Prestasi">
                       <!-- Populated by JS -->
                     </ul>
                   </div>
@@ -1722,50 +1807,31 @@
 
                 <div class="slide-footer-cta">
                   <span>Masa Bakti 2026/2027</span>
-                  <strong>Geser Program Kerja ➔</strong>
+                  <strong>Slide 3: Video Orasi ➔</strong>
                 </div>
               </div>
             </div>
 
-            <!-- SLIDE 3: VISI MISI & PROKER -->
+            <!-- SLIDE 3: VIDEO ORASI RESMI -->
             <div class="slide-layer" id="slide3Layer">
-              <div class="slide-editorial">
-                <div>
-                  <div class="slide-ed-header">
-                    <div style="font-size: 11px; font-weight: 700; color: #94A3B8;">
-                      GAGASAN & AKSI NYATA
-                    </div>
-                    <span class="slide-page-badge">SLIDE 3 / 3</span>
-                  </div>
-
-                  <!-- Slogan -->
-                  <div class="slide-box-card highlight" style="margin-top: 8px;">
-                    <div class="slide-box-title">📣 Slogan Kepemimpinan</div>
-                    <div class="slide-box-text" id="slide3Slogan" style="font-weight: 700; color: #FFFFFF; font-size: 11.5px;">
-                      <!-- Populated by JS -->
-                    </div>
-                  </div>
-
-                  <!-- Visi -->
-                  <div class="slide-box-card">
-                    <div class="slide-box-title">🎯 Visi Utama</div>
-                    <div class="slide-box-text" id="slide3Visi">
-                      <!-- Populated by JS -->
-                    </div>
-                  </div>
-
-                  <!-- Proker Unggulan -->
-                  <div class="slide-box-card">
-                    <div class="slide-box-title">🚀 Program Unggulan</div>
-                    <ul class="slide-list" id="slide3Proker">
-                      <!-- Populated by JS -->
-                    </ul>
-                  </div>
+              <div class="slide-video-container">
+                <div class="video-top-tag-bar">
+                  <span class="video-tag-badge" id="slide3VideoBadge">🎬 Video Orasi Paslon 01</span>
+                  <span class="slide-page-badge" style="background: rgba(0,0,0,0.6); color: white;">SLIDE 3 / 3</span>
                 </div>
 
-                <div class="slide-footer-cta">
-                  <span>Pemungutan Suara: <strong>28 Okt 2026</strong></span>
-                  <strong>#GunakanHakSuaramu</strong>
+                <video id="slide3VideoPlayer" class="slide-video-el" controls playsinline preload="metadata">
+                  <source id="slide3VideoSource" src="assets/videos/salsya_preview.mp4" type="video/mp4">
+                  Browser Anda tidak mendukung tag video.
+                </video>
+
+                <div class="video-bottom-info-bar">
+                  <div style="font-size: 11px; font-weight: 800; color: var(--gold);" id="slide3CandTitle">
+                    SALSYA APRILIA HIKMAH
+                  </div>
+                  <div style="font-size: 9.5px; color: #CBD5E1; margin-top: 2px;">
+                    ▶️ Video Orasi Master (BGM Piano + Motion Graphics Subtitle)
+                  </div>
                 </div>
               </div>
             </div>
@@ -1813,13 +1879,12 @@
           <!-- Canva Quick Check -->
           <div class="spec-card" style="background: #F1F5F9;">
             <div class="spec-card-title" style="color: var(--navy);">
-              <span>🎨 Checklist Desain Canva Inaya</span>
+              <span>🎨 Rekomendasi Format Carousel 3 Slide</span>
             </div>
             <ul style="font-size: 12px; color: #475569; line-height: 1.6; padding-left: 18px;">
-              <li><strong>Rasio:</strong> 1080 x 1350 px (Gunakan safe zone 1:1 di tengah).</li>
-              <li><strong>Logo:</strong> SMKN 13 & MPK di pojok kiri atas Slide 1.</li>
-              <li><strong>Nomor Urut:</strong> Lingkaran emas besar (01 / 02 / 03) di kanan atas.</li>
-              <li><strong>Konsistensi Font:</strong> League Spartan (Judul) & Poppins (Isi).</li>
+              <li><strong>Slide 1 (Foto):</strong> Ekspor dari Canva sebagai JPG 1080x1350 px kualitas tinggi.</li>
+              <li><strong>Slide 2 (Visi Misi):</strong> Ekspor dari Canva sebagai JPG 1080x1350 px layout teks terbaca jelas.</li>
+              <li><strong>Slide 3 (Video):</strong> Upload file video MP4 Master (sudah ada BGM & motion graphics teks) langsung dari folder <code>00_FINAL_VIDEO_EXPORT</code>.</li>
             </ul>
           </div>
         </div>
@@ -1868,7 +1933,7 @@
           <button class="bank-tab-btn active" onclick="switchBankTab('01', 'visi', this)">🎯 Visi & Misi Lengkap</button>
           <button class="bank-tab-btn" onclick="switchBankTab('01', 'bio', this)">👤 Profil & Biodata</button>
           <button class="bank-tab-btn" onclick="switchBankTab('01', 'proker', this)">🚀 Program Kerja Unggulan</button>
-          <button class="bank-tab-btn" onclick="switchBankTab('01', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('01', 'slides', this)">📱 Teks Slide 1, 2 & Video 3</button>
           <button class="bank-tab-btn" onclick="switchBankTab('01', 'caption', this)">✍️ Caption Instagram</button>
         </div>
 
@@ -1940,46 +2005,47 @@ Program evaluasi rutin bulanan bagi pengurus OSIS untuk meninjau perkembangan pr
 Kompetisi Inovasi dan Pemecahan Masalah di Sekolah. Wadah bagi siswa untuk mengembangkan ide kreatif dalam mengatasi permasalahan sekolah, seperti kebersihan, kedisiplinan, kenyamanan belajar, dan hubungan antarsiswa. Ide terbaik akan dikembangkan menjadi aksi nyata melalui kolaborasi siswa, OSIS, dan sekolah.</pre>
         </div>
 
-        <!-- Tab 4: Teks Slide Canva -->
+        <!-- Tab 4: Teks Slide Canva & Video -->
         <div class="bank-tab-pane" id="pane-01-slides">
           <div class="bank-pane-top">
-            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <span class="bank-pane-title">📱 Panduan Susunan 3 Slide: Slide 1 Foto, Slide 2 Visi Misi, Slide 3 Video</span>
             <button class="btn-copy-pane" onclick="copyTextById('raw-01-slides', 'Teks Slide Paslon 01')">📋 Salin Teks Slide</button>
           </div>
-          <pre class="raw-copy-box" id="raw-01-slides">PANDUAN TEKS SLIDE CANVA - PASLON 01 (SALSYA APRILIA HIKMAH)
+          <pre class="raw-copy-box" id="raw-01-slides">PANDUAN KONTEN FEED CAROUSEL PASLON 01 (SALSYA APRILIA HIKMAH)
 
-[SLIDE 1 - COVER DEPAN / FEED GRID]
-• Tag Atas: CALON KETUA OSIS 2026/2027
-• Nomor Urut: 01
+[SLIDE 1 - FOTO UTAMA & COVER GRID IG]
+• Foto: Portrait HD jas almamater resmi (crop wajah aman di 1:1 tengah)
+• Badge Nomor Urut: 01 (Emas lingkaran)
 • Nama Lengkap: SALSYA APRILIA HIKMAH
 • Kelas: XI-KA-5
-• Slogan di Koran/Kotak: "Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."
-• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+• Slogan: "Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama."
+• Logo: SMKN 13 Bandung & MPK di pojok kiri atas
+• Footer CTA: Geser Visi & Misi (Slide 2) ➔
 
-[SLIDE 2 - PROFIL & REKAM JEJAK]
-• Header: PROFIL & KAPABILITAS (Slide 2/3)
-• Judul: Rekam Jejak & Prestasi
-• Asal Sekolah: SMPN 24 Bandung
-• Prestasi:
-  - Juara Harapan 3 Lomba Pertolongan Pertama PMR se-Jawa Barat
-  - Juara Harapan 1 Lomba Clash of Champions PMR se-Jawa Barat
-• Pengalaman Organisasi:
-  - Wakil Ketua Manajemen Learning Center (Forum OSIS Jabar Gen 14)
-  - Pengurus Wilayah 7 Forum OSIS Jabar Gen 13
-  - Sekretaris OSIS SMKN 13 Bandung
-  - Ketua Angkatan 28 & Pengurus PMR SMKN 13 Bandung
-  - Komandan PMR SMPN 24 Bandung (2024-2025)
-
-[SLIDE 3 - GAGASAN & AKSI NYATA]
-• Header: GAGASAN & AKSI NYATA (Slide 3/3)
+[SLIDE 2 - INFOGRAFIS VISI MISI, PROKER & REKAM JEJAK]
+• Header: VISI, MISI & PROGRAM KERJA
 • Visi Inti: RISE (Reach, Inspire, Serve, Empower) — Penggerak perubahan inovatif, inspiratif, dan kolaboratif.
-• 5 Program Unggulan:
-  1. Student Achievement & Inspiration (Artikel edukasi & apresiasi karya)
-  2. PILAH (Peduli Lingkungan Olah Sampah & Bank Sampah)
-  3. CONNECT (Media keterbukaan informasi digital OSIS)
-  4. REFLECT (Evaluasi rutin bulanan pengurus)
-  5. AKSI (Kompetisi problem-solving & inovasi sekolah)
-• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+• 6 Poin Misi:
+  1. Pengembangan potensi & prestasi akademik/nonakademik
+  2. Keterbukaan informasi dan komunikasi OSIS
+  3. Peduli lingkungan hidup & pilah sampah
+  4. Pemanfaatan teknologi digital & transparansi
+  5. Evaluasi rutin & kualitas kinerja pengurus
+  6. Budaya berpikir kritis & problem solving
+• Proker Unggulan: Student Achievement, PILAH, CONNECT, REFLECT, AKSI.
+• Prestasi & Organisasi:
+  - Juara Harapan 3 Pertolongan Pertama PMR se-Jabar & Juara 1 Clash of Champions PMR se-Jabar
+  - Wakil Ketua MLC Forum OSIS Jabar & Sekretaris OSIS SMKN 13
+• Footer CTA: Geser Tonton Video Orasi (Slide 3) ➔
+
+[SLIDE 3 - VIDEO ORASI CAKETOS (MEDIA VIDEO MP4)]
+• Media: File Video Orasi Master (Format MP4 Vertikal 9:16 / 4:5)
+• Elemen Video:
+  - Opening bumper logo SMKN 13 & MPK
+  - Lower third nama & nomor urut 01
+  - Top card teks poin visi, misi, proker & slogan
+  - Audio pidato jernih dinormalisasi + backsound piano tipis
+• File Master: 01_SALSYA_ORASI_MASTER_BGM_GRAPHICS.mp4 (di folder Google Drive / Photos)</pre>
         </div>
 
         <!-- Tab 5: Caption Instagram -->
@@ -2007,7 +2073,9 @@ Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 01:
 4. REFLECT (Evaluasi rutin bulanan untuk efektivitas organisasi)
 5. AKSI — Ajang Kreativitas dan Solusi Inspiratif (Kompetisi pemecahan masalah sekolah)
 
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 01! 👉
+👉 Slide 1: Foto & Identitas Calon
+👉 Slide 2: Visi, Misi & Gagasan Lengkap
+👉 Slide 3: Video Orasi Langsung Paslon 01 (Dengarkan suaranya!)
 
 🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
 📍 Aula SMKN 13 Bandung
@@ -2042,7 +2110,7 @@ Suaramu menentukan masa depan Trikora!
           <button class="bank-tab-btn active" onclick="switchBankTab('02', 'visi', this)">🎯 Visi & Misi Lengkap</button>
           <button class="bank-tab-btn" onclick="switchBankTab('02', 'bio', this)">👤 Profil & Biodata</button>
           <button class="bank-tab-btn" onclick="switchBankTab('02', 'proker', this)">🚀 Program Kerja Unggulan</button>
-          <button class="bank-tab-btn" onclick="switchBankTab('02', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('02', 'slides', this)">📱 Teks Slide 1, 2 & Video 3</button>
           <button class="bank-tab-btn" onclick="switchBankTab('02', 'caption', this)">✍️ Caption Instagram</button>
         </div>
 
@@ -2103,48 +2171,47 @@ EXPOKASI (Expo Kompetisi dan Kreasi)
 • Tujuan: Menjadi panggung apresiasi karya kejuruan, festival unjuk bakat lintas jurusan, serta melatih daya saing dan jiwa kewirausahaan siswa SMKN 13 Bandung.</pre>
         </div>
 
-        <!-- Tab 4: Teks Slide Canva -->
+        <!-- Tab 4: Teks Slide Canva & Video -->
         <div class="bank-tab-pane" id="pane-02-slides">
           <div class="bank-pane-top">
-            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <span class="bank-pane-title">📱 Panduan Susunan 3 Slide: Slide 1 Foto, Slide 2 Visi Misi, Slide 3 Video</span>
             <button class="btn-copy-pane" onclick="copyTextById('raw-02-slides', 'Teks Slide Paslon 02')">📋 Salin Teks Slide</button>
           </div>
-          <pre class="raw-copy-box" id="raw-02-slides">PANDUAN TEKS SLIDE CANVA - PASLON 02 (BIMA PANGESTU SEJATI)
+          <pre class="raw-copy-box" id="raw-02-slides">PANDUAN KONTEN FEED CAROUSEL PASLON 02 (BIMA PANGESTU SEJATI)
 
-[SLIDE 1 - COVER DEPAN / FEED GRID]
-• Tag Atas: CALON KETUA OSIS 2026/2027
-• Nomor Urut: 02
+[SLIDE 1 - FOTO UTAMA & COVER GRID IG]
+• Foto: Portrait HD jas almamater resmi (crop wajah aman di 1:1 tengah)
+• Badge Nomor Urut: 02 (Emas lingkaran)
 • Nama Lengkap: BIMA PANGESTU SEJATI
 • Kelas: XI-KA-6
-• Slogan di Koran/Kotak: "Bersama 2 Wujudkan Aksi Nyata"
-• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+• Slogan: "Bersama 2 Wujudkan Aksi Nyata"
+• Logo: SMKN 13 Bandung & MPK di pojok kiri atas
+• Footer CTA: Geser Visi & Misi (Slide 2) ➔
 
-[SLIDE 2 - PROFIL & REKAM JEJAK]
-• Header: PROFIL & KAPABILITAS (Slide 2/3)
-• Judul: Rekam Jejak & Prestasi
-• Asal Sekolah: SMPN 35 Bandung
-• Prestasi:
-  - Juara Harapan 1 Membaca & Menulis Aksara Sunda Kota Bandung
-  - Juara Umum 2 Lomba Tingkat 2 Pramuka Penggalang
-  - Juara 1 MTQ Tingkat Pesantren
-  - Juara 3 Pidato Bahasa Arab Tingkat Kecamatan
-  - Juara 2 Gerakan Sholat Kota Bandung
-• Pengalaman Organisasi:
-  - Ketua Umum Rohis SMPN 35 Bandung
-  - Anggota Sekbid 1 OSIS SMPN 35 Bandung
-
-[SLIDE 3 - GAGASAN & AKSI NYATA]
-• Header: GAGASAN & AKSI NYATA (Slide 3/3)
-• Visi Inti: "Mewujudkan OSIS berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik berakhlak mulia, kompeten, dan berdaya suai."
-• 5 Misi Unggulan:
+[SLIDE 2 - INFOGRAFIS VISI MISI, PROKER & REKAM JEJAK]
+• Header: VISI, MISI & PROGRAM KERJA
+• Visi Inti: Mewujudkan OSIS berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik berakhlak mulia, kompeten, serta berdaya suai.
+• 5 Poin Misi:
   1. Akhlak mulia, kedisiplinan & tanggung jawab
-  2. Pengembangan potensi & prestasi akademik/non-akademik
-  3. Mendorong inovasi & adaptasi perkembangan zaman
+  2. Pengembangan potensi & prestasi siswa
+  3. Inovasi & kemampuan beradaptasi zaman
   4. Wadah aspirasi & kolaborasi seluruh siswa
-  5. Program kerja terencana, berkelanjutan & berdampak nyata
+  5. Program kerja terencana, berkelanjutan & nyata
 • Program Unggulan:
-  - EXPOKASI (Expo Kompetisi & Kreasi Kejuruan Siswa SMKN 13 per Semester)
-• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+  - EXPOKASI (Expo Kompetisi & Kreasi Siswa per Semester)
+• Prestasi & Organisasi:
+  - Juara Aksara Sunda Kota Bandung, Juara 1 MTQ, Juara Umum LT2 Pramuka
+  - Ketua Umum Rohis SMPN 35 Bandung & OSIS Sekbid 1
+• Footer CTA: Geser Tonton Video Orasi (Slide 3) ➔
+
+[SLIDE 3 - VIDEO ORASI CAKETOS (MEDIA VIDEO MP4)]
+• Media: File Video Orasi Master (Format MP4 Vertikal 9:16 / 4:5)
+• Elemen Video:
+  - Opening bumper logo SMKN 13 & MPK
+  - Lower third nama & nomor urut 02
+  - Top card teks poin visi, misi, proker & slogan
+  - Audio pidato jernih dinormalisasi + backsound piano tipis
+• File Master: 02_BIMA_ORASI_MASTER_BGM_GRAPHICS.mp4 (di folder Google Drive / Photos)</pre>
         </div>
 
         <!-- Tab 5: Caption Instagram -->
@@ -2170,7 +2237,9 @@ Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 02:
 🎯 EXPOKASI (Expo Kompetisi dan Kreasi)
 Festival pameran kejuruan terpadu dan demonstrasi keterampilan dari setiap program keahlian yang diadakan berkala tiap semester sebagai wadah kreasi nyata seluruh jurusan!
 
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 02! 👉
+👉 Slide 1: Foto & Identitas Calon
+👉 Slide 2: Visi, Misi & Gagasan Lengkap
+👉 Slide 3: Video Orasi Langsung Paslon 02 (Dengarkan suaranya!)
 
 🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
 📍 Aula SMKN 13 Bandung
@@ -2205,7 +2274,7 @@ Suaramu menentukan masa depan Trikora!
           <button class="bank-tab-btn active" onclick="switchBankTab('03', 'visi', this)">🎯 Visi & Misi Lengkap</button>
           <button class="bank-tab-btn" onclick="switchBankTab('03', 'bio', this)">👤 Profil & Biodata</button>
           <button class="bank-tab-btn" onclick="switchBankTab('03', 'proker', this)">🚀 Program Kerja Unggulan</button>
-          <button class="bank-tab-btn" onclick="switchBankTab('03', 'slides', this)">📱 Teks Slide Canva (1-3)</button>
+          <button class="bank-tab-btn" onclick="switchBankTab('03', 'slides', this)">📱 Teks Slide 1, 2 & Video 3</button>
           <button class="bank-tab-btn" onclick="switchBankTab('03', 'caption', this)">✍️ Caption Instagram</button>
         </div>
 
@@ -2265,47 +2334,47 @@ Ruang Kolaborasi, Komunikasi Solid, dan Penyaluran Aspirasi Tanpa Sekat.
 Diskusi Ketua Organisasi & Ekskul: Pertemuan rutin bulanan antara OSIS, MPK, dan seluruh Ketua Ekstrakurikuler untuk menyelaraskan kalender kegiatan sekolah, membagi penggunaan sarana/fasilitas, dan menyelesaikan kendala kegiatan bersama-sama.</pre>
         </div>
 
-        <!-- Tab 4: Teks Slide Canva -->
+        <!-- Tab 4: Teks Slide Canva & Video -->
         <div class="bank-tab-pane" id="pane-03-slides">
           <div class="bank-pane-top">
-            <span class="bank-pane-title">📱 Format Pembagian Teks Slide Canva (Slide 1, 2, 3)</span>
+            <span class="bank-pane-title">📱 Panduan Susunan 3 Slide: Slide 1 Foto, Slide 2 Visi Misi, Slide 3 Video</span>
             <button class="btn-copy-pane" onclick="copyTextById('raw-03-slides', 'Teks Slide Paslon 03')">📋 Salin Teks Slide</button>
           </div>
-          <pre class="raw-copy-box" id="raw-03-slides">PANDUAN TEKS SLIDE CANVA - PASLON 03 (LOVIOLA AMIRA PRAMESWARI)
+          <pre class="raw-copy-box" id="raw-03-slides">PANDUAN KONTEN FEED CAROUSEL PASLON 03 (LOVIOLA AMIRA PRAMESWARI)
 
-[SLIDE 1 - COVER DEPAN / FEED GRID]
-• Tag Atas: CALON KETUA OSIS 2026/2027
-• Nomor Urut: 03
+[SLIDE 1 - FOTO UTAMA & COVER GRID IG]
+• Foto: Portrait HD jas almamater resmi (crop wajah aman di 1:1 tengah)
+• Badge Nomor Urut: 03 (Emas lingkaran)
 • Nama Lengkap: LOVIOLA AMIRA PRAMESWARI
 • Kelas: XI-KA-6
-• Slogan di Koran/Kotak: "Stop scrolling, start voting: Pilih Nomor 3 for real shining!"
-• Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔
+• Slogan: "Stop scrolling, start voting: Pilih Nomor 3 for real shining!"
+• Logo: SMKN 13 Bandung & MPK di pojok kiri atas
+• Footer CTA: Geser Visi & Misi (Slide 2) ➔
 
-[SLIDE 2 - PROFIL & REKAM JEJAK]
-• Header: PROFIL & KAPABILITAS (Slide 2/3)
-• Judul: Rekam Jejak & Prestasi
-• Asal Sekolah: MTs Cijawura
-• Prestasi:
-  - Juara Prasetya Muda 3 Pra Madya Lomba Regu Pengibar Bendera Bandung Raya
-  - Juara Prasetya Muda 3 Madya Lomba Regu Pengibar Bendera Jawa Barat
-• Pengalaman Organisasi:
-  - Ketua Angkatan PASKIBRA SMKN 13 Bandung (2026-2027)
-  - Pengurus OSIS SMKN 13 Bandung (Sekbid 2)
-  - PASKIBRA Kota Bandung (Kebidangan Bina Lapangan)
-  - Ketua Angkatan PASKIBRA MTs Cijawura (2024-2025)
-
-[SLIDE 3 - GAGASAN & AKSI NYATA]
-• Header: GAGASAN & AKSI NYATA (Slide 3/3)
+[SLIDE 2 - INFOGRAFIS VISI MISI, PROKER & REKAM JEJAK]
+• Header: VISI, MISI & PROGRAM KERJA
 • Visi Inti: "Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter."
-• 5 Misi Unggulan:
+• 5 Poin Misi:
   1. Kegiatan kreatif akademik & non-akademik
   2. Komunikasi solid OSIS, MPK, Ekskul & Sekolah
   3. Kedisiplinan, kepemimpinan & kepedulian sosial
-  4. Media digital publikasi & transparansi karya
+  4. Media digital publikasi & apresiasi karya
   5. Profesionalisme, kejujuran & tanggung jawab
 • Program Unggulan:
   - RANGKUL 13 (Ruang Kolaborasi & Pertemuan Bulanan OSIS, MPK, dan Seluruh Ketua Ekskul)
-• Footer: Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026</pre>
+• Prestasi & Organisasi:
+  - Juara Lomba Pengibar Bendera Jawa Barat & Bandung Raya
+  - Ketua Angkatan Paskibra SMKN 13 & Pengurus OSIS Sekbid 2
+• Footer CTA: Geser Tonton Video Orasi (Slide 3) ➔
+
+[SLIDE 3 - VIDEO ORASI CAKETOS (MEDIA VIDEO MP4)]
+• Media: File Video Orasi Master (Format MP4 Vertikal 9:16 / 4:5)
+• Elemen Video:
+  - Opening bumper logo SMKN 13 & MPK
+  - Lower third nama & nomor urut 03
+  - Top card teks poin visi, misi, proker & slogan
+  - Audio pidato jernih dinormalisasi + backsound piano tipis
+• File Master: 03_LOVIOLA_ORASI_MASTER_BGM_GRAPHICS.mp4 (di folder Google Drive / Photos)</pre>
         </div>
 
         <!-- Tab 5: Caption Instagram -->
@@ -2330,7 +2399,9 @@ Perkenalkan, Kandidat Calon Ketua OSIS SMKN 13 Bandung Nomor Urut 03:
 🤝 RANGKUL 13 (Ruang Kolaborasi Bulanan)
 Forum temu rutin bulanan antara pengurus OSIS, MPK, dan seluruh Ketua Ekstrakurikuler untuk menyelaraskan agenda kegiatan, berbagi pemakaian fasilitas, dan menyelesaikan kendala bersama!
 
-Geser postingan ini untuk melihat rekam jejak, visi misi lengkap, dan aksi nyata Paslon 03! 👉
+👉 Slide 1: Foto & Identitas Calon
+👉 Slide 2: Visi, Misi & Gagasan Lengkap
+👉 Slide 3: Video Orasi Langsung Paslon 03 (Dengarkan suaranya!)
 
 🗓️ Hari Pemungutan Suara: Rabu, 28 Oktober 2026
 📍 Aula SMKN 13 Bandung
@@ -2406,8 +2477,8 @@ Suaramu menentukan masa depan Trikora!
         <a href="https://drive.google.com/drive/folders/16n_sxj-L_qduvs2bZcLRmnzAivpU8JOy" target="_blank" style="text-decoration: none;">
           <div class="spec-card" style="height: 100%; border-left: 4px solid #10B981; transition: transform 0.2s; cursor: pointer;">
             <div style="font-size: 20px; margin-bottom: 6px;">📸</div>
-            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Folder Foto HD Caketos</strong>
-            <span style="font-size: 11.5px; color: var(--text-muted);">Foto portrait mentahan resolusi kamera Canon (Salsya, Bima, Loviola).</span>
+            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Folder Foto & Video Master HD</strong>
+            <span style="font-size: 11.5px; color: var(--text-muted);">Foto portrait kamera Canon + video orasi master (BGM & graphics).</span>
           </div>
         </a>
 
@@ -2439,6 +2510,7 @@ Suaramu menentukan masa depan Trikora!
         nama: 'SALSYA APRILIA HIKMAH',
         kelas: 'XI-KA-5',
         photo: 'assets/candidates/salsya_portrait.jpg',
+        video: 'assets/videos/salsya_preview.mp4',
         smp: 'SMPN 24 Bandung',
         prestasi: [
           'Juara Harapan 3 Lomba Pertolongan Pertama PMR se-Jawa Barat',
@@ -2449,20 +2521,22 @@ Suaramu menentukan masa depan Trikora!
           'Ketua Angkatan 28 PMR SMKN 13 Bandung',
           'Pengurus PMR SMKN 13 Bandung (Divisi Tata Tertib)',
           'Pengurus OSIS SMKN 13 Bandung (Sekretaris)',
-          'Pengurus Wilayah 7 Forum OSIS Jawa Barat Generasi 13 (Divisi Program Manajemen Learning Center)',
-          'Pengurus Forum OSIS Jawa Barat Generasi 14 (Wakil Ketua Manajemen Learning Center)'
+          'Pengurus Wilayah 7 Forum OSIS Jawa Barat Generasi 13',
+          'Pengurus Forum OSIS Jawa Barat Generasi 14 (Wakil Ketua MLC)'
+        ],
+        misiPoin: [
+          'Mengembangkan potensi & prestasi siswa akademik/nonakademik serta apresiasi karya.',
+          'Membangun keterbukaan informasi dan komunikasi OSIS yang mudah diakses.',
+          'Kepedulian lingkungan hidup, pemilahan sampah, dan pembiasaan hidup bersih.',
+          'Mendorong teknologi digital untuk penyebaran informasi & aspirasi.',
+          'Evaluasi rutin, kedisiplinan, dan tanggung jawab kerja organisasi.',
+          'Mewujudkan budaya berpikir kritis dan solusi inovatif permasalahan sekolah.'
         ],
         visiTitle: 'RISE (Reach, Inspire, Serve, Empower)',
         visiDesc: 'Mewujudkan Pengurus OSIS SMKN 13 Bandung Sebagai pengurus yang RISE (Reach, Inspire, Serve, Empower) sebagai penggerak perubahan yang inovatif, inspiratif, dan kolaboratif dalam mengembangkan potensi siswa, menciptakan prestasi, serta menghadirkan dampak positif bagi lingkungan sekolah.',
-        proker: [
-          'Student Achievement & Inspiration: Apresiasi prestasi siswa di medsos (tips, tantangan & perjalanan)',
-          'PILAH (Peduli Lingkungan Olah Sampah): Gerakan bank sampah terpilah & hidup bersih',
-          'CONNECT: Media digital transparansi program kerja & aspirasi OSIS',
-          'REFLECT: Evaluasi rutin bulanan pengurus untuk efektivitas organisasi',
-          'AKSI: Kompetisi pemecahan masalah sekolah oleh ide kreatif siswa'
-        ],
-        slogan: 'Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama.',
-        caption: document.getElementById('raw-01-caption') ? document.getElementById('raw-01-caption').innerText : ''
+        prokerTitle: 'Student Achievement, PILAH, CONNECT, REFLECT, AKSI',
+        prokerDesc: '5 Program Unggulan: Student Achievement & Inspiration (Artikel medsos), PILAH (Bank sampah terpilah), CONNECT (Pusat transparansi info), REFLECT (Evaluasi bulanan), dan AKSI (Kompetisi problem-solving sekolah).',
+        slogan: 'Satu Langkah Memulai, Satu Komitmen Mengabdi, Satu Tujuan untuk Kemajuan Bersama.'
       },
 
       '02': {
@@ -2470,6 +2544,7 @@ Suaramu menentukan masa depan Trikora!
         nama: 'BIMA PANGESTU SEJATI',
         kelas: 'XI-KA-6',
         photo: 'assets/candidates/bima_portrait.jpg',
+        video: 'assets/videos/bima_preview.mp4',
         smp: 'SMPN 35 Bandung',
         prestasi: [
           'Juara Harapan 1 Membaca dan Menulis Aksara Sunda Tingkat Kota Bandung',
@@ -2482,17 +2557,18 @@ Suaramu menentukan masa depan Trikora!
           'Ketua Umum Rohis SMPN 35 Bandung',
           'Anggota Sekbid 1 OSIS SMPN 35 Bandung'
         ],
+        misiPoin: [
+          'Menanamkan nilai akhlak mulia, kedisiplinan, dan tanggung jawab.',
+          'Mengembangkan potensi, kreativitas, dan prestasi akademik/non-akademik.',
+          'Mendorong inovasi dan kemampuan beradaptasi terhadap perkembangan zaman.',
+          'Menjadikan OSIS sebagai wadah aspirasi dan kolaborasi seluruh siswa.',
+          'Mewujudkan program kerja yang terencana, berkelanjutan, dan berdampak nyata.'
+        ],
         visiTitle: 'Integritas, Kolaboratif, Inovatif',
         visiDesc: 'Mewujudkan OSIS sebagai organisasi yang berintegritas, kolaboratif, dan inovatif dalam membentuk peserta didik yang berakhlak mulia, kompeten, serta berdaya suai melalui kepemimpinan yang aspiratif dan aksi nyata yang berkelanjutan.',
-        proker: [
-          'EXPOKASI (Expo Kompetisi dan Kreasi): Pameran hasil karya & demo kejuruan setiap 6 bulan sekali',
-          'Penanaman nilai akhlak mulia, kedisiplinan & tanggung jawab',
-          'Pengembangan potensi & prestasi akademik maupun non-akademik',
-          'Wadah aspirasi dan kolaborasi seluruh siswa lintas jurusan',
-          'Mewujudkan proker yang terencana, berkelanjutan & berdampak nyata'
-        ],
-        slogan: 'Bersama 2 Wujudkan Aksi Nyata (2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!)',
-        caption: document.getElementById('raw-02-caption') ? document.getElementById('raw-02-caption').innerText : ''
+        prokerTitle: 'EXPOKASI (Expo Kompetisi dan Kreasi)',
+        prokerDesc: 'Pameran hasil karya inovasi siswa dengan demonstrasi keterampilan dari setiap program keahlian secara berkala setiap 6 bulan sekali (per semester).',
+        slogan: 'Bersama 2 Wujudkan Aksi Nyata (2 Kali Berpikir, 2 Kali Mempertimbangkan, 2 Kali Aksi Nyata!)'
       },
 
       '03': {
@@ -2500,6 +2576,7 @@ Suaramu menentukan masa depan Trikora!
         nama: 'LOVIOLA AMIRA PRAMESWARI',
         kelas: 'XI-KA-6',
         photo: 'assets/candidates/loviola_portrait.jpg',
+        video: 'assets/videos/loviola_preview.mp4',
         smp: 'MTs Cijawura',
         prestasi: [
           'Juara Prasetya Muda 3 Pra Madya Lomba Regu Pengibar Bendera Se-Bandung Raya',
@@ -2511,17 +2588,18 @@ Suaramu menentukan masa depan Trikora!
           'Pengurus OSIS SMKN 13 Bandung (Sekbid 2)',
           'PASKIBRA Kota Bandung (Kebidangan Bina Lapangan)'
         ],
+        misiPoin: [
+          'Menyelenggarakan kegiatan kreatif di bidang akademik maupun non-akademik.',
+          'Membangun komunikasi solid antara OSIS, MPK, ekskul, dan sekolah.',
+          'Menumbuhkan kedisiplinan, kepemimpinan, dan kepedulian sosial.',
+          'Memanfaatkan media digital untuk publikasi, transparansi, dan apresiasi karya.',
+          'Menjaga profesionalisme, kejujuran, dan tanggung jawab berorganisasi.'
+        ],
         visiTitle: 'Aktif, Kreatif, Solutif',
         visiDesc: 'Menjadikan OSIS SMKN 13 Bandung wadah yang Aktif, Kreatif, dan Solutif untuk mewujudkan siswa berprestasi dan berkarakter.',
-        proker: [
-          'RANGKUL 13: Ruang Kolaborasi bulanan OSIS, MPK & seluruh Ketua Ekskul',
-          'Kegiatan kreatif di bidang akademik maupun non-akademik',
-          'Komunikasi solid OSIS, MPK, Ekskul & pihak sekolah',
-          'Media digital untuk publikasi, transparansi & apresiasi karya',
-          'Profesionalisme, kejujuran & integritas berorganisasi'
-        ],
-        slogan: 'Stop scrolling, start voting: Pilih Nomor 3 for real shining!',
-        caption: document.getElementById('raw-03-caption') ? document.getElementById('raw-03-caption').innerText : ''
+        prokerTitle: 'RANGKUL 13 (Ruang Kolaborasi Bulanan)',
+        prokerDesc: 'Pertemuan rutin bulanan antara OSIS, MPK, dan seluruh Ketua Ekstrakurikuler untuk menyelaraskan kalender kegiatan dan menuntaskan kendala bersama.',
+        slogan: 'Stop scrolling, start voting: Pilih Nomor 3 for real shining!'
       }
     };
 
@@ -2548,8 +2626,18 @@ Suaramu menentukan masa depan Trikora!
       document.getElementById('slide1Name').innerText = data.nama;
       document.getElementById('slide1Class').innerText = data.kelas;
 
-      // Update Slide 2
-      document.getElementById('slide2Heading').innerText = 'Rekam Jejak & Prestasi';
+      // Update Slide 2 (Visi, Misi, Proker & Rekam Jejak)
+      document.getElementById('slide2Visi').innerText = data.visiDesc;
+
+      const misiUl = document.getElementById('slide2Misi');
+      misiUl.innerHTML = '';
+      data.misiPoin.slice(0, 3).forEach(m => {
+        const li = document.createElement('li');
+        li.innerText = m;
+        misiUl.appendChild(li);
+      });
+
+      document.getElementById('slide2Proker').innerText = data.prokerDesc;
 
       const presUl = document.getElementById('slide2Prestasi');
       presUl.innerHTML = '';
@@ -2559,25 +2647,14 @@ Suaramu menentukan masa depan Trikora!
         presUl.appendChild(li);
       });
 
-      const orgUl = document.getElementById('slide2Organisasi');
-      orgUl.innerHTML = '';
-      data.organisasi.forEach(o => {
-        const li = document.createElement('li');
-        li.innerText = o;
-        orgUl.appendChild(li);
-      });
-
-      // Update Slide 3
-      document.getElementById('slide3Slogan').innerText = '"' + data.slogan + '"';
-      document.getElementById('slide3Visi').innerHTML = '<strong>' + data.visiTitle + ':</strong> ' + data.visiDesc;
-
-      const prokUl = document.getElementById('slide3Proker');
-      prokUl.innerHTML = '';
-      data.proker.slice(0, 3).forEach(pr => {
-        const li = document.createElement('li');
-        li.innerText = pr;
-        prokUl.appendChild(li);
-      });
+      // Update Slide 3 (Video)
+      document.getElementById('slide3VideoBadge').innerText = '🎬 Video Orasi Paslon ' + data.num;
+      document.getElementById('slide3CandTitle').innerText = data.num + ' • ' + data.nama;
+      
+      const vPlayer = document.getElementById('slide3VideoPlayer');
+      const vSource = document.getElementById('slide3VideoSource');
+      vSource.src = data.video;
+      vPlayer.load();
 
       // Update Caption
       const rawCap = document.getElementById('raw-' + currentCand + '-caption');
@@ -2593,6 +2670,12 @@ Suaramu menentukan masa depan Trikora!
 
       document.getElementById('slide' + slideNum + 'Layer').classList.add('active');
       document.getElementById('dot' + slideNum).classList.add('active');
+
+      // Pause video when leaving slide 3
+      const vPlayer = document.getElementById('slide3VideoPlayer');
+      if (slideNum !== 3 && vPlayer) {
+        vPlayer.pause();
+      }
 
       updateCopyText();
     }
@@ -2632,39 +2715,45 @@ Suaramu menentukan masa depan Trikora!
       const boxEl = document.getElementById('copyTextContent');
 
       if (currentSlide === 1) {
-        titleEl.innerText = '📋 Naskah Teks Slide 1 (Cover / Grid Feed)';
+        titleEl.innerText = '📋 Naskah Teks Slide 1 (Foto & Cover Grid)';
         boxEl.innerText = `Tag: CALON KETUA OSIS 2026/2027
 Nomor Urut: ${data.num}
 Nama: ${data.nama}
 Kelas: ${data.kelas}
 Slogan: "${data.slogan}"
-Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi ➔`;
+Footer: PRAJA SATYA NAYAKA • Geser Visi & Misi (Slide 2) ➔`;
       } else if (currentSlide === 2) {
-        titleEl.innerText = '📋 Naskah Teks Slide 2 (Rekam Jejak & Prestasi)';
+        titleEl.innerText = '📋 Naskah Teks Slide 2 (Visi Misi, Proker & Profil)';
+        let misiTxt = data.misiPoin.map((m, i) => `${i+1}. ${m}`).join('\n');
         let presTxt = data.prestasi.map(p => '• ' + p).join('\n');
-        let orgTxt = data.organisasi.map(o => '• ' + o).join('\n');
-        boxEl.innerText = `Header: PROFIL & KAPABILITAS (Slide 2/3)
-Judul: Rekam Jejak & Prestasi
-
-Daftar Prestasi:
-${presTxt}
-
-Pengalaman Organisasi:
-${orgTxt}`;
-      } else if (currentSlide === 3) {
-        titleEl.innerText = '📋 Naskah Teks Slide 3 (Visi, Misi & Slogan)';
-        let prokTxt = data.proker.map((pr, i) => `${i+1}. ${pr}`).join('\n');
-        boxEl.innerText = `Header: GAGASAN & AKSI NYATA (Slide 3/3)
-Slogan Resmi: "${data.slogan}"
-
+        boxEl.innerText = `Header: VISI, MISI & PROGRAM KERJA (Slide 2/3)
 Visi Utama:
-${data.visiDesc}
+"${data.visiDesc}"
+
+Misi Utama:
+${misiTxt}
 
 Program Kerja Unggulan:
-${prokTxt}
+${data.prokerDesc}
+
+Prestasi:
+${presTxt}
 
 Footer CTA:
-Kenali Calonmu, Gunakan Hak Suaramu! • 28 Okt 2026`;
+Kenali Calonmu, Gunakan Hak Suaramu! • Geser Tonton Video Orasi (Slide 3) ➔`;
+      } else if (currentSlide === 3) {
+        titleEl.innerText = '🎬 Panduan Slide 3 (Video Orasi Paslon)';
+        boxEl.innerText = `Format Media: File Video MP4 (Carousel Slide 3)
+Durasi: 1 - 2 Menit (Pidato Orasi Resmi)
+Kelengkapan Video:
+- Intro Bumper Logo SMKN 13 & MPK
+- Lower Third Nama: ${data.nama} (${data.num})
+- Top Card Visi, Misi, Proker & Slogan
+- Audio Suara Jernih + Backsound Piano Tipis (-24dB Ducking)
+
+File Master Siap Upload:
+${data.num === '01' ? '01_SALSYA_ORASI_MASTER_BGM_GRAPHICS.mp4' : (data.num === '02' ? '02_BIMA_ORASI_MASTER_BGM_GRAPHICS.mp4' : '03_LOVIOLA_ORASI_MASTER_BGM_GRAPHICS.mp4')}
+Lokasi: Google Drive / Google Photos / 00_FINAL_VIDEO_EXPORT`;
       }
     }
 
@@ -2730,7 +2819,7 @@ ${visi}
 --- 3. PROGRAM KERJA UNGGULAN ---
 ${proker}
 
---- 4. PANDUAN TEKS SLIDE CANVA ---
+--- 4. PANDUAN STRUKTUR CAROUSEL (SLIDE 1 FOTO, 2 VISI MISI, 3 VIDEO) ---
 ${slides}
 
 --- 5. CAPTION INSTAGRAM ---
