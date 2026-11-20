@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDD Tunduk — Davin Maritza</title>
+  <title>pdd tunduk</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -16,156 +13,113 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #090D12;
-      color: #F1F5F9;
+      background-color: #8ACE00;
+      color: #000000;
+      font-family: Arial, Helvetica, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 24px 20px;
-    }
-
-    .container {
-      max-width: 440px;
-      width: 100%;
       text-align: center;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
-    .logos {
-      display: inline-flex;
+    .brat-box {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
-      background: #FFFFFF;
-      padding: 6px 12px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      width: 100%;
+      max-width: 540px;
     }
 
-    .logos img {
-      height: 28px;
-      width: auto;
-      object-fit: contain;
-      display: block;
+    .brat-title {
+      font-size: clamp(48px, 11vw, 76px);
+      font-weight: 400;
+      letter-spacing: -2px;
+      line-height: 1;
+      filter: blur(0.75px);
+      margin-bottom: 12px;
+      text-transform: lowercase;
     }
 
-    h1 {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: #FFFFFF;
-      margin-bottom: 6px;
+    .brat-sub {
+      font-size: clamp(18px, 4.5vw, 26px);
+      font-weight: 400;
+      letter-spacing: -0.6px;
+      filter: blur(0.55px);
+      margin-bottom: 44px;
+      text-transform: lowercase;
     }
 
-    .subtitle {
-      color: #94A3B8;
-      font-size: 15px;
-      margin-bottom: 32px;
-    }
-
-    .links {
+    .brat-links {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 100%;
+      max-width: 300px;
     }
 
-    .link-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #111720;
-      border: 1px solid #1E293B;
-      padding: 18px 22px;
-      border-radius: 14px;
+    .brat-btn {
+      display: block;
+      padding: 14px 24px;
+      background: #000000;
+      color: #8ACE00;
       text-decoration: none;
-      color: #FFFFFF;
-      transition: all 0.2s ease;
-    }
-
-    .link-card:hover {
-      background: #16202C;
-      border-color: #D4AF37;
-      transform: translateY(-2px);
-    }
-
-    .link-card:active {
-      transform: translateY(0);
-    }
-
-    .link-info {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .link-title {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: 0.3px;
+      letter-spacing: -0.5px;
+      border-radius: 999px;
+      text-transform: lowercase;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      filter: blur(0.2px);
     }
 
-    .link-desc {
-      font-size: 12px;
-      color: #64748B;
-      font-weight: 400;
-      margin-top: 2px;
+    .brat-btn:hover {
+      transform: scale(1.04);
+      opacity: 0.9;
     }
 
-    .arrow {
-      color: #D4AF37;
-      font-size: 20px;
-      font-weight: 700;
-      transition: transform 0.2s ease;
+    .brat-btn:active {
+      transform: scale(0.97);
     }
 
-    .link-card:hover .arrow {
-      transform: translateX(3px);
+    .brat-btn.outline {
+      background: transparent;
+      color: #000000;
+      border: 2.5px solid #000000;
+    }
+
+    .brat-btn.outline:hover {
+      background: rgba(0, 0, 0, 0.08);
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 48px;
       font-size: 12px;
-      color: #475569;
+      letter-spacing: -0.3px;
+      text-transform: lowercase;
+      filter: blur(0.3px);
+      opacity: 0.75;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="logos">
-      <img src="logo-smkn13.png" alt="Logo SMKN 13">
-      <img src="LOGO OSIS.png" alt="Logo OSIS">
-      <img src="logo-mpk.png" alt="Logo MPK">
-    </div>
+  <div class="brat-box">
+    <div class="brat-title">pdd tunduk</div>
+    <div class="brat-sub">udah 5 tahun pdd ni gue</div>
 
-    <h1>PDD Tunduk.</h1>
-    <p class="subtitle">Udah 5 tahun PDD nih gue.</p>
-
-    <div class="links">
-      <a href="administrasi.html" class="link-card">
-        <div class="link-info">
-          <span class="link-title">Pilketos</span>
-          <span class="link-desc">SMKN 13 Bandung · Praja Satya Nayaka</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-
-      <a href="hgn/index.html" class="link-card">
-        <div class="link-info">
-          <span class="link-title">HGN 2026</span>
-          <span class="link-desc">Hari Guru Nasional · Internal Portal</span>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+    <div class="brat-links">
+      <a href="administrasi.html" class="brat-btn">pilketos ➔</a>
+      <a href="hgn/index.html" class="brat-btn outline">hgn 2026 ➔</a>
     </div>
 
     <footer>
-      Davin Maritza · SMKN 13 Bandung
+      davin maritza · smkn 13 bandung
     </footer>
   </div>
 
