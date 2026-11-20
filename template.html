@@ -2,7 +2,10 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0D1B2A">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0D1B2A">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>🎨 Template & Aset — Divisi PDD PILKETOS SMKN 13 BANDUNG</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +31,11 @@
       --tag-other-txt: #475467;
     }
 
+    html {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -38,16 +46,30 @@
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
+    }
+
+    button, a, [role="button"], .btn-header, .tab-btn {
+      touch-action: manipulation;
+    }
+
+    button, [role="button"], .btn-header, .tab-btn, .status-pill, .brand-badge {
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    .btn-header:active, .tab-btn:active {
+      transform: scale(0.96);
     }
 
     /* Top Banner / Navbar */
     header {
       background: linear-gradient(135deg, var(--navy) 0%, #10243E 100%);
       color: white;
-      padding: 24px 20px;
+      padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 24px max(20px, env(safe-area-inset-left));
       border-bottom: 3px solid var(--gold);
       box-shadow: 0 4px 20px rgba(13, 27, 42, 0.15);
     }
@@ -81,10 +103,37 @@
       flex-shrink: 0;
     }
 
-    .brand-logo-container:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
-      border-color: var(--gold);
+    @media (hover: hover) and (pointer: fine) {
+      .brand-logo-container:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+        border-color: var(--gold);
+      }
+      .btn-header:hover {
+        background: var(--gold);
+        color: var(--navy);
+        border-color: var(--gold);
+      }
+      .tab-btn:hover {
+        color: var(--navy);
+        background: rgba(255, 255, 255, 0.6);
+      }
+      tbody tr:hover {
+        background-color: #EDF4FE;
+      }
+      .status-select:hover {
+        filter: brightness(0.96);
+      }
+      .file-link:hover {
+        text-decoration: underline;
+      }
+      .color-box:hover {
+        transform: translateY(-2px);
+      }
+      .roadmap-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      }
     }
 
     .brand-logo-img {
@@ -139,11 +188,7 @@
       gap: 6px;
     }
 
-    .btn-header:hover {
-      background: var(--gold);
-      color: var(--navy);
-      border-color: var(--gold);
-    }
+
 
     /* Main Container */
     main {
@@ -192,10 +237,7 @@
       gap: 6px;
     }
 
-    .tab-btn:hover {
-      color: var(--navy);
-      background: rgba(255, 255, 255, 0.6);
-    }
+
 
     .tab-btn.active {
       background: var(--card-bg);
@@ -284,10 +326,6 @@
       background-color: #F8FAFC;
     }
 
-    tbody tr:hover {
-      background-color: #EDF4FE;
-    }
-
     .badge {
       display: inline-block;
       padding: 4px 10px;
@@ -326,10 +364,6 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
 
-    .status-select:hover {
-      filter: brightness(0.96);
-    }
-
     .status-select.not-started { background: #F1F5F9; color: #475569; }
     .status-select.in-progress { background: #FEF3C7; color: #92400E; }
     .status-select.review      { background: #DBEAFE; color: #1E40AF; }
@@ -343,10 +377,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .file-link:hover {
-      text-decoration: underline;
     }
 
     .note-text {
@@ -395,10 +425,6 @@
       cursor: pointer;
       position: relative;
       transition: transform 0.15s;
-    }
-
-    .color-box:hover {
-      transform: translateY(-2px);
     }
 
     .color-box .hex {
@@ -500,11 +526,6 @@
       padding: 18px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .roadmap-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
 
     .roadmap-step-badge {
@@ -1015,7 +1036,7 @@
         width: 100%;
         box-sizing: border-box;
         padding: 11px 14px 11px 36px;
-        font-size: 13px;
+        font-size: 16px;
       }
 
       .mobile-table-hint {
@@ -1024,6 +1045,8 @@
 
       .table-container {
         border-radius: 10px;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
       }
 
       #administrasi table,

@@ -2,7 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#8ACE00">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>pdd tunduk</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
   <style>
@@ -12,19 +14,23 @@
       padding: 0;
     }
 
+    html {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+      overscroll-behavior: none;
+    }
+
     body {
       background-color: #8ACE00;
       color: #000000;
       font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 24px 20px;
+      padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
       text-align: center;
-      user-select: none;
-      -webkit-user-select: none;
     }
 
     .brat-box {
@@ -65,7 +71,7 @@
 
     .brat-btn {
       display: block;
-      padding: 14px 24px;
+      padding: 16px 24px;
       background: #000000;
       color: #8ACE00;
       text-decoration: none;
@@ -74,17 +80,17 @@
       letter-spacing: -0.5px;
       border-radius: 999px;
       text-transform: lowercase;
-      transition: transform 0.15s ease, opacity 0.15s ease;
       filter: blur(0.2px);
-    }
-
-    .brat-btn:hover {
-      transform: scale(1.04);
-      opacity: 0.9;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      transition: transform 120ms ease-out, opacity 120ms ease-out;
     }
 
     .brat-btn:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
+      opacity: 0.85;
     }
 
     .brat-btn.outline {
@@ -93,8 +99,19 @@
       border: 2.5px solid #000000;
     }
 
-    .brat-btn.outline:hover {
-      background: rgba(0, 0, 0, 0.08);
+    .brat-btn.outline:active {
+      background: rgba(0, 0, 0, 0.12);
+      transform: scale(0.96);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .brat-btn:hover {
+        transform: scale(1.03);
+        opacity: 0.9;
+      }
+      .brat-btn.outline:hover {
+        background: rgba(0, 0, 0, 0.08);
+      }
     }
 
     footer {
