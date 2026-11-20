@@ -435,6 +435,12 @@ table.data-table tr:hover {
   border: 1px solid #CBD5E1;
 }
 
+.status-upcoming {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
 .status-progress {
   background: #EBF3FD;
   color: #1E40AF;
