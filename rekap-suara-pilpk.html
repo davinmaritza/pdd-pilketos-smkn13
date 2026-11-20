@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Rekap Suara PILPK 2026 — SMKN 13 Bandung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Cinzel:wght@700;800;900&family=Playfair+Display:ital,wght@1,700;1,900&family=Poppins:wght@600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0F172A;
+      color: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .toolbar {
+      max-width: 540px;
+      width: 100%;
+      background: #1E293B;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #334155;
+      gap: 12px;
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, #D4AF37 0%, #F59E0B 100%);
+      color: #0F172A;
+      font-weight: 700;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.4);
+    }
+
+    /* 9:16 Instagram Story Canvas (1080x1920 scaled to 540x960 for display) */
+    .poster-container {
+      width: 540px;
+      height: 960px;
+      position: relative;
+      background: url('assets/canva_rekap_assets/background_podium_canva.jpg') no-repeat center top;
+      background-size: cover;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Top Logo Badge */
+    .top-badge {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid #64748B;
+      border-radius: 10px;
+      padding: 4px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 20;
+    }
+
+    .top-badge img {
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .top-badge span {
+      color: #0F172A;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Big Title */
+    .title-box {
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 20;
+    }
+
+    .title-main {
+      font-family: 'League Spartan', 'Impact', sans-serif;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0A3A82;
+      -webkit-text-stroke: 2.5px #FFFFFF;
+      text-shadow: 0 4px 0 #051E44, 0 8px 16px rgba(0,0,0,0.4);
+    }
+
+    .title-sub {
+      font-family: 'League Spartan', 'Impact', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0A3A82;
+      -webkit-text-stroke: 2px #FFFFFF;
+      text-shadow: 0 3px 0 #051E44, 0 6px 12px rgba(0,0,0,0.3);
+      margin-top: 2px;
+    }
+
+    .title-meta {
+      display: inline-block;
+      background: rgba(10, 58, 130, 0.85);
+      color: #F8FAFC;
+      border: 1px solid #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Candidate Podium Cards */
+    .podium-group {
+      position: absolute;
+      top: 180px;
+      left: 0;
+      right: 0;
+      bottom: 240px;
+      z-index: 15;
+    }
+
+    /* Candidate 1: Center Pillar (Winner) */
+    .candidate-card.rank-1 {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 170px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Candidate 2: Left Pillar */
+    .candidate-card.rank-2 {
+      position: absolute;
+      top: 130px;
+      left: 28px;
+      width: 150px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Candidate 3: Right Pillar */
+    .candidate-card.rank-3 {
+      position: absolute;
+      top: 150px;
+      right: 28px;
+      width: 150px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Big Percentage Display */
+    .percent-wrap {
+      position: relative;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .percent-number {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 56px;
+      color: #6B0818;
+      -webkit-text-stroke: 2px #FFFFFF;
+      text-shadow: 0 4px 0 #38030C, 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    .percent-wrap.rank-1 .percent-number {
+      font-size: 64px;
+      color: #800A1D;
+    }
+
+    .percent-label {
+      position: absolute;
+      bottom: 2px;
+      right: -8px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    /* Candidate Headshot Circle */
+    .candidate-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3.5px solid #F59E0B;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4), inset 0 0 8px rgba(0,0,0,0.2);
+      object-fit: cover;
+      background: #FFFFFF;
+    }
+
+    .rank-1 .candidate-photo {
+      width: 104px;
+      height: 104px;
+      border-color: #D4AF37;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    .rank-2 .candidate-photo {
+      border-color: #E2E8F0;
+    }
+
+    .rank-3 .candidate-photo {
+      border-color: #CD7F32;
+    }
+
+    /* Red Name Ribbon */
+    .name-ribbon {
+      background: linear-gradient(180deg, #991B1B 0%, #7F1D1D 100%);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .rank-1 .name-ribbon {
+      font-size: 12px;
+      padding: 4px 12px;
+      background: linear-gradient(180deg, #B91C1C 0%, #881337 100%);
+    }
+
+    .votes-detail {
+      font-size: 10px;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 2px 8px;
+      margin-top: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Arch Ribbon Banner */
+    .arch-ribbon {
+      position: absolute;
+      bottom: 275px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 440px;
+      z-index: 25;
+      text-align: center;
+    }
+
+    .arch-ribbon-text {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 28px;
+      color: #0A2540;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+      letter-spacing: 2px;
+      padding-top: 14px;
+    }
+
+    /* Bottom Info Badges */
+    .bottom-tag-left {
+      position: absolute;
+      bottom: 125px;
+      left: 20px;
+      background: #D97706;
+      color: white;
+      font-weight: 900;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 2px solid #FDE68A;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 20;
+    }
+
+    .bottom-tag-right {
+      position: absolute;
+      bottom: 125px;
+      right: 20px;
+      background: #D97706;
+      color: white;
+      font-weight: 900;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 2px solid #FDE68A;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 20;
+    }
+
+    .footer-credits {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <div>
+      <strong style="color:#D4AF37;">Hasil Rekap Suara PILPK 2026</strong>
+      <div style="font-size:12px; color:#94A3B8;">Format 9:16 Instagram Story (1080x1920)</div>
+    </div>
+    <button class="btn-download" onclick="downloadPoster()">⬇️ Download PNG HD</button>
+  </div>
+
+  <div class="poster-container" id="posterArea">
+    <!-- Top Badge -->
+    <div class="top-badge">
+      <img src="logo-smkn13.png" alt="SMKN 13">
+      <img src="logo-mpk.png" alt="MPK">
+      <img src="LOGO OSIS.png" alt="OSIS">
+      <span>PILPK 2026</span>
+    </div>
+
+    <!-- Main Title -->
+    <div class="title-box">
+      <div class="title-main">HASIL REKAP</div>
+      <div class="title-sub">SUARA PILPK 2026</div>
+      <div class="title-meta">SMKN 13 BANDUNG • TOTAL SUARA: 1.255 (100%)</div>
+    </div>
+
+    <!-- Podium Candidates -->
+    <div class="podium-group">
+      <!-- Juara 1: Salsya Aprilia Hikmah (Center Pillar - Highest) -->
+      <div class="candidate-card rank-1">
+        <div class="percent-wrap rank-1">
+          <span class="percent-number">57%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/salsya_portrait.jpg" alt="Salsya Aprilia">
+        <div class="name-ribbon">SALSYA APRILIA</div>
+        <div class="votes-detail">715 Suara • XI AK 5</div>
+      </div>
+
+      <!-- Juara 2: Bima Pangestu Sejati (Left Pillar - Medium) -->
+      <div class="candidate-card rank-2">
+        <div class="percent-wrap">
+          <span class="percent-number">35%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/bima_portrait.jpg" alt="Bima Pangestu">
+        <div class="name-ribbon">BIMA PANGESTU</div>
+        <div class="votes-detail">435 Suara • XI AK 6</div>
+      </div>
+
+      <!-- Juara 3: Loviola Amira Prameswari (Right Pillar - Lower) -->
+      <div class="candidate-card rank-3">
+        <div class="percent-wrap">
+          <span class="percent-number">8%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/loviola_portrait.jpg" alt="Loviola Amira">
+        <div class="name-ribbon">LOVIOLA AMIRA</div>
+        <div class="votes-detail">105 Suara • XI AK 6</div>
+      </div>
+    </div>
+
+    <!-- Arch Banner Tagline -->
+    <div class="arch-ribbon">
+      <div class="arch-ribbon-text">Praja Satya Nayaka</div>
+    </div>
+
+    <!-- Bottom Signs -->
+    <div class="bottom-tag-left">SUARA SAH!</div>
+    <div class="bottom-tag-right">TERIMA KASIH!</div>
+
+    <div class="footer-credits">
+      KOMISI PEMILIHAN KETUA OSIS/PK • SMKN 13 BANDUNG 2026
+    </div>
+  </div>
+
+  <script>
+    function downloadPoster() {
+      const el = document.getElementById('posterArea');
+      html2canvas(el, {
+        scale: 2, // 1080x1920 Full HD
+        useCORS: true,
+        backgroundColor: null
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'POSTER_HASIL_REKAP_SUARA_PILPK_2026.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>

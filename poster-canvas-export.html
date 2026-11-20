@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Poster Hasil Rekap Suara PILPK 2026 - SMKN 13 Bandung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Cinzel:wght@700;800;900&family=Playfair+Display:ital,wght@1,700;1,900&family=Poppins:wght@600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+    }
+
+    .poster-container {
+      width: 1080px;
+      height: 1920px;
+      position: relative;
+      background: url('assets/canva_rekap_assets/background_podium_canva.jpg') no-repeat center top;
+      background-size: 1080px 1920px;
+      overflow: hidden;
+    }
+
+    /* Top Logo Badge */
+    .top-badge {
+      position: absolute;
+      top: 44px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      border: 3px solid #64748B;
+      border-radius: 18px;
+      padding: 8px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      z-index: 20;
+    }
+
+    .top-badge img {
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .top-badge span {
+      color: #0F172A;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* Main Big Title */
+    .title-box {
+      position: absolute;
+      top: 145px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 20;
+    }
+
+    .title-main {
+      font-family: 'League Spartan', 'Impact', sans-serif;
+      font-size: 88px;
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0A3A82;
+      -webkit-text-stroke: 5px #FFFFFF;
+      text-shadow: 0 8px 0 #051E44, 0 16px 32px rgba(0,0,0,0.45);
+    }
+
+    .title-sub {
+      font-family: 'League Spartan', 'Impact', sans-serif;
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0A3A82;
+      -webkit-text-stroke: 4px #FFFFFF;
+      text-shadow: 0 6px 0 #051E44, 0 12px 24px rgba(0,0,0,0.35);
+      margin-top: 4px;
+    }
+
+    .title-meta {
+      display: inline-block;
+      background: rgba(10, 58, 130, 0.92);
+      color: #F8FAFC;
+      border: 2px solid #FFFFFF;
+      font-size: 20px;
+      font-weight: 800;
+      padding: 6px 24px;
+      border-radius: 40px;
+      margin-top: 14px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Candidate Podium Cards */
+    .podium-group {
+      position: absolute;
+      top: 360px;
+      left: 0;
+      right: 0;
+      bottom: 480px;
+      z-index: 15;
+    }
+
+    /* Candidate 1: Center Pillar (Winner - Salsya) */
+    .candidate-card.rank-1 {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 340px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Candidate 2: Left Pillar (Bima) */
+    .candidate-card.rank-2 {
+      position: absolute;
+      top: 260px;
+      left: 55px;
+      width: 300px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Candidate 3: Right Pillar (Loviola) */
+    .candidate-card.rank-3 {
+      position: absolute;
+      top: 300px;
+      right: 55px;
+      width: 300px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Big Percentage Display */
+    .percent-wrap {
+      position: relative;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .percent-number {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 112px;
+      color: #6B0818;
+      -webkit-text-stroke: 4px #FFFFFF;
+      text-shadow: 0 8px 0 #38030C, 0 12px 24px rgba(0,0,0,0.5);
+    }
+
+    .percent-wrap.rank-1 .percent-number {
+      font-size: 130px;
+      color: #800A1D;
+    }
+
+    .percent-label {
+      position: absolute;
+      bottom: 8px;
+      right: -16px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 32px;
+      font-weight: 800;
+      color: #FFFFFF;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+    }
+
+    /* Candidate Headshot Circle */
+    .candidate-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 7px solid #F59E0B;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+      object-fit: cover;
+      background: #FFFFFF;
+    }
+
+    .rank-1 .candidate-photo {
+      width: 210px;
+      height: 210px;
+      border-color: #D4AF37;
+      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.6);
+    }
+
+    .rank-2 .candidate-photo {
+      border-color: #E2E8F0;
+    }
+
+    .rank-3 .candidate-photo {
+      border-color: #CD7F32;
+    }
+
+    /* Red Name Ribbon */
+    .name-ribbon {
+      background: linear-gradient(180deg, #991B1B 0%, #7F1D1D 100%);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 22px;
+      padding: 6px 20px;
+      border-radius: 8px;
+      margin-top: 16px;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .rank-1 .name-ribbon {
+      font-size: 24px;
+      padding: 8px 24px;
+      background: linear-gradient(180deg, #B91C1C 0%, #881337 100%);
+    }
+
+    .votes-detail {
+      font-size: 19px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background: rgba(15, 23, 42, 0.88);
+      border-radius: 20px;
+      padding: 4px 16px;
+      margin-top: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Arch Ribbon Banner */
+    .arch-ribbon {
+      position: absolute;
+      bottom: 550px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 880px;
+      z-index: 25;
+      text-align: center;
+    }
+
+    .arch-ribbon-text {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 56px;
+      color: #0A2540;
+      text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+      letter-spacing: 4px;
+      padding-top: 28px;
+    }
+
+    /* Bottom Info Badges */
+    .bottom-tag-left {
+      position: absolute;
+      bottom: 250px;
+      left: 40px;
+      background: #D97706;
+      color: white;
+      font-weight: 900;
+      font-size: 26px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      border: 3px solid #FDE68A;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      z-index: 20;
+    }
+
+    .bottom-tag-right {
+      position: absolute;
+      bottom: 250px;
+      right: 40px;
+      background: #D97706;
+      color: white;
+      font-weight: 900;
+      font-size: 26px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      border: 3px solid #FDE68A;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      z-index: 20;
+    }
+
+    .footer-credits {
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+      z-index: 20;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-container">
+    <!-- Top Badge -->
+    <div class="top-badge">
+      <img src="logo-smkn13.png" alt="SMKN 13">
+      <img src="logo-mpk.png" alt="MPK">
+      <img src="LOGO OSIS.png" alt="OSIS">
+      <span>PILPK 2026</span>
+    </div>
+
+    <!-- Main Title -->
+    <div class="title-box">
+      <div class="title-main">HASIL REKAP</div>
+      <div class="title-sub">SUARA PILPK 2026</div>
+      <div class="title-meta">SMKN 13 BANDUNG • TOTAL SUARA: 1.255 (100%)</div>
+    </div>
+
+    <!-- Podium Candidates -->
+    <div class="podium-group">
+      <!-- Juara 1: Salsya Aprilia Hikmah (Center Pillar - Highest) -->
+      <div class="candidate-card rank-1">
+        <div class="percent-wrap rank-1">
+          <span class="percent-number">57%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/salsya_portrait.jpg" alt="Salsya Aprilia">
+        <div class="name-ribbon">SALSYA APRILIA</div>
+        <div class="votes-detail">715 Suara • XI AK 5</div>
+      </div>
+
+      <!-- Juara 2: Bima Pangestu Sejati (Left Pillar - Medium) -->
+      <div class="candidate-card rank-2">
+        <div class="percent-wrap">
+          <span class="percent-number">35%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/bima_portrait.jpg" alt="Bima Pangestu">
+        <div class="name-ribbon">BIMA PANGESTU</div>
+        <div class="votes-detail">435 Suara • XI AK 6</div>
+      </div>
+
+      <!-- Juara 3: Loviola Amira Prameswari (Right Pillar - Lower) -->
+      <div class="candidate-card rank-3">
+        <div class="percent-wrap">
+          <span class="percent-number">8%</span>
+          <span class="percent-label">Suara</span>
+        </div>
+        <img class="candidate-photo" src="assets/candidates/loviola_portrait.jpg" alt="Loviola Amira">
+        <div class="name-ribbon">LOVIOLA AMIRA</div>
+        <div class="votes-detail">105 Suara • XI AK 6</div>
+      </div>
+    </div>
+
+    <!-- Arch Banner Tagline -->
+    <div class="arch-ribbon">
+      <div class="arch-ribbon-text">Praja Satya Nayaka</div>
+    </div>
+
+    <!-- Bottom Signs -->
+    <div class="bottom-tag-left">SUARA SAH!</div>
+    <div class="bottom-tag-right">TERIMA KASIH!</div>
+
+    <div class="footer-credits">
+      KOMISI PEMILIHAN KETUA OSIS/PK • SMKN 13 BANDUNG 2026
+    </div>
+  </div>
+</body>
+</html>
