@@ -3,30 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDD Tunduk — 5 Tahun PDD | Davin Maritza</title>
+  <title>PDD Tunduk — Davin Maritza</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #0A1118;
-      --navy-card: #111C26;
-      --navy-light: #1A2836;
-      --gold: #E5B842;
-      --gold-hover: #F2C75B;
-      --gold-subtle: rgba(229, 184, 66, 0.12);
-      --bg: #070B0E;
-      --text-main: #F1F5F9;
-      --text-muted: #94A3B8;
-      --border: #1E2E3E;
-      --border-gold: rgba(229, 184, 66, 0.35);
-      --red-secret: #EF4444;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -35,589 +17,157 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
+      background-color: #090D12;
+      color: #F1F5F9;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(229, 184, 66, 0.05) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(70, 135, 228, 0.04) 0%, transparent 50%);
-    }
-
-    /* Header */
-    header {
-      background: rgba(10, 17, 24, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 16px;
+      padding: 24px 20px;
     }
 
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .logo-box {
-      background: #FFFFFF;
-      padding: 6px 10px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid var(--gold-subtle);
-    }
-
-    .logo-box img {
-      height: 32px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand-text h1 {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .brand-text .tagline {
-      font-size: 11px;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .header-badge {
-      background: var(--gold-subtle);
-      border: 1px solid var(--border-gold);
-      color: var(--gold);
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 999px;
-      letter-spacing: 0.4px;
-    }
-
-    /* Container */
-    main {
-      max-width: 1180px;
+    .container {
+      max-width: 440px;
       width: 100%;
-      margin: 36px auto;
-      padding: 0 20px;
-      flex: 1;
+      text-align: center;
     }
 
-    /* Hero Section */
-    .hero-banner {
-      background: linear-gradient(145deg, #101923 0%, #0A1118 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      margin-bottom: 36px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-banner::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(229, 184, 66, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-      display: inline-block;
-      background: var(--gold-subtle);
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border-gold);
-    }
-
-    .hero-title {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 42px;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      color: #FFFFFF;
-      margin-bottom: 16px;
-    }
-
-    .hero-title span.tunduk {
-      color: var(--gold);
-      text-decoration: underline;
-      text-decoration-color: rgba(229, 184, 66, 0.4);
-      text-underline-offset: 6px;
-    }
-
-    .hero-p {
-      color: #CBD5E1;
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 820px;
-      margin-bottom: 28px;
-    }
-
-    /* Stats Grid */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-    }
-
-    .stat-card {
-      background: rgba(26, 40, 54, 0.4);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
-    }
-
-    .stat-number {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Project Cards (Portal Navigation) */
-    .section-headline {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin-bottom: 18px;
-      display: flex;
+    .logos {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .portal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .portal-card {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s ease;
-      position: relative;
-    }
-
-    .portal-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-gold);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Special Secret Card Treatment for HGN */
-    .portal-card.classified {
-      border: 1px dashed rgba(239, 68, 68, 0.4);
-      background: linear-gradient(160deg, #131A21 0%, #0F1419 100%);
-    }
-
-    .portal-card.classified:hover {
-      border-color: var(--red-secret);
-      box-shadow: 0 14px 30px rgba(239, 68, 68, 0.12);
-    }
-
-    .card-badge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .badge-status {
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .badge-done {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34D399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .badge-secret {
-      background: rgba(239, 68, 68, 0.15);
-      color: #F87171;
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      animation: pulse-border 2s infinite;
-    }
-
-    @keyframes pulse-border {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-
-    .portal-title {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-
-    .portal-desc {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
+      background: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 12px;
       margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
-    .action-row {
+    .logos img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #94A3B8;
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .links {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-top: auto;
     }
 
-    .btn-portal {
-      display: inline-flex;
+    .link-card {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--gold);
-      color: #070B0E;
+      justify-content: space-between;
+      background: #111720;
+      border: 1px solid #1E293B;
+      padding: 18px 22px;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 12px 20px;
-      border-radius: var(--radius-sm);
+      color: #FFFFFF;
       transition: all 0.2s ease;
     }
 
-    .btn-portal:hover {
-      background: var(--gold-hover);
-      transform: translateY(-1px);
+    .link-card:hover {
+      background: #16202C;
+      border-color: #D4AF37;
+      transform: translateY(-2px);
     }
 
-    .btn-portal:active {
-      transform: translateY(1px);
+    .link-card:active {
+      transform: translateY(0);
     }
 
-    .btn-portal.classified-btn {
-      background: #1E2E3E;
-      color: #F87171;
-      border: 1px solid rgba(239, 68, 68, 0.4);
-    }
-
-    .btn-portal.classified-btn:hover {
-      background: rgba(239, 68, 68, 0.2);
-      border-color: var(--red-secret);
-      color: #FFFFFF;
-    }
-
-    .quick-links-row {
+    .link-info {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .link-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.3px;
+    }
+
+    .link-desc {
       font-size: 12px;
-    }
-
-    .quick-links-row a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 4px 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.04);
-      transition: all 0.2s;
-    }
-
-    .quick-links-row a:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Golden Rules of PDD */
-    .rules-card {
-      background: var(--navy-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      margin-bottom: 40px;
-    }
-
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 14px;
-    }
-
-    .rule-item {
-      background: rgba(10, 17, 24, 0.6);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px;
-      font-size: 12.5px;
-      line-height: 1.5;
-    }
-
-    .rule-item strong {
-      color: var(--gold);
-      display: block;
-      margin-bottom: 4px;
-      font-size: 13px;
-    }
-
-    /* Footer */
-    footer {
-      background: #05080A;
-      border-top: 1px solid var(--border);
       color: #64748B;
-      padding: 24px 20px;
-      font-size: 12.5px;
+      font-weight: 400;
+      margin-top: 2px;
     }
 
-    .footer-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+    .arrow {
+      color: #D4AF37;
+      font-size: 20px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
     }
 
-    .footer-inner a {
-      color: var(--text-muted);
-      text-decoration: none;
+    .link-card:hover .arrow {
+      transform: translateX(3px);
     }
 
-    .footer-inner a:hover {
-      color: var(--gold);
-    }
-
-    /* Responsive */
-    @media (max-width: 820px) {
-      .portal-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-banner {
-        padding: 24px;
-      }
-      .hero-title {
-        font-size: 30px;
-      }
-      .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #475569;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="brand-group">
-        <div class="logo-box">
-          <img src="logo-smkn13.png" alt="Logo SMKN 13 Bandung">
-          <img src="LOGO OSIS.png" alt="Logo OSIS">
-          <img src="logo-mpk.png" alt="Logo MPK">
+  <div class="container">
+    <div class="logos">
+      <img src="logo-smkn13.png" alt="Logo SMKN 13">
+      <img src="LOGO OSIS.png" alt="Logo OSIS">
+      <img src="logo-mpk.png" alt="Logo MPK">
+    </div>
+
+    <h1>PDD Tunduk.</h1>
+    <p class="subtitle">Udah 5 tahun PDD nih gue.</p>
+
+    <div class="links">
+      <a href="administrasi.html" class="link-card">
+        <div class="link-info">
+          <span class="link-title">Pilketos</span>
+          <span class="link-desc">SMKN 13 Bandung · Praja Satya Nayaka</span>
         </div>
-        <div class="brand-text">
-          <h1>PDD TUNDUK 🙇‍♂️</h1>
-          <div class="tagline">Official Hub — MPK & OSIS SMKN 13 Bandung</div>
-        </div>
+        <span class="arrow">→</span>
       </a>
 
-      <div class="header-badge">
-        ⭐ 5 Tahun di Divisi PDD
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-      <span class="hero-eyebrow">DEWAN PERWAKILAN LEMBUR & RENDERING</span>
-      <h2 class="hero-title">
-        "PDD <span class="tunduk">Tunduk</span>. Udah 5 Tahun PDD Nih Gue."
-      </h2>
-      <p class="hero-p">
-        Lima tahun berkecimpung di dunia Publikasi, Dekorasi, dan Dokumentasi sekolah. Dari era minjem kamera teman, drama kabel HDMI panggung, export render video jam 3 subuh, revisi typo nama pembina di banner 6 meter, sampai ratusan gigabyte footage di Drive. Divisi yang paling jarang tidur, tapi karyanya selalu jadi wajah utama setiap acara.
-      </p>
-
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-number">5+ Tahun</div>
-          <div class="stat-desc">Jam Terbang PDD & Desain</div>
+      <a href="hgn/index.html" class="link-card">
+        <div class="link-info">
+          <span class="link-title">HGN 2026</span>
+          <span class="link-desc">Hari Guru Nasional · Internal Portal</span>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">100+ GB</div>
-          <div class="stat-desc">Total Footage & Desain di Drive</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">2 Proyek</div>
-          <div class="stat-desc">Pilketos & Hari Guru Nasional</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">0 Jam</div>
-          <div class="stat-desc">Rata-rata Tidur Pas Hari H 💀</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portals Showcase -->
-    <div class="section-headline">
-      <span>📁 Pilih Portal Proyek PDD</span>
+        <span class="arrow">→</span>
+      </a>
     </div>
 
-    <div class="portal-grid">
-
-      <!-- Card 1: Pilketos -->
-      <div class="portal-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="badge-status badge-done">✅ Arsip Resmi · Selesai</span>
-            <span style="font-size: 11px; color: var(--gold); font-family: 'JetBrains Mono', monospace;">PILKETOS 2026</span>
-          </div>
-          <h3 class="portal-title">PRAJA SATYA NAYAKA</h3>
-          <p class="portal-desc">
-            Portal all-in-one divisi PDD untuk Pemilihan Ketua OSIS & MPK SMKN 13 Bandung. Memuat administrasi berkas, SOP desain 4 bab, task tracker tim, konsep feed carousel IG caketos, dan sistem rekapitulasi suara.
-          </p>
-        </div>
-
-        <div class="action-row">
-          <div class="quick-links-row">
-            <a href="administrasi.html">📁 Berkas</a>
-            <a href="tasks.html">✅ Tasks</a>
-            <a href="roadmap.html">🗺️ Roadmap</a>
-            <a href="template.html">🎨 Canva</a>
-            <a href="feed-caketos.html">📱 Feed</a>
-          </div>
-          <a href="administrasi.html" class="btn-portal">
-            Buka Portal Pilketos ➔
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2: HGN 2026 (Classified / Jangan Di-spill Dulu) -->
-      <div class="portal-card classified">
-        <div>
-          <div class="card-badge-row">
-            <span class="badge-status badge-secret">🔒 TOP SECRET · JANGAN DI-SPILL DULU</span>
-            <span style="font-size: 11px; color: #F87171; font-family: 'JetBrains Mono', monospace;">HGN 2026</span>
-          </div>
-          <h3 class="portal-title" style="color: #FFFFFF;">HARI GURU NASIONAL</h3>
-          <p class="portal-desc">
-            Konsep visual <em>Jalan Fajar & Buku Melayang</em>, pembagian tugas kolaborasi pairing VBAP–EBAP, palet warna resmi, dan rundown liputan upacara guru. Materi masih dirahasiakan demi menjaga kejutan untuk para guru saat Hari H.
-          </p>
-        </div>
-
-        <div class="action-row">
-          <div style="font-size: 11.5px; color: #F87171; display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: rgba(239, 68, 68, 0.08); border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
-            ⚠️ Akses terbatas internal tim PDD · Dilarang spill ke umum.
-          </div>
-          <a href="hgn/index.html" class="btn-portal classified-btn">
-            🔓 Buka Akses Internal Tim PDD ➔
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Golden Rules of PDD -->
-    <div class="rules-card">
-      <div class="section-headline" style="font-size: 18px; margin-bottom: 6px;">
-        <span>📜 4 Hukum Tak Tertulis Anak PDD</span>
-      </div>
-      <p style="font-size: 12.5px; color: var(--text-muted);">
-        Pelajaran nyata dari 5 tahun berkeringat di balik layar event sekolah:
-      </p>
-
-      <div class="rules-grid">
-        <div class="rule-item">
-          <strong>1. Haram Render Pas Menit Akhir</strong>
-          Video opening atau aftermovie jangan pernah dirender 15 menit sebelum acara mulai. Laptop pasti nemu cara buat nge-freeze.
-        </div>
-        <div class="rule-item">
-          <strong>2. Safe Zone IG Adalah Harga Mati</strong>
-          Rasio 4:5 di feed dan 9:16 di story wajib taat safe zone 250px atas-bawah. Teks kepotong di profil itu dosa desainer.
-        </div>
-        <div class="rule-item">
-          <strong>3. Cek Kamera H-1, Bukan Pas Hari H</strong>
-          Baterai cadangan dan kartu memori yang sudah diformat wajib ready dari gladi bersih. Bukan pas lagu Indonesia Raya mulai muter.
-        </div>
-        <div class="rule-item">
-          <strong>4. Jangan Ganti Font Sembarangan</strong>
-          Revisi materi itu wajar. Tapi kalau ada panitia lain minta ganti font ke Comic Sans atau minta poster dibikin "ramean dikit", mending gelut.
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div>
-        © 2026 <strong>PDD Tunduk</strong> — Directed by <span style="color: var(--gold);">Davin Maritza</span> (Koordinator PDD).
-      </div>
-      <div>
-        MPK & OSIS SMKN 13 Bandung · All rights reserved.
-      </div>
-    </div>
-  </footer>
+    <footer>
+      Davin Maritza · SMKN 13 Bandung
+    </footer>
+  </div>
 
 </body>
 </html>
