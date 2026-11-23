@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <meta name="theme-color" content="#8ACE00">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>pdd tunduk</title>
+  <title>pdd only</title>
   <link rel="icon" type="image/png" href="logo-mpk.png">
   <style>
     * {
@@ -86,6 +86,9 @@
       -webkit-user-select: none;
       -webkit-touch-callout: none;
       transition: transform 120ms ease-out, opacity 120ms ease-out;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
     }
 
     .brat-btn:active {
@@ -122,17 +125,105 @@
       filter: blur(0.3px);
       opacity: 0.75;
     }
+
+    /* Brat Modal */
+    .brat-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .brat-modal-overlay.active {
+      display: flex;
+    }
+
+    .brat-modal {
+      background: #8ACE00;
+      border: 3px solid #000000;
+      border-radius: 24px;
+      padding: 32px 24px;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 8px 8px 0px #000000;
+      animation: popIn 0.2s ease-out;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .brat-modal-title {
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: -1px;
+      filter: blur(0.3px);
+      margin-bottom: 6px;
+    }
+
+    .brat-modal-desc {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-transform: lowercase;
+      opacity: 0.85;
+    }
+
+    .brat-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2.5px solid #000000;
+      border-radius: 999px;
+      background: #FFFFFF;
+      color: #000000;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      text-align: center;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+
+    .brat-input:focus {
+      background: #FAFAFA;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+    }
+
+    .brat-modal-err {
+      color: #D32F2F;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      min-height: 18px;
+      text-transform: lowercase;
+    }
+
+    .brat-modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
   </style>
+  <script src="pdd-security.js"></script>
 </head>
 <body>
 
   <div class="brat-box">
-    <div class="brat-title">pdd tunduk</div>
-    <div class="brat-sub">udah 5 tahun pdd ni gue</div>
+    <div class="brat-title">hi there</div>
+    <div class="brat-sub">pdd only ya gais hahay</div>
 
     <div class="brat-links">
-      <a href="administrasi.html" class="brat-btn">pilketos ➔</a>
-      <a href="hgn/index.html" class="brat-btn outline">hgn 2026 ➔</a>
+      <a href="administrasi.html" class="brat-btn" data-gate-target="administrasi.html">pilketos ➔</a>
+      <a href="hgn/index.html" class="brat-btn outline" data-gate-target="hgn/index.html">hgn 2026 ➔</a>
     </div>
 
     <footer>
@@ -140,5 +231,74 @@
     </footer>
   </div>
 
+  <!-- Password Modal -->
+  <div id="bratModal" class="brat-modal-overlay">
+    <div class="brat-modal">
+      <div class="brat-modal-title">pdd only</div>
+      <div class="brat-modal-desc">masukin password dulu ya:</div>
+      <form id="bratGateForm">
+        <input type="password" id="bratPasswordInput" class="brat-input" placeholder="password..." autocomplete="off" />
+        <div id="bratError" class="brat-modal-err"></div>
+        <div class="brat-modal-actions">
+          <button type="submit" class="brat-btn">masuk ➔</button>
+          <button type="button" id="bratCancelBtn" class="brat-btn outline" style="padding: 10px; font-size: 14px;">batal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let pendingTarget = null;
+    const modal = document.getElementById('bratModal');
+    const input = document.getElementById('bratPasswordInput');
+    const err = document.getElementById('bratError');
+    const cancelBtn = document.getElementById('bratCancelBtn');
+
+    document.querySelectorAll('[data-gate-target]').forEach(el => {
+      el.addEventListener('click', function(e) {
+        const target = this.getAttribute('data-gate-target');
+        if (window.PDDSecurity && window.PDDSecurity.isAuthorized()) {
+          // Already unlocked
+          return true;
+        }
+        e.preventDefault();
+        pendingTarget = target;
+        err.textContent = '';
+        input.value = '';
+        modal.classList.add('active');
+        setTimeout(() => input.focus(), 100);
+      });
+    });
+
+    cancelBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+      pendingTarget = null;
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        pendingTarget = null;
+      }
+    });
+
+    document.getElementById('bratGateForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      err.textContent = '';
+      const val = input.value;
+      if (!val) return;
+      const ok = await window.PDDSecurity.verifyAndAuthorize(val);
+      if (ok) {
+        modal.classList.remove('active');
+        if (pendingTarget) {
+          window.location.href = pendingTarget;
+        }
+      } else {
+        err.textContent = 'password salah cuy!';
+        input.value = '';
+        input.focus();
+      }
+    });
+  </script>
 </body>
 </html>
