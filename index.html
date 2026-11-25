@@ -110,6 +110,39 @@
       transform: scale(0.96);
     }
 
+    .brat-btn.with-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 18px 13px 22px;
+    }
+
+    .brat-status-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brat-status-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      text-transform: lowercase;
+      letter-spacing: 0;
+      filter: none;
+    }
+
+    .brat-status-tag.done {
+      background: #8ACE00;
+      color: #000000;
+    }
+
+    .brat-status-tag.proses {
+      background: #000000;
+      color: #8ACE00;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       .brat-btn:hover {
         transform: scale(1.03);
@@ -387,8 +420,20 @@
     <div class="brat-sub">pdd only ya gais hahay</div>
 
     <div class="brat-links">
-      <a href="administrasi.html" class="brat-btn" data-gate-target="administrasi.html">pilketos ➔</a>
-      <a href="hgn/index.html" class="brat-btn outline" data-gate-target="hgn/index.html">hgn 2026 ➔</a>
+      <a href="administrasi.html" class="brat-btn with-status" data-gate-target="administrasi.html">
+        <span>pilketos</span>
+        <span class="brat-status-group">
+          <span class="brat-status-tag done">done ✓</span>
+          <span>➔</span>
+        </span>
+      </a>
+      <a href="hgn/index.html" class="brat-btn outline with-status" data-gate-target="hgn/index.html">
+        <span>hgn 2026</span>
+        <span class="brat-status-group">
+          <span class="brat-status-tag proses">proses</span>
+          <span>➔</span>
+        </span>
+      </a>
       <button type="button" id="openRulesBtn" class="brat-btn outline" style="margin-top: 6px; font-size: 14px; padding: 12px 20px; border-style: dashed;">rules pdd 📜</button>
     </div>
 
