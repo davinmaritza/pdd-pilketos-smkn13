@@ -212,6 +212,70 @@
       flex-direction: column;
       gap: 8px;
     }
+
+    /* Rules Modal */
+    .brat-modal.rules-modal {
+      max-width: 480px;
+      text-align: left;
+      padding: 26px 22px;
+      max-height: 85dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rules-header {
+      text-align: center;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .rules-scroll {
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rules-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .rules-scroll::-webkit-scrollbar-thumb {
+      background: #000000;
+      border-radius: 999px;
+    }
+
+    .rule-card {
+      background: #FFFFFF;
+      border: 2px solid #000000;
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 3px 3px 0px #000000;
+    }
+
+    .rule-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rule-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #111111;
+    }
+
+    .rule-card li + li {
+      margin-top: 4px;
+    }
   </style>
   <script src="pdd-security.js"></script>
 </head>
@@ -224,6 +288,7 @@
     <div class="brat-links">
       <a href="administrasi.html" class="brat-btn" data-gate-target="administrasi.html">pilketos ➔</a>
       <a href="hgn/index.html" class="brat-btn outline" data-gate-target="hgn/index.html">hgn 2026 ➔</a>
+      <button type="button" id="openRulesBtn" class="brat-btn outline" style="margin-top: 6px; font-size: 14px; padding: 12px 20px; border-style: dashed;">rules pdd 📜</button>
     </div>
 
     <footer>
@@ -244,6 +309,69 @@
           <button type="button" id="bratCancelBtn" class="brat-btn outline" style="padding: 10px; font-size: 14px;">batal</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Rules Modal -->
+  <div id="rulesModal" class="brat-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rulesModalTitle">
+    <div class="brat-modal rules-modal">
+      <div class="rules-header">
+        <div id="rulesModalTitle" class="brat-modal-title">rules selama jadi pdd</div>
+        <div class="brat-modal-desc" style="margin-bottom: 0;">wajib baca & patuhi bareng-bareng ya gais</div>
+      </div>
+
+      <div class="rules-scroll">
+        <div class="rule-card">
+          <div class="rule-card-title">1. komunikasi & tanggung jawab</div>
+          <ul>
+            <li>Wajib <strong>fast response</strong> di grup PDD dan selalu update progres tugas (jangan ghosting pas deadline).</li>
+            <li>Kalau berhalangan hadir atau butuh bantuan, langsung kabari di grup jauh-jauh hari biar bisa di-backup.</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-title">2. disiplin waktu & hari h</div>
+          <ul>
+            <li>Saat event sekolah, tim PDD wajib datang lebih awal buat cek alat dan plotting posisi liputan.</li>
+            <li>Wajib pakai atribut panitia (ID card / seragam yang disepakati) biar leluasa gerak di lapangan.</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-title">3. standar dokumentasi (foto & video)</div>
+          <ul>
+            <li>Seimbangkan jepretan <strong>Portrait</strong> (Feed 4:5 / Story 9:16) dan <strong>Landscape</strong> (wide/panggung).</li>
+            <li>Prioritas objek wajib: inti acara, bapak/ibu guru, <strong>Kepala Sekolah (wajib!)</strong>, dan momen candid siswa.</li>
+            <li>Dilarang asal hapus file di kamera sebelum selesai di-backup.</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-title">4. aturan setor file (anti-pecah)</div>
+          <ul>
+            <li>Hari H beres acara, semua file mentah (RAW/Original) wajib langsung disetor ke Google Drive di hari yang sama.</li>
+            <li><strong>Jangan kirim via WhatsApp</strong> kalau bisa colok card reader / upload langsung ke Drive biar resolusi gak turun.</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-title">5. desain & publikasi medsos</div>
+          <ul>
+            <li>Desain wajib ngikutin palet warna, font, dan aset logo resmi (SMKN 13, OSIS, MPK) yang udah disiapin.</li>
+            <li>Sebelum posting, wajib cek ulang ejaan nama & gelar Kepala Sekolah / guru (anti-typo!).</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-title">6. attitude & kerja tim (vbap–ebap)</div>
+          <ul>
+            <li>Senior (VBAP) wajib bimbing junior (EBAP); junior wajib aktif nanya dan punya inisiatif.</li>
+            <li>Jaga sopan santun saat motret guru/tamu undangan, serta jaga barang inventaris (kamera, lensa, mic, baterai) kayak milik sendiri.</li>
+          </ul>
+        </div>
+      </div>
+
+      <button type="button" id="closeRulesBtn" class="brat-btn" style="padding: 12px; font-size: 15px;">paham & siap! ➔</button>
     </div>
   </div>
 
@@ -297,6 +425,33 @@
         err.textContent = 'password salah cuy!';
         input.value = '';
         input.focus();
+      }
+    });
+
+    // Rules Modal Handlers
+    const rulesModal = document.getElementById('rulesModal');
+    const openRulesBtn = document.getElementById('openRulesBtn');
+    const closeRulesBtn = document.getElementById('closeRulesBtn');
+
+    openRulesBtn.addEventListener('click', function() {
+      rulesModal.classList.add('active');
+    });
+
+    closeRulesBtn.addEventListener('click', function() {
+      rulesModal.classList.remove('active');
+    });
+
+    rulesModal.addEventListener('click', function(e) {
+      if (e.target === rulesModal) {
+        rulesModal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        rulesModal.classList.remove('active');
+        modal.classList.remove('active');
+        pendingTarget = null;
       }
     });
   </script>
