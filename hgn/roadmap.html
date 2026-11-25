@@ -18,6 +18,68 @@
       window.PDDSecurity.enforceGate({ homeUrl: '../index.html' });
     }
   </script>
+  <style>
+    .rundown-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .rundown-tab-btn {
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--deep-navy);
+      background: #FFFFFF;
+      color: var(--deep-navy);
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 140ms ease;
+    }
+
+    .rundown-tab-btn.active {
+      background: var(--deep-navy);
+      color: #FFFFFF;
+    }
+
+    .rundown-panel {
+      display: none;
+    }
+
+    .rundown-panel.active {
+      display: block;
+    }
+
+    .row-highlight {
+      background: #F0F7FF;
+    }
+
+    .time-pill {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--deep-navy);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .dur-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--sky-azure-dark);
+      background: var(--sky-azure-light);
+      padding: 2px 7px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,14 +94,14 @@
         </div>
         <div class="brand-info">
           <h1>PDD HGN 2026</h1>
-          <div class="subtitle">SMKN 13 Bandung · OSIS & MPK</div>
+          <div class="subtitle">SMKN 13 Bandung · OSIS &amp; MPK</div>
         </div>
       </a>
 
       <nav class="main-nav">
-        <a href="index.html" class="nav-link">📁 Berkas & Aset</a>
+        <a href="index.html" class="nav-link">📁 Berkas &amp; Aset</a>
         <a href="tasks.html" class="nav-link">📋 Pembagian Tugas</a>
-        <a href="roadmap.html" class="nav-link active">⏱️ Timeline & Rundown</a>
+        <a href="roadmap.html" class="nav-link active">⏱️ Timeline &amp; Rundown</a>
         <a href="../index.html" class="nav-link" style="opacity: 0.75;" title="Kembali ke Portal Pilketos">← Pilketos</a>
       </nav>
     </div>
@@ -48,59 +110,379 @@
   <!-- Main Content -->
   <main class="main-content">
 
-    <div class="card" style="text-align: center; padding: 48px 24px; max-width: 680px; margin: 20px auto 40px auto; border-top: 4px solid var(--sky-azure);">
-      <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--bg-cream); border: 2px solid var(--sunbeam); display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">
-        ⏳
-      </div>
-      
-      <div>
-        <span class="hero-badge" style="margin-bottom: 8px;">Upcoming Event · 25 November 2026</span>
-      </div>
-
-      <h2 style="font-family: 'League Spartan', sans-serif; font-size: clamp(22px, 5vw, 30px); font-weight: 800; color: var(--deep-navy); margin-top: 8px; line-height: 1.2;">
-        Timeline & Rundown Eksekusi HGN 2026
+    <div style="margin-bottom: 22px;">
+      <span class="hero-badge">Rabu, 25 November 2026 · SMKN 13 Bandung</span>
+      <h2 style="font-family: 'League Spartan', sans-serif; font-size: 28px; font-weight: 800; color: var(--deep-navy); margin-top: 4px;">
+        Timeline &amp; Rundown Peringatan HGN 2026
       </h2>
-
-      <p style="color: var(--text-muted); font-size: 14px; margin-top: 10px; line-height: 1.6; max-width: 520px; margin-left: auto; margin-right: auto;">
-        Alur kerja pra-acara, gladi H-1, dan rundown liputan lapangan per jam saat ini masih berstatus <strong>Upcoming (Internal Divisi PDD)</strong> dan belum dirilis untuk umum.
+      <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
+        Jadwal resmi rangkaian kegiatan Hari Guru Nasional 2026 (versi Panitia dan versi Umum) sebagai acuan dokumentasi dan liputan Divisi PDD.
       </p>
-
-      <div style="background: var(--bg-cream); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 20px; margin: 24px auto; text-align: left; max-width: 520px;">
-        <div style="font-weight: 600; font-size: 13px; color: var(--deep-navy); display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-          <span>🔒 Informasi Belum Dirilis</span>
-          <span class="status-pill status-upcoming" style="margin-left: auto; font-size: 10px;">Segera Hadir</span>
-        </div>
-        <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin: 0;">
-          Rincian jadwal gladi kotor/bersih, pembagian kamera, rundown liputan lapangan, serta jadwal rilis video aftermovie akan dibuka mendekati pelaksanaan Hari Guru Nasional (H-2 / 23 November 2026).
-        </p>
-      </div>
-
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px;">
-        <a href="index.html" class="btn btn-primary btn-sm">📁 Buka Berkas & Aset Desain</a>
-        <a href="tasks.html" class="btn btn-outline btn-sm">📋 Lihat Pembagian Tugas Tim</a>
-      </div>
-
-      <div style="margin-top: 22px;">
-        <a href="../index.html" style="font-size: 12px; color: var(--text-muted); text-decoration: none;">← Kembali ke Halaman Utama</a>
-      </div>
     </div>
 
-    <!-- 
-      ===================================================================
-      PRESERVED DATA: DETAIL TIMELINE & RUNDOWN HGN 2026 (SIAP DIBUKA H-2)
-      ===================================================================
-      Fase 1: Persiapan & Cetak (20–23 Nov)
-      Fase 2: Gladi & Pemasangan Venue (24 Nov)
-      Rundown Hari H: 25 November 2026
-        - 06.30 – 07.00: Kedatangan Guru & Siswa (Imayesi, Zhafira)
-        - 07.00 – 08.15: Upacara Bendera Khusus HGN (Semua Tim PDD - Lead: Imayesi & Raziq)
-        - 08.15 – 09.30: Persembahan & Apresiasi Guru (Hasbi, Raziq)
-        - 09.30 – 11.00: Sesi Foto Bersama di Photobooth (Davin, Fadli)
-        - 11.00 – 12.00: Penutupan & Beres-Beres Venue (Semua Tim PDD)
-      Fase 4: Pasca Acara & Publikasi Video (26–28 Nov)
-        - Pengarsipan Foto (Drive)
-        - Editing & Rilis Aftermovie (Raziq & Imayesi, target 27 Nov)
-    -->
+    <!-- Tab Switcher -->
+    <div class="rundown-tabs" role="tablist">
+      <button type="button" class="rundown-tab-btn active" data-rundown-tab="panitia" role="tab" aria-selected="true">
+        📋 Rundown Panitia (05.15 – 11.30)
+      </button>
+      <button type="button" class="rundown-tab-btn" data-rundown-tab="umum" role="tab" aria-selected="false">
+        🎓 Rundown Acara Umum (06.30 – 11.30)
+      </button>
+    </div>
+
+    <!-- Panel 1: Rundown Panitia -->
+    <section id="panel-panitia" class="rundown-panel active">
+      <div class="section-title">
+        <span>Rundown Panitia Peringatan Hari Guru Nasional</span>
+        <span style="font-size: 12px; font-weight: 500; color: var(--text-muted); font-family: 'Poppins', sans-serif;">Rabu, 25 November 2026 (20 Agenda)</span>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width: 48px;">No</th>
+              <th>Waktu</th>
+              <th style="width: 64px;">Dur'</th>
+              <th>Kegiatan</th>
+              <th>PJ</th>
+              <th>Tempat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><span class="time-pill">05.15 – 05.30</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td><strong>Kedatangan Panitia</strong></td>
+              <td>Ketuplak</td>
+              <td>Ruang Panitia</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><span class="time-pill">05.30 – 06.00</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td><strong>Briefing Panitia</strong></td>
+              <td>Ketuplak</td>
+              <td>Ruang Panitia</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><span class="time-pill">06.00 – 06.45</span></td>
+              <td><span class="dur-badge">45'</span></td>
+              <td>Persiapan Acara &amp; Upacara</td>
+              <td>Petugas Upacara + Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>4</td>
+              <td><span class="time-pill">06.45 – 08.00</span></td>
+              <td><span class="dur-badge">75'</span></td>
+              <td><strong>UPACARA</strong></td>
+              <td>Petugas Upacara + Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><span class="time-pill">08.00 – 08.15</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Pengarahan guru dari depan R.33 ke koridor dekat RG dan Layout siswa</td>
+              <td>Koorlap</td>
+              <td>Lorong RG &amp; Lapangan</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>6</td>
+              <td><span class="time-pill">08.15 – 08.40</span></td>
+              <td><span class="dur-badge">25'</span></td>
+              <td><strong>Kedatangan &amp; penyambutan guru (Penampilan KATAPA)</strong></td>
+              <td>MC &amp; KATAPA</td>
+              <td>Lorong RG</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><span class="time-pill">08.40 – 08.50</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td>Guru diarahkan ke tengah lapang untuk kemudian dipersilahkan duduk di tempat yang sudah disediakan di selasar depan ruang guru</td>
+              <td>MC &amp; Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><span class="time-pill">08.50 – 09.05</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Pembukaan Acara + Pembacaan ayat suci Al-Quran &amp; Doa</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><span class="time-pill">09.05 – 09.35</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td>Sambutan-Sambutan</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><span class="time-pill">09.35 – 10.05</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td>Penampilan OSIS &amp; MPK</td>
+              <td>OSIS &amp; MPK</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>11</td>
+              <td><span class="time-pill">09.35 – 10.05</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td><strong>Pemberian Bunga &amp; Penurunan balon di gedung H&amp;D</strong></td>
+              <td>MPK &amp; Panitia Bunga</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td><span class="time-pill">10.05 – 10.20</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penampilan Ibu Rina daryani, M.Pd. (Puisi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td><span class="time-pill">10.20 – 10.35</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penampilan Paduan Suara Ibu-Ibu</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td><span class="time-pill">10.35 – 10.40</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Khairul X RPL 2 (Puisi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td><span class="time-pill">10.40 – 10.45</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Adinda XII KA 4 (Nyanyi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td><span class="time-pill">10.45 – 10.50</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Arshavin X RPL 3 (Dance)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td><span class="time-pill">10.50 – 10.55</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Ajeng X RPL 2 (Nyanyi+Gitar)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td><span class="time-pill">10.55 – 11.05</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td>Kesan Pesan Siswa terhadap Guru</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>19</td>
+              <td><span class="time-pill">11.05 – 11.15</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td><strong>Sesi Dokumentasi</strong></td>
+              <td>Tim Gedung</td>
+              <td>Pendopo</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td><span class="time-pill">11.15 – 11.30</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penutupan MC</td>
+              <td>Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Panel 2: Rundown Acara Umum -->
+    <section id="panel-umum" class="rundown-panel">
+      <div class="section-title">
+        <span>Rundown Peringatan Hari Guru Nasional (Umum)</span>
+        <span style="font-size: 12px; font-weight: 500; color: var(--text-muted); font-family: 'Poppins', sans-serif;">Rabu, 25 November 2026 (18 Agenda)</span>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width: 48px;">No</th>
+              <th>Waktu</th>
+              <th style="width: 64px;">Dur'</th>
+              <th>Kegiatan</th>
+              <th>PJ</th>
+              <th>Tempat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><span class="time-pill">06.30 – 06.45</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Persiapan Acara &amp; Upacara</td>
+              <td>Petugas Upacara + Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>2</td>
+              <td><span class="time-pill">06.45 – 08.00</span></td>
+              <td><span class="dur-badge">75'</span></td>
+              <td><strong>UPACARA</strong></td>
+              <td>Petugas Upacara + Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><span class="time-pill">08.00 – 08.15</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Pengarahan guru dari depan R.33 ke koridor dekat RG dan Layout siswa</td>
+              <td>Koorlap</td>
+              <td>Lorong RG &amp; Lapangan</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>4</td>
+              <td><span class="time-pill">08.15 – 08.40</span></td>
+              <td><span class="dur-badge">25'</span></td>
+              <td><strong>Kedatangan &amp; penyambutan guru (Penampilan KATAPA)</strong></td>
+              <td>MC &amp; KATAPA</td>
+              <td>Lorong RG</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><span class="time-pill">08.40 – 08.50</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td>Guru diarahkan ke tengah lapang untuk kemudian dipersilahkan duduk di tempat yang sudah disediakan di selasar depan ruang guru</td>
+              <td>MC &amp; Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><span class="time-pill">08.50 – 09.05</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Pembukaan Acara + Pembacaan ayat suci Al-Quran &amp; Doa</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><span class="time-pill">09.05 – 09.35</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td>Sambutan-Sambutan</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><span class="time-pill">09.35 – 10.05</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td>Penampilan OSIS &amp; MPK</td>
+              <td>OSIS &amp; MPK</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>9</td>
+              <td><span class="time-pill">09.35 – 10.05</span></td>
+              <td><span class="dur-badge">30'</span></td>
+              <td><strong>Pemberian bunga dan penurunan balon di gedung H&amp;D</strong></td>
+              <td>MPK &amp; Panitia Bunga</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><span class="time-pill">10.05 – 10.20</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penampilan Ibu Rina daryani, M.Pd. (Puisi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><span class="time-pill">10.20 – 10.35</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penampilan Paduan Suara Ibu-Ibu</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td><span class="time-pill">10.35 – 10.40</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Khairul X RPL 2 (Puisi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td><span class="time-pill">10.40 – 10.45</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Adinda XII KA 4 (Nyanyi)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td><span class="time-pill">10.45 – 10.50</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Arshavin X RPL 3 (Dance)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td><span class="time-pill">10.50 – 10.55</span></td>
+              <td><span class="dur-badge">5'</span></td>
+              <td>Penampilan Ajeng X RPL 2 (Nyanyi+Gitar)</td>
+              <td>Humas &amp; MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td><span class="time-pill">10.55 – 11.05</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td>Kesan Pesan Siswa terhadap Guru</td>
+              <td>MC</td>
+              <td>Lapang</td>
+            </tr>
+            <tr class="row-highlight">
+              <td>17</td>
+              <td><span class="time-pill">11.05 – 11.15</span></td>
+              <td><span class="dur-badge">10'</span></td>
+              <td><strong>Sesi Dokumentasi</strong></td>
+              <td>Tim Gedung</td>
+              <td>Pendopo</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td><span class="time-pill">11.15 – 11.30</span></td>
+              <td><span class="dur-badge">15'</span></td>
+              <td>Penutupan MC</td>
+              <td>Koorlap</td>
+              <td>Lapang</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
   </main>
 
@@ -108,13 +490,35 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-copy">
-        © 2026 Divisi PDD — OSIS & MPK SMKN 13 Bandung.
+        © 2026 Divisi PDD — OSIS &amp; MPK SMKN 13 Bandung.
       </div>
       <div>
         Peringatan Hari Guru Nasional · 25 November 2026
       </div>
     </div>
   </footer>
+
+  <script>
+    const tabBtns = document.querySelectorAll('.rundown-tab-btn');
+    const panels = {
+      panitia: document.getElementById('panel-panitia'),
+      umum: document.getElementById('panel-umum')
+    };
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = this.getAttribute('data-rundown-tab');
+        tabBtns.forEach(b => {
+          const isActive = b === this;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        Object.keys(panels).forEach(key => {
+          panels[key].classList.toggle('active', key === target);
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
