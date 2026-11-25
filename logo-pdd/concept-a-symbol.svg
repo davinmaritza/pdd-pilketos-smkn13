@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-a">
+  <title id="title-a">PDD Concept A - Lens Monogram P</title>
+  <path fill="#000000" fill-rule="evenodd" d="
+    M 64,32
+    L 144,32
+    C 182.7,32 212,61.3 212,98
+    C 212,134.7 182.7,164 144,164
+    L 100,164
+    L 100,212
+    C 100,218.6 94.6,224 88,224
+    L 64,224
+    C 57.4,224 52,218.6 52,212
+    L 52,44
+    C 52,37.4 57.4,32 64,32 Z
+    M 100,68
+    L 100,128
+    L 142,128
+    C 159.7,128 172,115.7 172,98
+    C 172,80.3 159.7,68 142,68
+    L 100,68 Z
+  "/>
+  <circle cx="138" cy="98" r="16" fill="#000000"/>
+</svg>

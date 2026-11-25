@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-c">
+  <title id="title-c">PDD Concept C - Viewfinder Prism</title>
+  <!-- Top-Left Bracket -->
+  <path fill="#000000" d="M 32,32 L 96,32 L 96,56 L 56,56 L 56,96 L 32,96 Z"/>
+  <!-- Top-Right Bracket -->
+  <path fill="#000000" d="M 224,32 L 224,96 L 200,96 L 200,56 L 160,56 L 160,32 Z"/>
+  <!-- Bottom-Right Bracket -->
+  <path fill="#000000" d="M 224,224 L 160,224 L 160,200 L 200,200 L 200,160 L 224,160 Z"/>
+  <!-- Bottom-Left Bracket -->
+  <path fill="#000000" d="M 32,224 L 32,160 L 56,160 L 56,200 L 96,200 L 96,224 Z"/>
+  <!-- Center Diamond Prism with Aperture Hole -->
+  <path fill="#000000" fill-rule="evenodd" d="
+    M 128,68
+    L 188,128
+    L 128,188
+    L 68,128 Z
+    M 128,104
+    A 24,24 0 1,0 128,152
+    A 24,24 0 1,0 128,104 Z
+  "/>
+</svg>

@@ -1,0 +1,48 @@
+<svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-pdd"><title>PDD</title>
+  <title id="title-pdd">PDD Monogram Logo</title>
+  <!-- Letter P (x=16..84, width=68) -->
+  <path fill="#ffffff" fill-rule="evenodd" d="
+    M 16,64
+    L 52,64
+    C 70.8,64 84,77.2 84,96
+    C 84,114.8 70.8,128 52,128
+    L 38,128
+    L 38,192
+    L 16,192 Z
+    M 38,84
+    L 38,108
+    L 50,108
+    C 57.7,108 62,103.7 62,96
+    C 62,88.3 57.7,84 50,84 Z
+  "/>
+  <!-- First D (x=94..162, width=68) -->
+  <path fill="#ffffff" fill-rule="evenodd" d="
+    M 94,64
+    L 124,64
+    C 146.1,64 162,79.9 162,102
+    L 162,154
+    C 162,176.1 146.1,192 124,192
+    L 94,192 Z
+    M 116,86
+    L 116,170
+    L 124,170
+    C 133.9,170 140,163.9 140,154
+    L 140,102
+    C 140,92.1 133.9,86 124,86 Z
+  "/>
+  <!-- Second D (x=172..240, width=68) -->
+  <path fill="#ffffff" fill-rule="evenodd" d="
+    M 172,64
+    L 202,64
+    C 224.1,64 240,79.9 240,102
+    L 240,154
+    C 240,176.1 224.1,192 202,192
+    L 172,192 Z
+    M 194,86
+    L 194,170
+    L 202,170
+    C 211.9,170 218,163.9 218,154
+    L 218,102
+    C 218,92.1 211.9,86 202,86 Z
+  "/>
+</svg>
