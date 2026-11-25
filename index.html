@@ -218,27 +218,62 @@
 
     /* Rules Modal */
     .brat-modal.rules-modal {
-      max-width: 480px;
+      max-width: 560px;
       text-align: left;
-      padding: 26px 22px;
-      max-height: 85dvh;
+      padding: 24px 20px;
+      max-height: 86dvh;
       display: flex;
       flex-direction: column;
     }
 
     .rules-header {
       text-align: center;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .rules-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
       margin-bottom: 14px;
       flex-shrink: 0;
+    }
+
+    .rules-tab-btn {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 2px solid #000000;
+      background: transparent;
+      color: #000000;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: lowercase;
+      cursor: pointer;
+      transition: background 120ms ease, color 120ms ease;
+    }
+
+    .rules-tab-btn.active {
+      background: #000000;
+      color: #8ACE00;
     }
 
     .rules-scroll {
       overflow-y: auto;
       padding-right: 4px;
-      margin-bottom: 16px;
-      display: flex;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .rules-tab-panel {
+      display: none;
       flex-direction: column;
       gap: 10px;
+    }
+
+    .rules-tab-panel.active {
+      display: flex;
     }
 
     .rules-scroll::-webkit-scrollbar {
@@ -278,6 +313,68 @@
 
     .rule-card li + li {
       margin-top: 4px;
+    }
+
+    .pasal-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .pasal-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 8px;
+      align-items: start;
+      font-size: 12px;
+      line-height: 1.45;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed #D4D4D4;
+    }
+
+    .pasal-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pasal-badge {
+      display: inline-block;
+      background: #000000;
+      color: #8ACE00;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 6px;
+      border-radius: 6px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .source-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1.5px solid #000000;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    .source-link {
+      display: inline-block;
+      background: #F4F4F5;
+      border: 1.5px solid #000000;
+      color: #000000;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    .source-link:hover {
+      background: #8ACE00;
     }
   </style>
   <script src="pdd-security.js"></script>
@@ -321,85 +418,167 @@
     <div class="brat-modal rules-modal">
       <div class="rules-header">
         <div id="rulesModalTitle" class="brat-modal-title">rules selama jadi pdd</div>
-        <div class="brat-modal-desc" style="margin-bottom: 0;">wajib baca & patuhi bareng-bareng ya gais</div>
+        <div class="brat-modal-desc" style="margin-bottom: 0;">wajib baca &amp; patuhi bareng-bareng ya gais</div>
       </div>
 
-      <div class="rules-scroll">
-        <div class="rule-card">
-          <div class="rule-card-title">1. anti-mendadak & wajib persiapan</div>
-          <ul>
-            <li>Segala kebutuhan desain, liputan, atau konsep acara wajib dikoordinasikan jauh-jauh hari karena butuh persiapan matang.</li>
-            <li><strong>Kami berhak menolak</strong> request atau penugasan yang mendadak tanpa pemberitahuan sebelumnya.</li>
-          </ul>
+      <div class="rules-tabs" role="tablist">
+        <button type="button" class="rules-tab-btn active" data-rules-tab="sop" role="tab" aria-selected="true">📋 sop &amp; rules</button>
+        <button type="button" class="rules-tab-btn" data-rules-tab="etik" role="tab" aria-selected="false">⚖️ kode etik &amp; hukum</button>
+      </div>
+
+      <div class="rules-scroll" id="rulesScrollBody">
+        <!-- Tab 1: SOP & Rules Internal -->
+        <div id="tab-sop" class="rules-tab-panel active">
+          <div class="rule-card">
+            <div class="rule-card-title">1. anti-mendadak &amp; wajib persiapan</div>
+            <ul>
+              <li>Segala kebutuhan desain, liputan, atau konsep acara wajib dikoordinasikan jauh-jauh hari karena butuh persiapan matang.</li>
+              <li><strong>Kami berhak menolak</strong> request atau penugasan yang mendadak tanpa pemberitahuan sebelumnya.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">2. bersifat netral &amp; objektif</div>
+            <ul>
+              <li>PDD wajib bersikap <strong>netral, independen, dan tidak memihak</strong> kandidat, golongan, atau pihak tertentu (termasuk saat Pilketos maupun event sekolah).</li>
+              <li>Memberikan eksposur dan porsi publikasi yang adil, berbasis fakta lapangan, serta bebas dari opini pribadi yang menghakimi.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">3. komunikasi &amp; tanggung jawab</div>
+            <ul>
+              <li>Wajib <strong>fast response</strong> di grup PDD dan selalu update progres tugas (jangan ghosting pas deadline).</li>
+              <li>Kalau berhalangan hadir atau butuh bantuan, langsung kabari di grup jauh-jauh hari biar bisa di-backup.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">4. disiplin waktu &amp; hari h</div>
+            <ul>
+              <li>Saat event sekolah, tim PDD wajib datang lebih awal buat cek alat dan plotting posisi liputan.</li>
+              <li>Wajib pakai atribut panitia (ID card / seragam yang disepakati) biar leluasa gerak di lapangan.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">5. standar dokumentasi (foto &amp; video)</div>
+            <ul>
+              <li>Seimbangkan jepretan <strong>Portrait</strong> (Feed 4:5 / Story 9:16) dan <strong>Landscape</strong> (wide/panggung).</li>
+              <li>Prioritas objek wajib: inti acara, bapak/ibu guru, <strong>Kepala Sekolah (wajib!)</strong>, dan momen candid siswa.</li>
+              <li>Dilarang asal hapus file di kamera sebelum selesai di-backup.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">6. aturan setor file (anti-pecah)</div>
+            <ul>
+              <li>Hari H beres acara, semua file mentah (RAW/Original) wajib langsung disetor ke Google Drive di hari yang sama.</li>
+              <li><strong>Jangan kirim via WhatsApp</strong> kalau bisa colok card reader / upload langsung ke Drive biar resolusi gak turun.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">7. desain &amp; publikasi medsos</div>
+            <ul>
+              <li>Desain wajib ngikutin palet warna, font, dan aset logo resmi (SMKN 13, OSIS, MPK) yang udah disiapin.</li>
+              <li>Sebelum posting, wajib cek ulang ejaan nama &amp; gelar Kepala Sekolah / guru (anti-typo!).</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-card-title">8. attitude &amp; jaga inventaris</div>
+            <ul>
+              <li>Jaga sopan santun dan etika saat motret bapak/ibu guru maupun tamu undangan di lapangan.</li>
+              <li>Jaga barang inventaris (kamera, lensa, mic, baterai, memory card) kayak milik sendiri dan kembalikan dalam kondisi lengkap.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="rule-card">
-          <div class="rule-card-title">2. komunikasi & tanggung jawab</div>
-          <ul>
-            <li>Wajib <strong>fast response</strong> di grup PDD dan selalu update progres tugas (jangan ghosting pas deadline).</li>
-            <li>Kalau berhalangan hadir atau butuh bantuan, langsung kabari di grup jauh-jauh hari biar bisa di-backup.</li>
-          </ul>
-        </div>
+        <!-- Tab 2: Kode Etik Jurnalistik & Hukum RI -->
+        <div id="tab-etik" class="rules-tab-panel">
+          <div class="rule-card">
+            <div class="rule-card-title">kode etik jurnalistik (pasal 1 – 11 lengkap)</div>
+            <div style="font-size: 11px; color: #52525B; margin-bottom: 8px;">Peraturan Dewan Pers No. 6/Peraturan-DP/V/2008</div>
+            <div class="pasal-list">
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 1</span>
+                <span>Bersikap <strong>independen &amp; netral</strong>, menghasilkan publikasi yang akurat, berimbang, dan tidak beritikad buruk.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 2</span>
+                <span>Menempuh cara profesional: tunjukkan identitas, hormati privasi, dan beri keterangan jelas jika foto/gambar merupakan arsip atau rekayasa.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 3</span>
+                <span>Selalu menguji informasi (<em>check &amp; re-check</em>), berimbang, tidak mencampur fakta dengan opini menghakimi, serta asas praduga tak bersalah.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 4</span>
+                <span>Dilarang membuat atau menyebarkan konten bohong (<em>hoax</em>), fitnah, sadis, dan cabul.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 5</span>
+                <span>Wajib merahasiakan identitas korban kejahatan susila serta identitas anak yang terlibat masalah hukum.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 6</span>
+                <span>Tidak menyalahgunakan tugas/posisi PDD untuk kepentingan pribadi dan dilarang keras menerima suap atau gratifikasi.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 7</span>
+                <span>Memegang <strong>Hak Tolak</strong> untuk melindungi narasumber anonim, serta menghargai embargo dan kesepakatan <em>off the record</em>.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 8</span>
+                <span>Anti-prasangka &amp; anti-diskriminasi (suku, ras, agama, gender, kondisi fisik/mental) serta tidak merendahkan martabat orang lain.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 9</span>
+                <span>Menghormati hak privasi dan kehidupan pribadi narasumber, kecuali menyangkut kepentingan publik yang luas.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 10</span>
+                <span>Segera mencabut, meralat, dan memperbaiki informasi/postingan yang keliru disertai permintaan maaf terbuka.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">Pasal 11</span>
+                <span>Wajib melayani <strong>Hak Jawab</strong> dan <strong>Hak Koreksi</strong> dari pihak terkait secara proporsional.</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="rule-card">
-          <div class="rule-card-title">3. disiplin waktu & hari h</div>
-          <ul>
-            <li>Saat event sekolah, tim PDD wajib datang lebih awal buat cek alat dan plotting posisi liputan.</li>
-            <li>Wajib pakai atribut panitia (ID card / seragam yang disepakati) biar leluasa gerak di lapangan.</li>
-          </ul>
-        </div>
+          <div class="rule-card">
+            <div class="rule-card-title">payung hukum ri (pers, foto, data &amp; digital)</div>
+            <div class="pasal-list">
+              <div class="pasal-row">
+                <span class="pasal-badge">UU 40/1999</span>
+                <span><strong>UU Pers (Pasal 5 &amp; 7):</strong> Wajib menghormati norma agama, kesusilaan, praduga tak bersalah, melayani Hak Jawab &amp; Hak Tolak, serta menaati Kode Etik Jurnalistik.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">UU 28/2014</span>
+                <span><strong>UU Hak Cipta (Pasal 12):</strong> Dilarang menggunakan atau mendistribusikan potret seseorang untuk keperluan komersial/iklan tanpa izin tertulis dari subjek foto.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">UU 27/2022</span>
+                <span><strong>UU PDP (Pasal 65):</strong> Dilarang memperoleh, mengungkapkan, atau menyebarkan data pribadi milik orang lain (termasuk foto dokumen/identitas sensitif) secara melawan hukum.</span>
+              </div>
+              <div class="pasal-row">
+                <span class="pasal-badge">UU 1/2024</span>
+                <span><strong>UU ITE (Pasal 27A &amp; 28):</strong> Dilarang menyerang kehormatan/nama baik orang lain, menyebar ujaran kebencian SARA, serta berita bohong di ruang digital.</span>
+              </div>
+            </div>
 
-        <div class="rule-card">
-          <div class="rule-card-title">4. standar dokumentasi (foto & video)</div>
-          <ul>
-            <li>Seimbangkan jepretan <strong>Portrait</strong> (Feed 4:5 / Story 9:16) dan <strong>Landscape</strong> (wide/panggung).</li>
-            <li>Prioritas objek wajib: inti acara, bapak/ibu guru, <strong>Kepala Sekolah (wajib!)</strong>, dan momen candid siswa.</li>
-            <li>Dilarang asal hapus file di kamera sebelum selesai di-backup.</li>
-          </ul>
-        </div>
-
-        <div class="rule-card">
-          <div class="rule-card-title">5. aturan setor file (anti-pecah)</div>
-          <ul>
-            <li>Hari H beres acara, semua file mentah (RAW/Original) wajib langsung disetor ke Google Drive di hari yang sama.</li>
-            <li><strong>Jangan kirim via WhatsApp</strong> kalau bisa colok card reader / upload langsung ke Drive biar resolusi gak turun.</li>
-          </ul>
-        </div>
-
-        <div class="rule-card">
-          <div class="rule-card-title">6. desain & publikasi medsos</div>
-          <ul>
-            <li>Desain wajib ngikutin palet warna, font, dan aset logo resmi (SMKN 13, OSIS, MPK) yang udah disiapin.</li>
-            <li>Sebelum posting, wajib cek ulang ejaan nama & gelar Kepala Sekolah / guru (anti-typo!).</li>
-          </ul>
-        </div>
-
-        <div class="rule-card">
-          <div class="rule-card-title">7. attitude & jaga inventaris</div>
-          <ul>
-            <li>Jaga sopan santun dan etika saat motret bapak/ibu guru maupun tamu undangan di lapangan.</li>
-            <li>Jaga barang inventaris (kamera, lensa, mic, baterai, memory card) kayak milik sendiri dan kembalikan dalam kondisi lengkap.</li>
-          </ul>
-        </div>
-
-        <div class="rule-card">
-          <div class="rule-card-title">8. etika jurnalistik & hukum ri (sumber resmi)</div>
-          <ul>
-            <li><strong>Kode Etik Jurnalistik (Peraturan Dewan Pers No. 6/Peraturan-DP/V/2008):</strong> Wajib akurat, berimbang, uji informasi (<em>check &amp; re-check</em>) [Pasal 1 &amp; 3]; bersikap profesional, tunjukkan identitas, hormati privasi, &amp; beri keterangan jika foto merupakan rekayasa/arsip [Pasal 2]; dilarang buat konten bohong, fitnah, sadis, cabul, serta wajib lindungi identitas anak/korban [Pasal 4 &amp; 5].</li>
-            <li><strong>UU No. 40 Tahun 1999 tentang Pers:</strong> Wajib menghormati norma agama, kesusilaan, praduga tak bersalah, dan melayani <strong>Hak Jawab</strong> [Pasal 5 &amp; 7].</li>
-            <li><strong>UU No. 28 Tahun 2014 tentang Hak Cipta:</strong> Dilarang menggunakan potret seseorang secara komersial/iklan tanpa izin tertulis dari orang yang dipotret [Pasal 12].</li>
-            <li><strong>UU No. 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP):</strong> Dilarang mengumpulkan, mengungkapkan, atau menyebarkan data pribadi (termasuk foto identitas/dokumen sensitif) tanpa hak [Pasal 65].</li>
-            <li><strong>UU No. 1 Tahun 2024 (Perubahan Kedua UU ITE):</strong> Dilarang menyerang kehormatan/nama baik [Pasal 27A], menyebar ujaran kebencian SARA, serta berita bohong (<em>hoax</em>) di ruang digital [Pasal 28].</li>
-          </ul>
-          <div style="margin-top: 8px; padding-top: 6px; border-top: 1px dashed #000000; font-size: 11px; color: #333333;">
-            <strong>Sumber Resmi:</strong>
-            <a href="https://dewanpers.or.id" target="_blank" rel="noopener noreferrer" style="color: #000000; font-weight: 700;">Dewan Pers (dewanpers.or.id)</a> ·
-            <a href="https://peraturan.bpk.go.id" target="_blank" rel="noopener noreferrer" style="color: #000000; font-weight: 700;">JDIH BPK RI (peraturan.bpk.go.id)</a>
+            <div class="source-bar">
+              <span><strong>Sumber Resmi:</strong></span>
+              <a href="https://dewanpers.or.id" target="_blank" rel="noopener noreferrer" class="source-link">Dewan Pers (dewanpers.or.id) ↗</a>
+              <a href="https://peraturan.bpk.go.id" target="_blank" rel="noopener noreferrer" class="source-link">JDIH BPK RI (peraturan.bpk.go.id) ↗</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <button type="button" id="closeRulesBtn" class="brat-btn" style="padding: 12px; font-size: 15px;">paham & siap! ➔</button>
+      <button type="button" id="closeRulesBtn" class="brat-btn" style="padding: 12px; font-size: 15px; flex-shrink: 0;">paham &amp; siap! ➔</button>
     </div>
   </div>
 
@@ -460,6 +639,24 @@
     const rulesModal = document.getElementById('rulesModal');
     const openRulesBtn = document.getElementById('openRulesBtn');
     const closeRulesBtn = document.getElementById('closeRulesBtn');
+    const rulesScrollBody = document.getElementById('rulesScrollBody');
+    const tabBtns = document.querySelectorAll('.rules-tab-btn');
+    const tabPanels = document.querySelectorAll('.rules-tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-rules-tab');
+        tabBtns.forEach(b => {
+          const isMatch = b === this;
+          b.classList.toggle('active', isMatch);
+          b.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+        tabPanels.forEach(panel => {
+          panel.classList.toggle('active', panel.id === 'tab-' + targetTab);
+        });
+        if (rulesScrollBody) rulesScrollBody.scrollTop = 0;
+      });
+    });
 
     openRulesBtn.addEventListener('click', function() {
       rulesModal.classList.add('active');
